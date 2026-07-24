@@ -1,0 +1,28 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "关你么子事(breath) 打破砂锅问到底(breath) 心急呷不得热豆腐(breath) 说曹操曹操到(breath) 瘦死的骆驼比马大(breath) 你搞么子咯？(breath) ",
+  "language_boost": "zh",
+  "pronunciation_dict": {
+    "tone": [
+      "么子/(mo3 zi0)",
+      "呷/(qia1)"
+    ]
+  },
+  "voice_setting": {
+    "voice_id": "YOUR_VOICE_ID",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  },
+  "_note": "湖南话 方言，通过 pronunciation_dict 强制指定发音",
+  "_samples": [
+    "关你么子事",
+    "打破砂锅问到底",
+    "心急呷不得热豆腐",
+    "说曹操曹操到"
+  ]
+}

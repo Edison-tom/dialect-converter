@@ -1,0 +1,27 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "疑问/反问(breath) 叮嘱/缓和(breath) 肯定/强调(breath) 轻快/随意(breath) 遗憾/完蛋(breath) 杀割 / 煞角",
+  "language_boost": "zh",
+  "pronunciation_dict": {
+    "tone": [
+      "杀割/(sha1 ge2)"
+    ]
+  },
+  "voice_setting": {
+    "voice_id": "YOUR_VOICE_ID",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  },
+  "_note": "四川话 方言，通过 pronunciation_dict 强制指定发音",
+  "_samples": [
+    "疑问/反问",
+    "叮嘱/缓和",
+    "肯定/强调",
+    "轻快/随意"
+  ]
+}

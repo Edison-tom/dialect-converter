@@ -1,0 +1,25 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "你寻思你是sei啊(breath) 黄皮子给鸡拜年(breath) 一条道跑到黑(breath) 看人下菜碟儿(breath) 说起来容易做起来难(breath) 小鸡炖蘑菇",
+  "language_boost": "zh",
+  "pronunciation_dict": {
+    "tone": []
+  },
+  "voice_setting": {
+    "voice_id": "YOUR_VOICE_ID",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  },
+  "_note": "东北话 方言，通过 pronunciation_dict 强制指定发音",
+  "_samples": [
+    "你寻思你是sei啊",
+    "黄皮子给鸡拜年",
+    "一条道跑到黑",
+    "看人下菜碟儿"
+  ]
+}

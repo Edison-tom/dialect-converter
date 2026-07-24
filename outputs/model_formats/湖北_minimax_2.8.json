@@ -1,0 +1,25 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "啰连 / 扎实啰连(breath) 高频通用语气(breath) 反问/催促(breath) 完成/变化(breath) 叮嘱/缓和(breath) 推测/建议",
+  "language_boost": "zh",
+  "pronunciation_dict": {
+    "tone": []
+  },
+  "voice_setting": {
+    "voice_id": "YOUR_VOICE_ID",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  },
+  "_note": "湖北话 方言，通过 pronunciation_dict 强制指定发音",
+  "_samples": [
+    "啰连 / 扎实啰连",
+    "高频通用语气",
+    "反问/催促",
+    "完成/变化"
+  ]
+}

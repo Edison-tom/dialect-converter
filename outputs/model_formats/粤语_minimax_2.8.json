@@ -1,0 +1,31 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "你做紧乜嘢啊？(breath) (breath) 呢个好鬼好食㗎。#0.8# (breath) 你唔知咩？(breath) 唔好呃我啦。#0.8# (breath) 我哋去食饭啦。#0.8# (breath) 好鬼舒服㗎，得唔得啊？(breath) (breath) 掂晒！正到爆！",
+  "language_boost": "yue",
+  "pronunciation_dict": {
+    "tone": [
+      "乜嘢/(mat1 je5)",
+      "好食/(hou2 sik6)",
+      "唔/(m4)",
+      "咩/(me1)",
+      "呃/(aak1)",
+      "我哋/(ngo5 dei6)",
+      "得/(dak1)",
+      "㗎/(gaa3)",
+      "掂/(dim6)",
+      "好鬼/(hou2 gwai2)",
+      "嘢/(je5)"
+    ]
+  },
+  "voice_setting": {
+    "voice_id": "YOUR_CANTO_VOICE_ID",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  },
+  "_note": "粤语 Cantonese，原生活言支持，粤拼注音增强准确性"
+}
