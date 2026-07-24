@@ -16,264 +16,54 @@
 
 ---
 
-## 在各 AI Agent / 平台中使用
+## 支持的 AI Agent
 
-本项目是一个参考词典 + 技能定义文件，可按以下方式接入各类 AI 工具。
+| Agent | 说明 |
+|-------|------|
+| **WorkBuddy** | 原生 Skill 格式，开箱即用 |
+| **Claude Code / Desktop** | 通过 CLAUDE.md 或 Project Knowledge 注入词典 |
+| **Cursor** | 通过 .cursorrules 或 @ 引用词典文件 |
+| **GitHub Copilot** | 通过 Custom Instructions 注入策略 |
+| **ChatGPT** | Custom GPTs 上传为 Knowledge；Web 版直接附加文件 |
+| **DeepSeek / Kimi / 通义千问** | 长上下文优势，直接上传词典文件即可 |
 
----
+> 核心原理：所有 Agent 都支持在上下文中注入外部文件。把 `references/dialect_dictionary.md` 作为参考文件附给对话，AI 自动按词条转换。
 
-### 1. WorkBuddy（原生支持 ⭐）
+## 安装
 
-**支持度：★★★★★ 开箱即用**
+### macOS
 
-WorkBuddy 原生支持 Skill 格式，导入后可通过自然语言触发方言转换。
-
-**安装**：
 ```bash
+# 克隆仓库
+git clone https://github.com/Edison-tom/dialect-converter.git
+
+# WorkBuddy 用户 — 直接安装为 Skill
 cp -r dialect-converter ~/.workbuddy/skills/
+
+# Claude Code 用户 — 放入项目引用
+cp dialect-converter/references/dialect_dictionary.md 你的项目目录/
+
+# Cursor 用户 — 放入 .cursor 目录
+mkdir -p 你的项目目录/.cursor/references
+cp dialect-converter/references/dialect_dictionary.md 你的项目目录/.cursor/references/
 ```
 
-**触发方式**（WorkBuddy 对话中直接说）：
+### Windows
+
+```powershell
+# 克隆仓库
+git clone https://github.com/Edison-tom/dialect-converter.git
+
+# WorkBuddy 用户 — 直接安装为 Skill
+xcopy /E /I dialect-converter %USERPROFILE%\.workbuddy\skills\dialect-converter
+
+# Claude Code 用户 — 放入项目引用
+copy dialect-converter\references\dialect_dictionary.md 你的项目目录\
+
+# Cursor 用户 — 放入 .cursor 目录
+mkdir 你的项目目录\.cursor\references
+copy dialect-converter\references\dialect_dictionary.md 你的项目目录\.cursor\references\
 ```
-把这段话改成四川话：你好，今天天气真不错，我们出去走走吧。
-用东北话重写：别磨蹭了，赶紧把这事儿办完。
-这封邮件用粤语写，要地道一点。
-```
-
-**支持的方言**：全部 19 种，三级转换深度可用 `基础`/`增强`/`地道` 关键词控制。
-
----
-
-### 2. Claude Code / Claude Desktop
-
-**支持度：★★★★☆ 通过上下文注入**
-
-Claude Code 和 Claude Desktop 不原生支持 Skill 格式，但可以通过项目上下文注入词典。
-
-**方法 A：作为项目上下文**
-```bash
-# 将词典放入项目目录，在 CLAUDE.md 中引用
-mkdir -p .claude/references
-cp references/dialect_dictionary.md .claude/references/
-
-# 在 CLAUDE.md 中添加：
-# 方言转换时请参考 .claude/references/dialect_dictionary.md
-```
-
-**方法 B：对话中直接附加上下文**
-```
-@references/dialect_dictionary.md
-
-请参考上述方言词典，把下面这段话转换成湖北话：
-"你在干什么？这东西真好吃。"
-```
-
-**方法 C：作为 Claude Project 知识库**
-在 Claude Web 创建 Project → 上传 `dialect_dictionary.md` 作为 Knowledge，然后在 Project 内对话即可。
-
-**支持度说明**：Claude 中文方言知识丰富，配合词典注入效果最佳，尤其粤语/闽南语/客家话等南方方言表现突出。
-
----
-
-### 3. Cursor
-
-**支持度：★★★★☆ 通过 .cursorrules 注入**
-
-**方法 A：.cursorrules 引用**
-```bash
-cp references/dialect_dictionary.md .cursor/references/
-
-# 在 .cursorrules 中添加：
-# 涉及方言转换任务时，优先查阅 .cursor/references/dialect_dictionary.md 中的对应词条
-```
-
-**方法 B：Composer / Chat 中 @ 引用**
-在 Cursor Chat 中直接 `@references/dialect_dictionary.md` 附加上下文，然后发送转换指令。
-
-**方法 C：作为 Rules for AI**
-将 SKILL.md 的转换策略部分复制到 Cursor Rules 中（Settings → Rules for AI → 添加规则）。
-
-**支持度说明**：Cursor 的 Agent 模式可直接读取项目文件，词典附到项目中即可自动引用。
-
----
-
-### 4. GitHub Copilot
-
-**支持度：★★★☆☆ 通过 Custom Instructions**
-
-GitHub Copilot 不直接支持外部知识库，但可通过 Custom Instructions 注入核心规则。
-
-**方法 A：VS Code Custom Instructions**
-在 VS Code 设置 `github.copilot.chat.instructions` 中添加方言转换的核心规则摘要（精简版 SKILL.md 的策略部分）。
-
-**方法 B：Copilot Workspace**
-在 Copilot Workspace（https://copilot-workspace.githubnext.com）中上传 `dialect_dictionary.md` 作为参考文件，然后发起转换任务。
-
-**方法 C：提示词模板**
-将每种方言的标志词提取为精简的提示词模板，存为 `.github/copilot-instructions.md`。
-
-**限制**：Copilot 的上下文窗口有限，无法一次性加载全部 1233 词条，建议按需引用单一方言的词条。
-
----
-
-### 5. ChatGPT（Web / Custom GPTs）
-
-**支持度：★★★★☆ Custom GPTs 最佳**
-
-**方法 A：Custom GPT（推荐）**
-1. 进入 ChatGPT → "Explore GPTs" → "Create"
-2. 在 Knowledge 区域上传 `dialect_dictionary.md`
-3. 在 Instructions 中粘贴 `SKILL.md` 的 Overview 和转换策略部分
-4. 保存后即可在 GPT 对话中使用
-
-**方法 B：ChatGPT Web（直接上传）**
-- 每次对话中直接附加 `dialect_dictionary.md`（ChatGPT Plus 支持文件上传）
-- 提示词示例：`请根据附件的方言词典，把以下文本改成四川话：{内容}`
-
-**方法 C：用精简版提示词**
-如果上下文受限，可以复制某一种方言的词条表格粘贴到对话中，指定转换该方言。
-
----
-
-### 6. DeepSeek / Kimi / 通义千问 (Qwen)
-
-**支持度：★★★★★ 长上下文优势明显**
-
-这三个国产模型以中文理解力和超长上下文著称，特别适合方言转换场景。
-
-**DeepSeek（推荐）**
-- DeepSeek Chat Web 版支持 1M 上下文，直接上传 `dialect_dictionary.md`
-- 提示词：`参考附件的方言词典（19种方言对应1200+词条），把以下文本转换为湖北武汉话：{内容}`
-- DeepSeek API 中作为 system prompt + user message 附件
-
-**Kimi**
-- 支持 200K 上下文，上传词典后直接对话
-- 优点：中文口语理解力极强，方言转换自然度高于多数模型
-
-**通义千问 (Qwen)**
-- 通义千问 Web / APP 支持文件上传
-- 将词典上传后，用对话模式逐步转换
-- Qwen-Max 对方言词汇覆盖面广
-
-**豆包 / 文心一言**
-- 同样支持文档上传，上传 `dialect_dictionary.md` 作为参考
-- 提示词：`你是方言转换专家，请参考附件词典，将这段话改成{XX方言}…`
-
----
-
-### 7. Coze / Dify（Bot 构建平台）
-
-**支持度：★★★★★ 企业级集成**
-
-**Coze（扣子）**
-1. 创建 Bot → 知识库 → 上传 `dialect_dictionary.md`
-2. 在 Bot 的 Persona（人设）中粘贴 SKILL.md 的策略部分
-3. 添加 Workflow 节点实现格式化输出
-4. 发布到飞书/微信/Web 等渠道
-
-**Dify**
-1. 创建知识库 → 上传 `dialect_dictionary.md` → 选择分段模式（建议按 ## 标题分段，每个方言一段）
-2. 创建 Chatflow 应用 → 关联知识库
-3. 在 system prompt 中指定：`你是方言转换助手，转换时优先从知识库检索对应方言语料`
-4. 可扩展为 API 接口供其他应用调用
-
-**提示**：Dify 知识库分段建议按方言分，确保检索时能精确命中目标方言。
-
----
-
-### 8. Cline / Roo Code（VS Code 插件）
-
-**支持度：★★★☆☆ 通过 .clinerules 注入**
-
-Cline 和 Roo Code 不原生支持 Skill，但支持自定义系统提示。
-
-**安装**：
-```bash
-# 放置词典到项目
-cp references/dialect_dictionary.md .cline/references/
-
-# 在 .clinerules 中引用：
-# 方言转换任务 — 参考 .cline/references/dialect_dictionary.md
-```
-
-**触发**：在 Cline 对话中直接说明转换需求，Cline 会读取 `.clinerules` 并引用词典。
-
----
-
-### 9. Windsurf (Codeium)
-
-**支持度：★★★☆☆ 通过 Rules 注入**
-
-```
-# 在 .windsurfrules 中添加：
-方言转换任务应参考项目中的 references/dialect_dictionary.md
-```
-
-Windsurf 的 Cascade 模式会自动读取项目文件，将词典放入项目根目录即可。
-
----
-
-### 10. 通用 API / LangChain（开发者）
-
-**支持度：★★★★☆ 灵活集成**
-
-**Python 示例**：
-```python
-# 加载词典为上下文
-with open('references/dialect_dictionary.md', 'r') as f:
-    dialect_dict = f.read()
-
-system_prompt = f"""你是方言转换专家。以下是19种中国方言的完整词典。
-
-{dialect_dict}
-
-请根据词典将用户输入的普通话转换为指定方言。"""
-
-# 调用任意 LLM API
-response = llm.chat(
-    system=system_prompt,
-    user="把这段话改成四川话：你好，今天天气真好。"
-)
-```
-
-**LangChain**：
-```python
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import MarkdownHeaderTextSplitter
-
-# 按方言分段
-loader = TextLoader("references/dialect_dictionary.md")
-documents = loader.load()
-
-splitter = MarkdownHeaderTextSplitter(
-    headers_to_split_on=[("##", "方言"), ("###", "子类")]
-)
-docs = splitter.split_text(documents[0].page_content)
-
-# 检索 → 注入 → 生成
-```
-
----
-
-## 各平台支持度总览
-
-| 平台 | 集成方式 | 难度 | 效果 |
-|------|---------|------|------|
-| **WorkBuddy** | 原生 Skill | ⭐ 极简 | ⭐⭐⭐⭐⭐ |
-| **Claude Code/Desktop** | CLAUDE.md / Project Knowledge | ⭐⭐ 简单 | ⭐⭐⭐⭐⭐ |
-| **Cursor** | .cursorrules / @引用 | ⭐⭐ 简单 | ⭐⭐⭐⭐ |
-| **GitHub Copilot** | Custom Instructions | ⭐⭐⭐ 中等 | ⭐⭐⭐ |
-| **ChatGPT Custom GPT** | Knowledge 上传 | ⭐⭐ 简单 | ⭐⭐⭐⭐ |
-| **DeepSeek** | 直接上传/粘贴 | ⭐ 极简 | ⭐⭐⭐⭐⭐ |
-| **Kimi** | 直接上传/粘贴 | ⭐ 极简 | ⭐⭐⭐⭐⭐ |
-| **通义千问** | 直接上传/粘贴 | ⭐ 极简 | ⭐⭐⭐⭐ |
-| **Coze** | 知识库 | ⭐⭐ 简单 | ⭐⭐⭐⭐⭐ |
-| **Dify** | 知识库 + Chatflow | ⭐⭐⭐ 中等 | ⭐⭐⭐⭐⭐ |
-| **Cline / Roo Code** | .clinerules | ⭐⭐ 简单 | ⭐⭐⭐ |
-| **Windsurf** | .windsurfrules | ⭐⭐ 简单 | ⭐⭐⭐ |
-| **LangChain / API** | 文档加载器 | ⭐⭐⭐ 中等 | ⭐⭐⭐⭐ |
-
----
 
 ## 文件结构
 
