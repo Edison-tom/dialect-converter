@@ -1,0 +1,28 @@
+{
+  "model": "speech-2.8-hd",
+  "text": "你在搞爪子哦？(breath) 这个东西硬是好吃得很嘛。#0.8# 你不晓得嗦？(sighs) 莫日弄老子了哈。#1.0# 走撒，去哆饭。(laughs) 硬是巴适得板哟，要得不嘛？",
+  "language_boost": "zh",
+  "pronunciation_dict": {
+    "tone": [
+      "爪子/(zhua3)(zi0)",
+      "硬是/(ying4)(shi4)",
+      "晓得/(xiao3)(de0)",
+      "嗦/(so1)",
+      "日弄/(ri4)(nong4)",
+      "哆饭/(duo1)(fan4)",
+      "巴适/(ba1)(shi4)",
+      "要得/(yao4)(de2)",
+      "撒/(sa1)"
+    ]
+  },
+  "voice_setting": {
+    "voice_id": "male_sichuan_narrator",
+    "speed": 1.0,
+    "vol": 1.0,
+    "pitch": 0
+  },
+  "audio_setting": {
+    "sample_rate": 32000,
+    "format": "mp3"
+  }
+}
