@@ -219,18 +219,9 @@ Agent 自动输出：**Target Text**（方言文本）+ **Control Instruction**�
 
 **输出示例**：
 
-```text
-【Target Text — 四川话·成渝片】
-老板，这个几多钱嘛？能不能少点嘛？
-
----
-
-> **🔊 VoxCPM Control Instruction**
->
-> 四川方言，中年男性，慵懒语气，语速偏慢
->
-> **完整输入**：
-> (四川方言，中年男性，慵懒语气，语速偏慢)老板，这个几多钱嘛？能不能少点嘛？
+```
+Control Instruction：四川方言，中年男性，慵懒语气，语速偏慢。
+Target Text：老板，这个几多钱嘛？能不能少点嘛？
 ```
 
 ### 场景二：直接送入 VoxCPM 生成语音

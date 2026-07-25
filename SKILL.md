@@ -136,10 +136,8 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 
 ---
 
-> 🔊 VoxCPM 语音生成
->
-> Control Instruction: {中文声音描述}
-> Target Text: {方言转换结果}
+Control Instruction：{中文声音描述}
+Target Text：{方言转换结果}
 ```
 
 #### 输出示例
@@ -155,10 +153,8 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 
 ---
 
-> 🔊 VoxCPM 语音生成
->
-> Control Instruction: 四川方言，中年男性，慵懒语气，语速偏慢
-> Target Text: 你在搞爪子？这个硬是好吃得很。
+Control Instruction：四川方言，中年男性，慵懒语气，语速偏慢。
+Target Text：你在搞爪子？这个硬是好吃得很。
 ```
 
 ### Control Instruction 生成规则
@@ -204,15 +200,11 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 
 ---
 
-> 🔊 VoxCPM 语音生成（角色 1 — 顾客）
->
-> Control Instruction: 粤语，年轻女性，轻松语气，正常语速
-> Target Text: 老板，呢个几多钱啊？可唔可以平啲啊？
+Control Instruction：粤语，年轻女性，轻松语气，正常语速。
+Target Text：老板，呢个几多钱啊？可唔可以平啲啊？
 
-> 🔊 VoxCPM 语音生成（角色 2 — 老板）
->
-> Control Instruction: 粤语，中年男性，热情语气，正常语速
-> Target Text: 平啲啦，我成日嚟买嘢㗎。
+Control Instruction：粤语，中年男性，热情语气，正常语速。
+Target Text：平啲啦，我成日嚟买嘢㗎。
 ```
 
 ## 重口音原则
