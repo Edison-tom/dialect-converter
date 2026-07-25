@@ -9,13 +9,13 @@
 ## 默认 Control Instruction
 
 ```
-A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery
+山东话，中年男性，豪爽语气，正常语速
 ```
 
 ## 完整输入示例
 
 ```
-(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
+(山东话，中年男性，豪爽语气，正常语速)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
 ```
 
 ## Python 调用示例
@@ -27,7 +27,7 @@ import soundfile as sf
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 wav = model.generate(
-    text="(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。",
+    text="(山东话，中年男性，豪爽语气，正常语速)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。",
     cfg_value=2.0,
     inference_timesteps=10,
     seed=42,
@@ -43,7 +43,7 @@ sf.write("山东_voxcpm.wav", wav, model.tts_model.sample_rate)
 
 ```bash
 voxcpm design \
-  --text "(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。" \
+  --text "(山东话，中年男性，豪爽语气，正常语速)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。" \
   --output 山东_voxcpm.wav
 ```
 
@@ -51,17 +51,17 @@ voxcpm design \
 
 ### 轻松日常
 ```
-(A young Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery, casual and relaxed tone)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
+(山东话，中年男性，轻松语气，语速偏慢)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
 ```
 
 ### 激动语气
 ```
-(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery, excited and loud tone, fast pace)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
+(山东话，中年男性，激动语气，语速较快)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
 ```
 
-### 慢速低沉
+### 悲伤低沉
 ```
-(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery, slow and deep tone)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
+(山东话，中年男性，悲伤语气，语速偏慢)你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
 ```
 
 ## 代表性词条（前 5 条）

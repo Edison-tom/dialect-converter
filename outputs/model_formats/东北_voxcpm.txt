@@ -9,13 +9,13 @@
 ## 默认 Control Instruction
 
 ```
-A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery
+东北话，中年男性，洪亮嗓音，语速较快
 ```
 
 ## 完整输入示例
 
 ```
-(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
+(东北话，中年男性，洪亮嗓音，语速较快)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
 ```
 
 ## Python 调用示例
@@ -27,7 +27,7 @@ import soundfile as sf
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 wav = model.generate(
-    text="(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。",
+    text="(东北话，中年男性，洪亮嗓音，语速较快)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。",
     cfg_value=2.0,
     inference_timesteps=10,
     seed=42,
@@ -43,7 +43,7 @@ sf.write("东北_voxcpm.wav", wav, model.tts_model.sample_rate)
 
 ```bash
 voxcpm design \
-  --text "(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。" \
+  --text "(东北话，中年男性，洪亮嗓音，语速较快)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。" \
   --output 东北_voxcpm.wav
 ```
 
@@ -51,17 +51,17 @@ voxcpm design \
 
 ### 轻松日常
 ```
-(A young Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery, casual and relaxed tone)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
+(东北话，中年男性，轻松语气，语速偏慢)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
 ```
 
 ### 激动语气
 ```
-(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery, excited and loud tone, fast pace)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
+(东北话，中年男性，激动语气，语速较快)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
 ```
 
-### 慢速低沉
+### 悲伤低沉
 ```
-(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery, slow and deep tone)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
+(东北话，中年男性，悲伤语气，语速偏慢)你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
 ```
 
 ## 代表性词条（前 5 条）

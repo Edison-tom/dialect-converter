@@ -77,8 +77,8 @@ VoxCPM 的核心输入格式非常简洁：
 (Control Instruction)Target Text
 ```
 
-- **Control Instruction**：放在括号 `()` 内的自然语言声音描述，控制性别、年龄、口音、语速、情绪等
-- **Target Text**：紧随括号之后的实际要合成的文本（方言文本）
+- **Control Instruction**：放在括号 `()` 内的中文自然语言描述，控制方言、性别、年龄、口音、语速、情绪等
+- **Target Text**：紧随括号之后的方言转换文本
 
 > 模型会自动从文本推断语言/方言，**无需指定语言标签**。
 
@@ -104,8 +104,7 @@ model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 # 四川话 — Voice Design 模式
 wav = model.generate(
-    text="(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, "
-         "with Chengdu accent, trailing particles)"
+    text="(四川方言，中年男性，慵懒语气，语速偏慢)"
          "你在搞爪子？这个硬是好吃得很。你不晓得嗦？",
     cfg_value=2.0,
     inference_timesteps=10,
@@ -131,7 +130,7 @@ sf.write("sichuan.wav", wav, model.tts_model.sample_rate)
 ```python
 # 使用参考音频克隆音色 + 方言风格控制
 wav = model.generate(
-    text="(slightly faster, cheerful tone)你在搞爪子？这个硬是好吃得很。",
+    text="(语速较快，激动语气)你在搞爪子？这个硬是好吃得很。",
     reference_wav_path="path/to/dialect_voice.wav",
     cfg_value=2.0,
     inference_timesteps=10,
@@ -146,7 +145,7 @@ import numpy as np
 
 chunks = []
 for chunk in model.generate_streaming(
-    text="(A middle-aged Cantonese male, confident tone)"
+    text="(粤语，中年男性，自信语气，正常语速)"
          "你做紧乜嘢啊？呢个好鬼好食㗎。",
 ):
     chunks.append(chunk)
@@ -162,7 +161,7 @@ sf.write("cantonese.wav", wav, model.tts_model.sample_rate)
 
 ```bash
 voxcpm design \
-  --text "(A middle-aged Sichuan male, relaxed tone)你在搞爪子？这个硬是好吃得很。" \
+  --text "(四川方言，中年男性，慵懒语气，语速偏慢)你在搞爪子？这个硬是好吃得很。" \
   --output sichuan.wav
 ```
 
@@ -171,7 +170,7 @@ voxcpm design \
 ```bash
 voxcpm design \
   --text "你在搞爪子？这个硬是好吃得很。" \
-  --control "A middle-aged Sichuan male, relaxed and lazy tone" \
+  --control "四川方言，中年男性，慵懒语气，语速偏慢" \
   --seed 42 \
   --output sichuan.wav
 ```
@@ -199,41 +198,40 @@ voxcpm batch --input examples/input.txt --output-dir outs
 
 | 方言 | Control Instruction |
 |------|---------------------|
-| **四川话** | `(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles like "o" and "sa")` |
-| **粤语** | `(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery)` |
-| **吴语（上海话）** | `(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)` |
-| **东北话** | `(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery)` |
-| **河南话** | `(A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality)` |
-| **陕西话** | `(A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones)` |
-| **山东话** | `(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)` |
-| **天津话** | `(A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation)` |
-| **闽南话** | `(A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones)` |
+| **四川话** | `四川方言，中年男性，慵懒语气，语速偏慢` |
+| **粤语** | `粤语，中年男性，自信语气，正常语速` |
+| **吴语（上海话）** | `上海话，年轻女性，温柔语气，正常语速` |
+| **东北话** | `东北话，中年男性，洪亮嗓音，语速较快` |
+| **河南话** | `河南话，中年男性，沉稳语气，正常语速` |
+| **陕西话** | `陕西话，中年男性，低沉嗓音，语速偏慢` |
+| **山东话** | `山东话，中年男性，豪爽语气，正常语速` |
+| **天津话** | `天津话，中年男性，幽默语气，正常语速` |
+| **闽南话** | `闽南话，中年男性，温和语气，语速偏慢` |
 
 ### 6.2 Control Instruction 要素
 
 | 要素 | 说明 | 可选值 |
 |------|------|--------|
-| **性别** | 根据对白角色推断 | male / female |
-| **年龄** | 根据角色设定 | young / middle-aged / elderly |
-| **口音** | 方言名称 + 特征 | Sichuan accent, Cantonese accent, etc. |
-| **语速** | 结合内容情绪 | slow / moderate / fast / rapid |
-| **情绪** | 从对白内容提取 | relaxed / excited / angry / sad / cheerful / serious |
-| **嗓音特征** | 声音质感描述 | gentle / raspy / resonant / soft / bold |
+| **方言** | 方言名称 | 四川方言 / 粤语 / 东北话 |
+| **性别+年龄** | 根据角色推断 | 中年男性 / 老年女性 / 年轻女性 |
+| **口音浓度** | 口音轻重 | 浓重口音 / 轻度口音 |
+| **语速** | 结合内容情绪 | 语速较快 / 语速偏慢 / 正常语速 |
+| **情绪** | 从对白内容提取 | 激动 / 轻松 / 悲伤 / 严肃 |
 
 ### 6.3 情绪调整示例
 
 ```python
 # 轻松市井
-text = "(A middle-aged Sichuan male, relaxed tone, slow pace)巴适得板哟，今天硬是安逸。"
+text = "(四川方言，中年男性，轻松语气，语速偏慢)巴适得板哟，今天硬是安逸。"
 
 # 激动争吵
-text = "(A middle-aged Sichuan male, excited and loud tone, fast pace)搞锤子搞！你硬是不听话是不是嘛！"
+text = "(四川方言，中年男性，激动语气，语速较快)搞锤子搞！你硬是不听话是不是嘛！"
 
 # 悲伤低落
-text = "(A middle-aged Sichuan male, sad tone, slow pace)今天嘛，心头硬是不舒服，啥子都不想搞。"
+text = "(四川方言，中年男性，悲伤语气，语速偏慢)今天嘛，心头硬是不舒服，啥子都不想搞。"
 
 # 幽默调侃
-text = "(A middle-aged Tianjin male, witty and humorous tone)介不废话嘛，倍儿好吃了您嘞。"
+text = "(天津话，中年男性，幽默语气)介不废话嘛，倍儿好吃了您嘞。"
 ```
 
 ---

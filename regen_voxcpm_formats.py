@@ -19,7 +19,7 @@ DIALECT_CONFIG = {
         "subgroup": "成渝片",
         "phylogeny": "西南官话·成渝片",
         "output_file": "四川_voxcpm.txt",
-        "control_instruction": "A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles",
+        "control_instruction": "四川方言，中年男性，慵懒语气，语速偏慢",
         "sample_text": "你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。",
         "translation_notes": "爪子=什么；硬是=真的很；日弄=骗/忽悠；要得=可以；巴适=舒服/好",
     },
@@ -29,7 +29,7 @@ DIALECT_CONFIG = {
         "subgroup": "广府片",
         "phylogeny": "粤语·广府片",
         "output_file": "粤语_voxcpm.txt",
-        "control_instruction": 'A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery',
+        "control_instruction": "粤语，中年男性，自信语气，正常语速",
         "sample_text": "你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。",
         "translation_notes": "乜嘢=什么；好鬼=非常；唔=不；咩=吗；呃=骗",
     },
@@ -39,7 +39,7 @@ DIALECT_CONFIG = {
         "subgroup": "太湖片",
         "phylogeny": "吴语·太湖片",
         "output_file": "上海_voxcpm.txt",
-        "control_instruction": 'A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones',
+        "control_instruction": "上海话，年轻女性，温柔语气，正常语速",
         "sample_text": "侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。",
         "translation_notes": "侬=你；勒=在；搿=这；物事=东西；蛮=很；切=吃；覅=不要",
     },
@@ -49,7 +49,7 @@ DIALECT_CONFIG = {
         "subgroup": "",
         "phylogeny": "东北官话",
         "output_file": "东北_voxcpm.txt",
-        "control_instruction": 'A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery',
+        "control_instruction": "东北话，中年男性，洪亮嗓音，语速较快",
         "sample_text": "你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。",
         "translation_notes": "嘎哈=干什么；玩意儿=东西；嘎嘎=非常；忽悠=骗",
     },
@@ -59,7 +59,7 @@ DIALECT_CONFIG = {
         "subgroup": "郑开片",
         "phylogeny": "中原官话·郑开片",
         "output_file": "河南_voxcpm.txt",
-        "control_instruction": 'A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality',
+        "control_instruction": "河南话，中年男性，沉稳语气，正常语速",
         "sample_text": "你弄啥嘞？这东西可中可好吃。你不知情哩？白搁这儿骗我。",
         "translation_notes": "弄啥=干什么；中=行/好；可=很；白=别；搁=在",
     },
@@ -69,7 +69,7 @@ DIALECT_CONFIG = {
         "subgroup": "关中片",
         "phylogeny": "中原官话·关中片",
         "output_file": "陕西_voxcpm.txt",
-        "control_instruction": 'A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones',
+        "control_instruction": "陕西话，中年男性，低沉嗓音，语速偏慢",
         "sample_text": "你弄啥哩？这东西嫽滴很。你不得知道？包哄我。",
         "translation_notes": "弄啥=干什么；嫽滴很=很好；不得=不；包=别；哄=骗",
     },
@@ -79,7 +79,7 @@ DIALECT_CONFIG = {
         "subgroup": "",
         "phylogeny": "冀鲁/胶辽官话",
         "output_file": "山东_voxcpm.txt",
-        "control_instruction": 'A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery',
+        "control_instruction": "山东话，中年男性，豪爽语气，正常语速",
         "sample_text": "你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。",
         "translation_notes": "干啥=干什么；杠=非常；俺=我/我们；忽悠=骗",
     },
@@ -89,7 +89,7 @@ DIALECT_CONFIG = {
         "subgroup": "天津片",
         "phylogeny": "冀鲁官话·天津片",
         "output_file": "天津_voxcpm.txt",
-        "control_instruction": 'A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation',
+        "control_instruction": "天津话，中年男性，幽默语气，正常语速",
         "sample_text": "你干嘛呢？介玩意儿倍儿好吃。你不儿道啊？甭忽悠我了。",
         "translation_notes": "干嘛=干什么；介=这；倍儿=非常；不儿道=不知道；甭=别",
     },
@@ -99,7 +99,7 @@ DIALECT_CONFIG = {
         "subgroup": "闽南片",
         "phylogeny": "闽语·闽南片",
         "output_file": "闽南_voxcpm.txt",
-        "control_instruction": 'A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones',
+        "control_instruction": "闽南话，中年男性，温和语气，语速偏慢",
         "sample_text": "汝咧做啥物？这物事诚好食。汝毋知影？莫骗我。",
         "translation_notes": "汝=你；啥物=什么；物事=东西；诚=很；毋=不；莫=别",
     },
@@ -202,17 +202,17 @@ voxcpm design \\
 
 ### 轻松日常
 ```
-({ci.replace('middle-aged', 'young')}, casual and relaxed tone){sample}
+({ci.split('，')[0]}，{ci.split('，')[1]}，轻松语气，语速偏慢){sample}
 ```
 
 ### 激动语气
 ```
-({ci}, excited and loud tone, fast pace){sample}
+({ci.split('，')[0]}，{ci.split('，')[1]}，激动语气，语速较快){sample}
 ```
 
-### 慢速低沉
+### 悲伤低沉
 ```
-({ci}, slow and deep tone){sample}
+({ci.split('，')[0]}，{ci.split('，')[1]}，悲伤语气，语速偏慢){sample}
 ```
 """
 
@@ -240,7 +240,7 @@ def generate_branch_file(filepath, branch_name, parent_group, phylogeny, output_
     parent_ci = DIALECT_CONFIG.get(
         {"四川话": "02_sichuan", "吴语": "05_shanghai", "河南话": "06_henan", "山东话": "09_shandong"}.get(parent_group, "02_sichuan"),
         {}
-    ).get("control_instruction", "A middle-aged male, moderate pace, with local accent")
+    ).get("control_instruction", "浓重口音，正常语速")
 
     sample_entries = entries[:5]
     sample_text = sample_entries[0][1] if sample_entries else "方言示例文本"

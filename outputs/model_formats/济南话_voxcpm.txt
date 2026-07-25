@@ -9,13 +9,13 @@
 ## 默认 Control Instruction
 
 ```
-A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery
+山东话，中年男性，豪爽语气，正常语速
 ```
 
 ## 完整输入示例
 
 ```
-(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)短视频
+(山东话，中年男性，豪爽语气，正常语速)短视频
 ```
 
 ## Python 调用示例
@@ -27,7 +27,7 @@ import soundfile as sf
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 wav = model.generate(
-    text="(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)短视频",
+    text="(山东话，中年男性，豪爽语气，正常语速)短视频",
     cfg_value=2.0,
     inference_timesteps=10,
     seed=42,

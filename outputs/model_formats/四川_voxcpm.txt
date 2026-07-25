@@ -9,13 +9,13 @@
 ## 默认 Control Instruction
 
 ```
-A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles
+四川方言，中年男性，慵懒语气，语速偏慢
 ```
 
 ## 完整输入示例
 
 ```
-(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
+(四川方言，中年男性，慵懒语气，语速偏慢)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
 ```
 
 ## Python 调用示例
@@ -27,7 +27,7 @@ import soundfile as sf
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 wav = model.generate(
-    text="(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。",
+    text="(四川方言，中年男性，慵懒语气，语速偏慢)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。",
     cfg_value=2.0,
     inference_timesteps=10,
     seed=42,
@@ -43,7 +43,7 @@ sf.write("四川_voxcpm.wav", wav, model.tts_model.sample_rate)
 
 ```bash
 voxcpm design \
-  --text "(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。" \
+  --text "(四川方言，中年男性，慵懒语气，语速偏慢)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。" \
   --output 四川_voxcpm.wav
 ```
 
@@ -51,17 +51,17 @@ voxcpm design \
 
 ### 轻松日常
 ```
-(A young Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles, casual and relaxed tone)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
+(四川方言，中年男性，轻松语气，语速偏慢)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
 ```
 
 ### 激动语气
 ```
-(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles, excited and loud tone, fast pace)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
+(四川方言，中年男性，激动语气，语速较快)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
 ```
 
-### 慢速低沉
+### 悲伤低沉
 ```
-(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles, slow and deep tone)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
+(四川方言，中年男性，悲伤语气，语速偏慢)你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
 ```
 
 ## 代表性词条（前 5 条）

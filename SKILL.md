@@ -121,10 +121,7 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 
 ### Step 4: 输出格式（VoxCPM Control Instruction + Target Text）
 
-每次转换完成后，输出两个核心部分：
-
-1. **Target Text** — 方言对白文本（直接送入 VoxCPM 的 text 参数）
-2. **Control Instruction** — 语音生成控制指令（括号包裹的自然语言描述，置于 text 最前面）
+转换完成后输出两部分，拼接为 `(Control Instruction)Target Text` 即可送入 VoxCPM。
 
 #### 输出模板
 
@@ -134,20 +131,15 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 【原文】
 {原始普通话文本}
 
-【Target Text — 方言目标文本】
+【转换】
 {方言转换结果}
-
-【词汇注释】（按需输出）
-爪子 = 什么 ； 硬是 = 真的很 ； 要得 = 可以
 
 ---
 
-> **🔊 VoxCPM Control Instruction**
+> 🔊 VoxCPM 语音生成
 >
-> **Control Instruction**: {控制指令}
-> **Target Text**: {方言目标文本}
-> **完整输入**: ({控制指令}){方言目标文本}
-> **推荐参数**: cfg_value=2.0, inference_timesteps=10, seed=42
+> Control Instruction: {中文声音描述}
+> Target Text: {方言转换结果}
 ```
 
 #### 输出示例
@@ -156,52 +148,46 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 【目标方言】四川话·成渝片（增强层）
 
 【原文】
-你在干什么？这个东西很好吃。你不知道吗？别骗我了。
+你在干什么？这个东西很好吃。
 
-【Target Text — 方言目标文本】
-你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
-
-【词汇注释】
-爪子 = 什么 ； 硬是 = 真的很 ； 日弄 = 骗/忽悠
+【转换】
+你在搞爪子？这个硬是好吃得很。
 
 ---
 
-> **🔊 VoxCPM Control Instruction**
+> 🔊 VoxCPM 语音生成
 >
-> **Control Instruction**: A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with local Chengdu accent, trailing particles like "o" and "sa"
-> **Target Text**: 你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
-> **完整输入**: (A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with local Chengdu accent, trailing particles like "o" and "sa")你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
-> **推荐参数**: cfg_value=2.0, inference_timesteps=10, seed=42
+> Control Instruction: 四川方言，中年男性，慵懒语气，语速偏慢
+> Target Text: 你在搞爪子？这个硬是好吃得很。
 ```
 
 ### Control Instruction 生成规则
 
-控制指令必须包含以下要素，以英文自然语言书写（VoxCPM 官方示例格式），用括号 `()` 包裹：
+用中文自然语言描述声音特征，简洁明了，逗号分隔各要素：
 
 | 要素 | 说明 | 示例 |
 |------|------|------|
-| **性别** | 根据对白内容推断或默认 | male / female |
-| **年龄** | 根据角色设定推断 | young / middle-aged / elderly |
-| **方言口音** | 方言名称 + 口音特征 | Sichuan accent, with trailing particles |
-| **语速** | 结合内容情绪 | slow / moderate / fast / rapid |
-| **情绪/语气** | 从对白内容提取 | relaxed / excited / angry / sad / humorous |
-| **嗓音特征** | 方言特色声音描述 | slightly raspy, trailing tone |
+| **方言** | 方言名称 | 四川方言 / 粤语 / 东北话 |
+| **性别+年龄** | 根据角色推断 | 中年男性 / 老年女性 / 年轻女性 |
+| **口音浓度** | 口音轻重 | 浓重口音 / 轻度口音 |
+| **语速** | 结合内容情绪 | 语速较快 / 语速偏慢 / 正常语速 |
+| **情绪** | 从对白提取 | 激动 / 轻松 / 悲伤 / 严肃 |
 
-#### 各方言 Control Instruction 默认参考
+#### 各方言默认 Control Instruction 参考
 
 | 方言 | 默认 Control Instruction |
 |------|--------------------------|
-| **四川话** | `A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles like "o" and "sa"` |
-| **粤语** | `A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery` |
-| **吴语（上海话）** | `A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones` |
-| **东北话** | `A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery` |
-| **河南话** | `A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality` |
-| **陕西话** | `A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones` |
-| **山东话** | `A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery` |
-| **天津话** | `A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation` |
-| **闽南话** | `A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones` |
+| **四川话** | 四川方言，中年男性，慵懒语气，语速偏慢 |
+| **粤语** | 粤语，中年男性，自信语气，正常语速 |
+| **吴语（上海话）** | 上海话，年轻女性，温柔语气，正常语速 |
+| **东北话** | 东北话，中年男性，洪亮嗓音，语速较快 |
+| **河南话** | 河南话，中年男性，沉稳语气，正常语速 |
+| **陕西话** | 陕西话，中年男性，低沉嗓音，语速偏慢 |
+| **山东话** | 山东话，中年男性，豪爽语气，正常语速 |
+| **天津话** | 天津话，中年男性，幽默语气，正常语速 |
+| **闽南话** | 闽南话，中年男性，温和语气，语速偏慢 |
 
-> 💡 当对白中有多个角色时，为每个角色分别生成 Control Instruction，用分隔线 `---` 隔开。
+> 💡 多角色场景为每个角色分别生成 Control Instruction，用 `---` 隔开。
 
 #### 多角色输出示例
 
@@ -210,25 +196,23 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 
 【原文】
 老板，这个多少钱？能不能便宜点？
-便宜点嘛，我经常来买嘢的。
+便宜点嘛，我经常来买的。
 
-【Target Text — 方言目标文本】
+【转换】
 老板，呢个几多钱啊？可唔可以平啲啊？
 平啲啦，我成日嚟买嘢㗎。
 
 ---
 
-> **🔊 VoxCPM Control Instruction（角色 1 — 顾客）**
+> 🔊 VoxCPM 语音生成（角色 1 — 顾客）
 >
-> **Control Instruction**: A young Cantonese female, casual and friendly tone, moderate pace, with Guangzhou accent
-> **Target Text**: 老板，呢个几多钱啊？可唔可以平啲啊？
-> **完整输入**: (A young Cantonese female, casual and friendly tone, moderate pace, with Guangzhou accent)老板，呢个几多钱啊？可唔可以平啲啊？
+> Control Instruction: 粤语，年轻女性，轻松语气，正常语速
+> Target Text: 老板，呢个几多钱啊？可唔可以平啲啊？
 
-> **🔊 VoxCPM Control Instruction（角色 2 — 老板）**
+> 🔊 VoxCPM 语音生成（角色 2 — 老板）
 >
-> **Control Instruction**: A middle-aged Cantonese male, warm and businesslike tone, moderate pace, with Guangzhou accent
-> **Target Text**: 平啲啦，我成日嚟买嘢㗎。
-> **完整输入**: (A middle-aged Cantonese male, warm and businesslike tone, moderate pace, with Guangzhou accent)平啲啦，我成日嚟买嘢㗎。
+> Control Instruction: 粤语，中年男性，热情语气，正常语速
+> Target Text: 平啲啦，我成日嚟买嘢㗎。
 ```
 
 ## 重口音原则

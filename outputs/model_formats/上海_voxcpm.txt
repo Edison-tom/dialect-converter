@@ -9,13 +9,13 @@
 ## 默认 Control Instruction
 
 ```
-A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones
+上海话，年轻女性，温柔语气，正常语速
 ```
 
 ## 完整输入示例
 
 ```
-(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+(上海话，年轻女性，温柔语气，正常语速)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
 ```
 
 ## Python 调用示例
@@ -27,7 +27,7 @@ import soundfile as sf
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 wav = model.generate(
-    text="(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。",
+    text="(上海话，年轻女性，温柔语气，正常语速)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。",
     cfg_value=2.0,
     inference_timesteps=10,
     seed=42,
@@ -43,7 +43,7 @@ sf.write("上海_voxcpm.wav", wav, model.tts_model.sample_rate)
 
 ```bash
 voxcpm design \
-  --text "(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。" \
+  --text "(上海话，年轻女性，温柔语气，正常语速)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。" \
   --output 上海_voxcpm.wav
 ```
 
@@ -51,17 +51,17 @@ voxcpm design \
 
 ### 轻松日常
 ```
-(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, casual and relaxed tone)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+(上海话，年轻女性，轻松语气，语速偏慢)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
 ```
 
 ### 激动语气
 ```
-(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, excited and loud tone, fast pace)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+(上海话，年轻女性，激动语气，语速较快)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
 ```
 
-### 慢速低沉
+### 悲伤低沉
 ```
-(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, slow and deep tone)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+(上海话，年轻女性，悲伤语气，语速偏慢)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
 ```
 
 ## 代表性词条（前 5 条）

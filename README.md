@@ -101,8 +101,7 @@ model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 # Control Instruction + Target Text
 wav = model.generate(
-    text="(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, "
-         "with Chengdu accent, trailing particles like 'o' and 'sa')"
+    text="(四川方言，中年男性，慵懒语气，语速偏慢)"
          "你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。",
     cfg_value=2.0,
     inference_timesteps=10,
@@ -115,8 +114,8 @@ sf.write("sichuan.wav", wav, model.tts_model.sample_rate)
 
 | 部分 | 内容 | 说明 |
 |------|------|------|
-| **Control Instruction** | `(A middle-aged Sichuan male, relaxed and lazy tone, ...)` | 声音控制指令，括号内自然语言描述 |
-| **Target Text** | `你在搞爪子？这个硬是好吃得很。...` | 方言目标文本 |
+| **Control Instruction** | `(四川方言，中年男性，慵懒语气，语速偏慢)` | 声音控制指令，括号内中文自然语言描述 |
+| **Target Text** | `你在搞爪子？这个硬是好吃得很。...` | 方言转换后的目标文本 |
 | **完整输入** | `(Control Instruction)Target Text` | 拼接后送入 `text` 参数 |
 
 </details>
@@ -156,7 +155,7 @@ sf.write("sichuan.wav", wav, model.tts_model.sample_rate)
 
 ### 输入格式
 
-VoxCPM 使用 **Control Instruction + Target Text** 格式，通过括号包裹的自然语言描述控制声音特征：
+VoxCPM 使用 **Control Instruction + Target Text** 格式，通过括号包裹的中文自然语言描述控制声音特征：
 
 ```
 (Control Instruction)Target Text
@@ -164,8 +163,8 @@ VoxCPM 使用 **Control Instruction + Target Text** 格式，通过括号包裹�
 
 | 模式 | 说明 | 示例 |
 |------|------|------|
-| **Voice Design** | 从描述创建全新声音，无需参考音频 | `(A young woman, gentle voice)要合成的文本` |
-| **Controllable Cloning** | 克隆已有声音 + 风格控制 | `(slightly faster, cheerful tone)要合成的文本` + `reference_wav_path` |
+| **Voice Design** | 从描述创建全新声音，无需参考音频 | `(四川方言，中年男性，慵懒语气)要合成的文本` |
+| **Controllable Cloning** | 克隆已有声音 + 风格控制 | `(语速较快，激动语气)要合成的文本` + `reference_wav_path` |
 | **纯 TTS** | 无控制指令，使用默认声音 | `要合成的文本` |
 
 ### Python 调用
@@ -178,7 +177,7 @@ model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 
 # 方言语音生成
 wav = model.generate(
-    text="(A middle-aged Cantonese male, confident tone, with Guangzhou accent)"
+    text="(粤语，中年男性，自信语气，正常语速)"
          "你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。",
     cfg_value=2.0,
     inference_timesteps=10,
@@ -192,13 +191,13 @@ sf.write("cantonese.wav", wav, model.tts_model.sample_rate)
 ```bash
 # Voice Design
 voxcpm design \
-  --text "(A middle-aged Sichuan male, relaxed tone)你在搞爪子？这个硬是好吃得很。" \
+  --text "(四川方言，中年男性，慵懒语气，语速偏慢)你在搞爪子？这个硬是好吃得很。" \
   --output sichuan.wav
 
 # 带风格控制
 voxcpm design \
   --text "你在搞爪子？这个硬是好吃得很。" \
-  --control "A middle-aged Sichuan male, relaxed and lazy tone" \
+  --control "四川方言，中年男性，慵懒语气，语速偏慢" \
   --seed 42 --output sichuan.wav
 ```
 
@@ -222,7 +221,7 @@ Agent 自动输出：**Target Text**（方言文本）+ **Control Instruction**�
 将 Skill 输出的 `完整输入` 复制到 VoxCPM 的 `text` 参数即可：
 
 ```python
-text = "(A middle-aged Sichuan male, relaxed tone)老板，几多钱嘛？可唔可以平啲哦？"
+text = "(四川方言，中年男性，慵懒语气)老板，几多钱嘛？能不能少点嘛？"
 wav = model.generate(text=text, cfg_value=2.0, inference_timesteps=10, seed=42)
 ```
 
@@ -278,15 +277,15 @@ cat outputs/model_formats/粤语_voxcpm.txt
 
 | 方言 | 默认 Control Instruction |
 |------|--------------------------|
-| **四川话** | `A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles like "o" and "sa"` |
-| **粤语** | `A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery` |
-| **吴语（上海话）** | `A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones` |
-| **东北话** | `A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery` |
-| **河南话** | `A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality` |
-| **陕西话** | `A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones` |
-| **山东话** | `A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery` |
-| **天津话** | `A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation` |
-| **闽南话** | `A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones` |
+| **四川话** | `四川方言，中年男性，慵懒语气，语速偏慢` |
+| **粤语** | `粤语，中年男性，自信语气，正常语速` |
+| **吴语（上海话）** | `上海话，年轻女性，温柔语气，正常语速` |
+| **东北话** | `东北话，中年男性，洪亮嗓音，语速较快` |
+| **河南话** | `河南话，中年男性，沉稳语气，正常语速` |
+| **陕西话** | `陕西话，中年男性，低沉嗓音，语速偏慢` |
+| **山东话** | `山东话，中年男性，豪爽语气，正常语速` |
+| **天津话** | `天津话，中年男性，幽默语气，正常语速` |
+| **闽南话** | `闽南话，中年男性，温和语气，语速偏慢` |
 
 </details>
 
