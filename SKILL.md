@@ -4,7 +4,7 @@ description: 将普通话对白文字转换为重口音的方言表述。覆盖�
 agent_created: true
 ---
 
-# Dialect Converter — 方言转换器 v1.1.0
+# Dialect Converter — 方言转换器 v1.2.0
 
 ## Overview
 

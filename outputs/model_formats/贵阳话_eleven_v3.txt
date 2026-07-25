@@ -1,9 +1,3999 @@
-[casual] 短视频
+[casual] 灶房
 
-[curious] 直播
+[curious] 茅斯
 
-[excited] 带货
+[excited] 筷子
 
-[serious] 打赏
+[serious] 碗
 
-[nervous] 弹幕
+[nervous] 盅盅
+
+[happy] 被窝
+
+[calm] 枕头
+
+[surprised] 伞
+
+[casual] 牛
+
+[curious] 猪
+
+[excited] 鸡
+
+[serious] 鱼
+
+[nervous] 耗子
+
+[happy] 苍蝇
+
+[calm] 蚊子
+
+[surprised] 过早
+
+[casual] 吃晌午
+
+[curious] 没得用
+
+[excited] 莫客气
+
+[serious] 短视频
+
+[nervous] 直播
+
+[happy] 带货
+
+[calm] 打赏
+
+[surprised] 弹幕
+
+[casual] 二次元
+
+[curious] 宅
+
+[excited] 萌
+
+[serious] 御宅
+
+[nervous] 腐
+
+[happy] 同人
+
+[calm] 周边
+
+[surprised] 手办
+
+[casual] 景品
+
+[curious] 一番赏
+
+[excited] 扭蛋
+
+[serious] 盲盒
+
+[nervous] 福袋
+
+[happy] 痛车
+
+[calm] 痛包
+
+[surprised] 宅舞
+
+[casual] 声优
+
+[curious] 虚拟主播
+
+[excited] 虚拟偶像
+
+[serious] 初音未来
+
+[nervous] 洛天依
+
+[happy] 鬼畜
+
+[calm] 空耳
+
+[surprised] 弹幕文化
+
+[casual] 网络流行语
+
+[curious] 社畜
+
+[excited] 打工人
+
+[serious] 工具人
+
+[nervous] 海王
+
+[happy] 凡尔赛
+
+[calm] 内卷
+
+[surprised] 躺平
+
+[casual] 摆烂
+
+[curious] 摸鱼
+
+[excited] 吃瓜
+
+[serious] 破防
+
+[nervous] 上头
+
+[happy] 下头
+
+[calm] 绝绝子
+
+[surprised] 无语子
+
+[casual] 蚌埠住了
+
+[curious] 夺笋
+
+[excited] 小丑竟是我自己
+
+[serious] 芭比Q了
+
+[nervous] 栓Q
+
+[happy] 拿捏
+
+[calm] 集美
+
+[surprised] 家人们
+
+[casual] 属于是
+
+[curious] 就是说
+
+[excited] 一整个
+
+[serious] 大无语
+
+[nervous] 事件
+
+[happy] 反向
+
+[calm] 安利
+
+[surprised] 种草
+
+[casual] 拔草
+
+[curious] 打卡
+
+[excited] 探店
+
+[serious] 出片
+
+[nervous] OOTD
+
+[happy] GRWM
+
+[calm] ASMR
+
+[surprised] 沉浸式
+
+[casual] 开箱
+
+[curious] 评测
+
+[excited] 翻车
+
+[serious] 避雷
+
+[nervous] 种草
+
+[happy] 排雷
+
+[calm] 测评
+
+[surprised] 试吃
+
+[casual] 试色
+
+[curious] 教程
+
+[excited] Vlog
+
+[serious] 旅行
+
+[nervous] 美食
+
+[happy] 健身
+
+[calm] 穿搭
+
+[surprised] 美妆
+
+[casual] 护肤
+
+[curious] 家居
+
+[excited] 数码
+
+[serious] 科技
+
+[nervous] 资讯
+
+[happy] 评论
+
+[calm] 理中客
+
+[surprised] 带节奏
+
+[casual] 引战
+
+[curious] 钓鱼
+
+[excited] 标题党
+
+[serious] 角色扮演
+
+[nervous] 动作角色扮演
+
+[happy] 回合制
+
+[calm] 即时制
+
+[surprised] 战棋
+
+[casual] 战术角色扮演
+
+[curious] 第一人称射击
+
+[excited] 第三人称射击
+
+[serious] 大逃杀
+
+[nervous] 多人在线
+
+[happy] 开放世界
+
+[calm] 沙盒
+
+[surprised] 类Rogue
+
+[casual] Roguelike
+
+[curious] 类银河战士恶魔城
+
+[excited] 魂系
+
+[serious] 类魂
+
+[nervous] 潜行
+
+[happy] 恐怖
+
+[calm] 生存
+
+[surprised] 模拟经营
+
+[casual] 模拟养成
+
+[curious] 恋爱模拟
+
+[excited] 视觉小说
+
+[serious] 音乐节奏
+
+[nervous] 格斗
+
+[happy] 横版
+
+[calm] 平台跳跃
+
+[surprised] 解谜
+
+[casual] 点击冒险
+
+[curious] 交互式电影
+
+[excited] 步行模拟
+
+[serious] 挂机
+
+[nervous] 放置
+
+[happy] 卡牌
+
+[calm] 集换式卡牌
+
+[surprised] 塔防
+
+[casual] 自走棋
+
+[curious] 大乱斗
+
+[excited] 聚会
+
+[serious] 体感
+
+[nervous] 增强现实
+
+[happy] 虚拟现实
+
+[calm] 混合现实
+
+[surprised] 云游戏
+
+[casual] 网页游戏
+
+[curious] 客户端游戏
+
+[excited] 主机游戏
+
+[serious] 掌机游戏
+
+[nervous] 移动游戏
+
+[happy] 独立游戏
+
+[calm] 3A
+
+[surprised] 买断
+
+[casual] 免费
+
+[curious] 订阅
+
+[excited] 内购
+
+[serious] 开箱
+
+[nervous] 抽卡
+
+[happy] 赛季
+
+[calm] 通行证
+
+[surprised] 天梯
+
+[casual] 排位
+
+[curious] 匹配
+
+[excited] 段位
+
+[serious] 青铜
+
+[nervous] 白银
+
+[happy] 黄金
+
+[calm] 铂金
+
+[surprised] 钻石
+
+[casual] 大师
+
+[curious] 宗师
+
+[excited] 王者
+
+[serious] UI
+
+[nervous] HUD
+
+[happy] 小地图
+
+[calm] 背包
+
+[surprised] 装备
+
+[casual] 技能
+
+[curious] 天赋
+
+[excited] 属性
+
+[serious] 血量
+
+[nervous] 魔法
+
+[happy] CD
+
+[calm] 冷却
+
+[surprised] 增益
+
+[casual] 减益
+
+[curious] 控制
+
+[excited] 眩晕
+
+[serious] 沉默
+
+[nervous] 禁锢
+
+[happy] 击飞
+
+[calm] 击退
+
+[surprised] 霸体
+
+[casual] 无敌
+
+[curious] 镜头
+
+[excited] 景别
+
+[serious] 远景
+
+[nervous] 全景
+
+[happy] 中景
+
+[calm] 近景
+
+[surprised] 特写
+
+[casual] 大特写
+
+[curious] 主观镜头
+
+[excited] 客观镜头
+
+[serious] 跟拍
+
+[nervous] 移摄
+
+[happy] 摇摄
+
+[calm] 俯摄
+
+[surprised] 仰摄
+
+[casual] 推拉
+
+[curious] 变焦
+
+[excited] 跟焦
+
+[serious] 移焦
+
+[nervous] 浅焦
+
+[happy] 深焦
+
+[calm] 长镜头
+
+[surprised] 一镜到底
+
+[casual] 蒙太奇
+
+[curious] 平行蒙太奇
+
+[excited] 交叉蒙太奇
+
+[serious] 倒叙
+
+[nervous] 闪回
+
+[happy] 闪前
+
+[calm] 跳切
+
+[surprised] 匹配剪辑
+
+[casual] 动作匹配
+
+[curious] 形状匹配
+
+[excited] 色彩匹配
+
+[serious] 声音匹配
+
+[nervous] 叠化
+
+[happy] 淡入
+
+[calm] 淡出
+
+[surprised] 黑场
+
+[casual] 白场
+
+[curious] 划像
+
+[excited] 圈入
+
+[serious] 圈出
+
+[nervous] 遮幅
+
+[happy] 宽银幕
+
+[calm] 变形宽银幕
+
+[surprised] 画幅
+
+[casual] 帧率
+
+[curious] 升格
+
+[excited] 降格
+
+[serious] 慢动作
+
+[nervous] 快动作
+
+[happy] 定格
+
+[calm] 抽帧
+
+[surprised] 调色
+
+[casual] 一级调色
+
+[curious] 二级调色
+
+[excited] LUT
+
+[serious] 达芬奇
+
+[nervous] 剪辑
+
+[happy] 粗剪
+
+[calm] 精剪
+
+[surprised] 定剪
+
+[casual] 套底
+
+[curious] 回批
+
+[excited] 声画对位
+
+[serious] 声画同步
+
+[nervous] 后期
+
+[happy] 同期
+
+[calm] 补录
+
+[surprised] 拟音
+
+[casual] 动效
+
+[curious] 配乐
+
+[excited] 原声
+
+[serious] 插曲
+
+[nervous] 主题曲
+
+[happy] 片头
+
+[calm] 片尾
+
+[surprised] 字幕
+
+[casual] 花絮
+
+[curious] 预告
+
+[excited] 特辑
+
+[serious] 导演剪辑版
+
+[nervous] 加长版
+
+[happy] 柱式
+
+[calm] 多立克
+
+[surprised] 爱奥尼克
+
+[casual] 科林斯
+
+[curious] 塔司干
+
+[excited] 混合
+
+[serious] 柱头
+
+[nervous] 柱身
+
+[happy] 柱础
+
+[calm] 檐部
+
+[surprised] 额枋
+
+[casual] 檐壁
+
+[curious] 檐口
+
+[excited] 山花
+
+[serious] 三角楣
+
+[nervous] 拱
+
+[happy] 券
+
+[calm] 筒拱
+
+[surprised] 交叉拱
+
+[casual] 肋拱
+
+[curious] 扇拱
+
+[excited] 葱形拱
+
+[serious] 马蹄拱
+
+[nervous] 火焰拱
+
+[happy] 穹顶
+
+[calm] 帆拱
+
+[surprised] 叠涩
+
+[casual] 肋骨拱
+
+[curious] 飞扶壁
+
+[excited] 扶壁
+
+[serious] 玫瑰窗
+
+[nervous] 彩绘玻璃
+
+[happy] 哥特
+
+[calm] 罗马风
+
+[surprised] 拜占庭
+
+[casual] 文艺复兴
+
+[curious] 巴洛克
+
+[excited] 洛可可
+
+[serious] 新古典
+
+[nervous] 新艺术
+
+[happy] 装饰艺术
+
+[calm] 现代主义
+
+[surprised] 后现代
+
+[casual] 解构
+
+[curious] 高技
+
+[excited] 粗野主义
+
+[serious] 新陈代谢
+
+[nervous] 参数化
+
+[happy] 仿生
+
+[calm] 有机
+
+[surprised] 地域
+
+[casual] 乡土
+
+[curious] 批判地域
+
+[excited] 建构
+
+[serious] 透明性
+
+[nervous] 现象透明
+
+[happy] 字面透明
+
+[calm] 流动空间
+
+[surprised] 通用空间
+
+[casual] 服务空间
+
+[curious] 被服务空间
+
+[excited] 匀质空间
+
+[serious] 漫步建筑
+
+[nervous] 折叠
+
+[happy] 表皮
+
+[calm] 图解
+
+[surprised] 原型
+
+[casual] 类型学
+
+[curious] 空间句法
+
+[excited] 视域
+
+[serious] 轴线
+
+[nervous] 网格
+
+[happy] 模度
+
+[calm] 柯布西耶模度
+
+[surprised] 黄金分割
+
+[casual] 斐波那契
+
+[curious] 芭蕾
+
+[excited] 古典舞
+
+[serious] 现代舞
+
+[nervous] 当代舞
+
+[happy] 民族舞
+
+[calm] 民间舞
+
+[surprised] 秧歌
+
+[casual] 腰鼓
+
+[curious] 花鼓灯
+
+[excited] 龙舞
+
+[serious] 狮舞
+
+[nervous] 旱船
+
+[happy] 高跷
+
+[calm] 霸王鞭
+
+[surprised] 安塞腰鼓
+
+[casual] 热巴
+
+[curious] 果谐
+
+[excited] 堆谐
+
+[serious] 弦子
+
+[nervous] 锅庄
+
+[happy] 赛乃姆
+
+[calm] 多朗
+
+[surprised] 萨玛
+
+[casual] 盘子舞
+
+[curious] 农乐舞
+
+[excited] 长鼓舞
+
+[serious] 扇子舞
+
+[nervous] 僧舞
+
+[happy] 安代
+
+[calm] 盅碗舞
+
+[surprised] 筷子舞
+
+[casual] 芦笙舞
+
+[curious] 铜鼓舞
+
+[excited] 木鼓舞
+
+[serious] 板凳舞
+
+[nervous] 芒筒舞
+
+[happy] 孔雀舞
+
+[calm] 象脚鼓舞
+
+[surprised] 嘎光
+
+[casual] 孔雀
+
+[curious] 鱼舞
+
+[excited] 蝴蝶舞
+
+[serious] 芭蕾基训
+
+[nervous] 把杆
+
+[happy] 擦地
+
+[calm] 蹲
+
+[surprised] 小踢腿
+
+[casual] 划圈
+
+[curious] 控制
+
+[excited] 大踢腿
+
+[serious] 四位转
+
+[nervous] 挥鞭转
+
+[happy] 大跳
+
+[calm] 阿拉贝斯克
+
+[surprised] 阿提久
+
+[casual] 巴特芒
+
+[curious] 代弗洛佩
+
+[excited] 弗拉佩
+
+[serious] 格朗
+
+[nervous] 格朗日代
+
+[happy] 皮鲁埃特
+
+[calm] 普利耶
+
+[surprised] 勒勒韦
+
+[casual] 汤迪
+
+[curious] 油画
+
+[excited] 水彩
+
+[serious] 水粉
+
+[nervous] 丙烯
+
+[happy] 坦培拉
+
+[calm] 版画
+
+[surprised] 木刻
+
+[casual] 铜版
+
+[curious] 石版
+
+[excited] 丝网版
+
+[serious] 腐蚀版
+
+[nervous] 干刻
+
+[happy] 美柔汀
+
+[calm] 飞尘
+
+[surprised] 软蜡
+
+[casual] 糖水
+
+[curious] 水墨画
+
+[excited] 浅绛
+
+[serious] 青绿
+
+[nervous] 金碧
+
+[happy] 没骨
+
+[calm] 白描
+
+[surprised] 界画
+
+[casual] 指画
+
+[curious] 漫画
+
+[excited] 插画
+
+[serious] 绘本
+
+[nervous] 连环画
+
+[happy] 素描
+
+[calm] 速写
+
+[surprised] 线描
+
+[casual] 涂鸦
+
+[curious] 壁画
+
+[excited] 天顶画
+
+[serious] 湿壁画
+
+[nervous] 干壁画
+
+[happy] 镶嵌画
+
+[calm] 玻璃画
+
+[surprised] 珐琅画
+
+[casual] 漆画
+
+[curious] 帛画
+
+[excited] 画像石
+
+[serious] 画像砖
+
+[nervous] 岩画
+
+[happy] 洞穴画
+
+[calm] 雕塑
+
+[surprised] 圆雕
+
+[casual] 浮雕
+
+[curious] 透雕
+
+[excited] 圆雕
+
+[serious] 胸像
+
+[nervous] 全身像
+
+[happy] 群像
+
+[calm] 纪念碑
+
+[surprised] 公共艺术
+
+[casual] 装置
+
+[curious] 大地艺术
+
+[excited] 包裹
+
+[serious] 环境艺术
+
+[nervous] 行为
+
+[happy] 偶发
+
+[calm] 激浪派
+
+[surprised] 达达
+
+[casual] 超现实主义
+
+[curious] 立体主义
+
+[excited] 野兽派
+
+[serious] 表现主义
+
+[nervous] 抽象表现
+
+[happy] 极简主义
+
+[calm] 波普
+
+[surprised] 光效应
+
+[casual] 动态艺术
+
+[curious] 录像艺术
+
+[excited] 数字艺术
+
+[serious] 新媒体
+
+[nervous] 生物艺术
+
+[happy] 声音艺术
+
+[calm] 寓言故事
+
+[surprised] 童话故事
+
+[casual] 神话传说
+
+[curious] 民间故事
+
+[excited] 志怪小说
+
+[serious] 传奇小说
+
+[nervous] 话本小说
+
+[happy] 章回小说
+
+[calm] 侦探小说
+
+[surprised] 科幻小说
+
+[casual] 武侠小说
+
+[curious] 言情小说
+
+[excited] 历史小说
+
+[serious] 乡土小说
+
+[nervous] 都市小说
+
+[happy] 纪实文学
+
+[calm] 报告文学
+
+[surprised] 游记文学
+
+[casual] 日记文学
+
+[curious] 书信文学
+
+[excited] 序跋
+
+[serious] 发刊词
+
+[nervous] 编后记
+
+[happy] 凡例
+
+[calm] 序言
+
+[surprised] 前言
+
+[casual] 导论
+
+[curious] 绪论
+
+[excited] 结语
+
+[serious] 后记
+
+[nervous] 致谢
+
+[happy] 参考文献
+
+[calm] 索引
+
+[surprised] 插图
+
+[casual] 图表
+
+[curious] 附录
+
+[excited] 注释
+
+[serious] 脚注
+
+[nervous] 尾注
+
+[happy] 夹注
+
+[calm] 参见
+
+[surprised] 佚文
+
+[casual] 残篇
+
+[curious] 断简
+
+[excited] 孤本
+
+[serious] 珍本
+
+[nervous] 秘本
+
+[happy] 禁书
+
+[calm] 焚书
+
+[surprised] 异文
+
+[casual] 校记
+
+[curious] 社会学
+
+[excited] 人类学
+
+[serious] 民俗学
+
+[nervous] 语言学
+
+[happy] 音系学
+
+[calm] 形态学
+
+[surprised] 句法学
+
+[casual] 语义学
+
+[curious] 语用学
+
+[excited] 修辞学
+
+[serious] 符号学
+
+[nervous] 叙事学
+
+[happy] 翻译学
+
+[calm] 比较文学
+
+[surprised] 文献学
+
+[casual] 目录学
+
+[curious] 校勘学
+
+[excited] 版本学
+
+[serious] 训诂学
+
+[nervous] 音韵学
+
+[happy] 文字学
+
+[calm] 金石学
+
+[surprised] 甲骨学
+
+[casual] 简帛学
+
+[curious] 敦煌学
+
+[excited] 徽学
+
+[serious] 藏学
+
+[nervous] 蒙古学
+
+[happy] 满学
+
+[calm] 西夏学
+
+[surprised] 突厥学
+
+[casual] 吐鲁番学
+
+[curious] 龟兹学
+
+[excited] 于阗学
+
+[serious] 丝绸之路学
+
+[nervous] 海洋学
+
+[happy] 极地学
+
+[calm] 洞穴学
+
+[surprised] 沙漠学
+
+[casual] 山地学
+
+[curious] 湖泊学
+
+[excited] 湿地学
+
+[serious] 岛屿学
+
+[nervous] 流域学
+
+[happy] 景观生态
+
+[calm] 恢复生态
+
+[surprised] 行为生态
+
+[casual] 化学生态
+
+[curious] 进化生态
+
+[excited] 人类生态
+
+[serious] 城市生态
+
+[nervous] 农业生态
+
+[happy] 景观生态
+
+[calm] 生态系统服务
+
+[surprised] 价值评估
+
+[casual] 生态补偿
+
+[curious] 生态红线
+
+[excited] 自然保护地
+
+[serious] 国家公园
+
+[nervous] 地质公园
+
+[happy] 森林公园
+
+[calm] 湿地公园
+
+[surprised] 沙漠公园
+
+[casual] 矿山公园
+
+[curious] 海洋公园
+
+[excited] 风景名胜区
+
+[serious] 自然保护区
+
+[nervous] 自然遗产
+
+[happy] 文化遗产
+
+[calm] 混合遗产
+
+[surprised] 非物质文化遗产
+
+[casual] 传统知识
+
+[curious] 遗传资源
+
+[excited] 生物勘探
+
+[serious] ABS
+
+[nervous] 名古屋议定书
+
+[happy] 波恩准则
+
+[calm] 事先知情同意
+
+[surprised] 共同商定
+
+[casual] 利益分享
+
+[curious] 惠益分享
+
+[excited] 遗传资源数字序列
+
+[serious] 传统知识数字序列
+
+[nervous] 合成生物学
+
+[happy] 基因驱动
+
+[calm] 基因组编辑
+
+[surprised] 脱靶
+
+[casual] 嵌合
+
+[curious] 镶嵌
+
+[excited] 种系
+
+[serious] 体细胞
+
+[nervous] 生殖系
+
+[happy] 线粒体置换
+
+[calm] 三亲婴儿
+
+[surprised] 胚胎编辑
+
+[casual] 设计婴儿
+
+[curious] 治疗性克隆
+
+[excited] 生殖性克隆
+
+[serious] 干细胞治疗
+
+[nervous] 细胞治疗
+
+[happy] 基因治疗
+
+[calm] 免疫治疗
+
+[surprised] 靶向治疗
+
+[casual] 精准医疗
+
+[curious] 个性化医疗
+
+[excited] 循证医学
+
+[serious] 转化医学
+
+[nervous] 再生医学
+
+[happy] 纳米医学
+
+[calm] 远程医疗
+
+[surprised] 移动医疗
+
+[casual] 数字健康
+
+[curious] 电子健康记录
+
+[excited] 个人健康记录
+
+[serious] 互操作
+
+[nervous] 术语标准
+
+[happy] 消息标准
+
+[calm] 文档标准
+
+[surprised] 集成规范
+
+[casual] IHE
+
+[curious] HL7
+
+[excited] FHIR
+
+[serious] DICOM
+
+[nervous] LOINC
+
+[happy] SNOMED
+
+[calm] ICD
+
+[surprised] CPT
+
+[casual] RxNorm
+
+[curious] NDC
+
+[excited] NLM
+
+[serious] 统一医学语言系统
+
+[nervous] 精神分裂
+
+[happy] 分裂情感
+
+[calm] 妄想性
+
+[surprised] 短暂精神病性
+
+[casual] 精神分裂样
+
+[curious] 双相I
+
+[excited] 双相II
+
+[serious] 环性心境
+
+[nervous] 抑郁
+
+[happy] 破坏性情绪失调
+
+[calm] 经前烦躁
+
+[surprised] 物质所致
+
+[casual] 躯体疾病所致
+
+[curious] 强迫
+
+[excited] 躯体变形
+
+[serious] 囤积
+
+[nervous] 拔毛
+
+[happy] 抓痕
+
+[calm] 分离性身份
+
+[surprised] 分离性遗忘
+
+[casual] 人格解体
+
+[curious] 现实解体
+
+[excited] 创伤后应激
+
+[serious] 急性应激
+
+[nervous] 适应障碍
+
+[happy] 延长哀伤
+
+[calm] 反应性依恋
+
+[surprised] 脱抑制社会参与
+
+[casual] 躯体症状
+
+[curious] 疾病焦虑
+
+[excited] 转换
+
+[serious] 做作性
+
+[nervous] 进食障碍
+
+[happy] 神经性厌食
+
+[calm] 神经性贪食
+
+[surprised] 暴食
+
+[casual] 回避性限制性食物摄入
+
+[curious] 异食
+
+[excited] 反刍
+
+[serious] 排泄
+
+[nervous] 遗尿
+
+[happy] 遗粪
+
+[calm] 睡眠觉醒
+
+[surprised] 失眠
+
+[casual] 过度嗜睡
+
+[curious] 发作性睡病
+
+[excited] 阻塞性睡眠呼吸暂停
+
+[serious] 中枢性睡眠呼吸暂停
+
+[nervous] 睡眠相关通气不足
+
+[happy] 昼夜节律
+
+[calm] 睡眠觉醒时相延迟
+
+[surprised] 睡眠觉醒时相提前
+
+[casual] 不规律睡眠觉醒
+
+[curious] 非24小时睡眠觉醒
+
+[excited] 轮班
+
+[serious] 梦魇
+
+[nervous] 睡惊
+
+[happy] 睡行
+
+[calm] 快速眼动睡眠行为障碍
+
+[surprised] 不宁腿
+
+[casual] 物质所致睡眠障碍
+
+[curious] 性别烦躁
+
+[excited] 性别不一致
+
+[serious] 性别确认
+
+[nervous] 性别肯定
+
+[happy] 性别认同
+
+[calm] 性别表达
+
+[surprised] 性取向
+
+[casual] 破坏性冲动控制和品行障碍
+
+[curious] 对立违抗
+
+[excited] 间歇性暴怒
+
+[serious] 品行
+
+[nervous] 反社会
+
+[happy] 纵火
+
+[calm] 偷窃
+
+[surprised] 认知行为治疗
+
+[casual] 行为激活
+
+[curious] 暴露
+
+[excited] 冲击
+
+[serious] 系统脱敏
+
+[nervous] 现实脱敏
+
+[happy] 内感脱敏
+
+[calm] 意象脱敏
+
+[surprised] 虚拟现实暴露
+
+[casual] 预防
+
+[curious] 反应
+
+[excited] 习惯逆转
+
+[serious] 偶然性管理
+
+[nervous] 代币
+
+[happy] 行为契约
+
+[calm] 行为塑造
+
+[surprised] 链锁
+
+[casual] 模仿
+
+[curious] 示范
+
+[excited] 角色扮演
+
+[serious] 问题解决
+
+[nervous] 自助
+
+[happy] 引导发现
+
+[calm] 苏格拉底提问
+
+[surprised] 箭头向下
+
+[casual] 箭头向上
+
+[curious] 饼图
+
+[excited] 责任饼
+
+[serious] 行为实验
+
+[nervous] 调查
+
+[happy] 观察
+
+[calm] 核心信念
+
+[surprised] 中间信念
+
+[casual] 自动思维
+
+[curious] 功能失调
+
+[excited] 认知错误
+
+[serious] 非此即彼
+
+[nervous] 灾难化
+
+[happy] 低估应对
+
+[calm] 情绪推理
+
+[surprised] 标签化
+
+[casual] 夸大
+
+[curious] 缩小
+
+[excited] 心理过滤
+
+[serious] 以偏概全
+
+[nervous] 个人化
+
+[happy] 应声虫
+
+[calm] 读心术
+
+[surprised] 水晶球
+
+[casual] 算命
+
+[curious] 控制谬误
+
+[excited] 公平谬误
+
+[serious] 改变谬误
+
+[nervous] 永远正确
+
+[happy] 天堂奖赏
+
+[calm] 正念
+
+[surprised] 接纳
+
+[casual] 承诺
+
+[curious] 解离
+
+[excited] 接触当下
+
+[serious] 观察自我
+
+[nervous] 价值
+
+[happy] 承诺行动
+
+[calm] 创造性无望
+
+[surprised] 控制是问题
+
+[casual] 愿意
+
+[curious] 骑自行车
+
+[excited] metaphor
+
+[serious] 乘客
+
+[nervous] 公共汽车
+
+[happy] 棋盘
+
+[calm] 流沙
+
+[surprised] 恶魔
+
+[casual] 推文件夹
+
+[curious] 抛弃锚
+
+[excited] 锚定
+
+[serious] 抛锚
+
+[nervous] 抛下绳子
+
+[happy] 山顶
+
+[calm] 沼泽
+
+[surprised] 棋盘的
+
+[casual] T
+
+[curious] 形台
+
+[excited] 时间机器
+
+[serious] 良师
+
+[nervous] 墓碑
+
+[happy] 生日
+
+[calm] 退休
+
+[surprised] 哀悼
+
+[casual] 完满
+
+[curious] 空椅子
+
+[excited] 双椅
+
+[serious] 想象
+
+[nervous] 重塑
+
+[happy] 修通
+
+[calm] 再决定
+
+[surprised] 脚本分析
+
+[casual] 自我状态
+
+[curious] 父母
+
+[excited] 成人
+
+[serious] 儿童
+
+[nervous] 安抚
+
+[happy] 漠视
+
+[calm] 扭曲
+
+[surprised] 共生
+
+[casual] 印前
+
+[curious] 制版
+
+[excited] 排版
+
+[serious] 照排
+
+[nervous] 激光照排
+
+[happy] 计算机直接制版
+
+[calm] 计算机直接制片
+
+[surprised] 胶片
+
+[casual] 阳图
+
+[curious] 阴图
+
+[excited] 反阳
+
+[serious] 反阴
+
+[nervous] 网点
+
+[happy] 调幅
+
+[calm] 调频
+
+[surprised] 混和
+
+[casual] 加网
+
+[curious] 线数
+
+[excited] 灰度
+
+[serious] 阶调
+
+[nervous] 浓度
+
+[happy] 实地
+
+[calm] 高光
+
+[surprised] 暗调
+
+[casual] 中间调
+
+[curious] 密度
+
+[excited] 反差
+
+[serious] 清晰度
+
+[nervous] 锐度
+
+[happy] 印刷
+
+[calm] 平版
+
+[surprised] 凸版
+
+[casual] 凹版
+
+[curious] 孔版
+
+[excited] 柔版
+
+[serious] 网版
+
+[nervous] 数字印刷
+
+[happy] 按需印刷
+
+[calm] 可变数据
+
+[surprised] 静电
+
+[casual] 喷墨
+
+[curious] 热转印
+
+[excited] 热升华
+
+[serious] 染料
+
+[nervous] 颜料
+
+[happy] 胶印
+
+[calm] 无水胶印
+
+[surprised] UV胶印
+
+[casual] 凹印
+
+[curious] 雕刻凹印
+
+[excited] 腐蚀凹印
+
+[serious] 照相凹印
+
+[nervous] 网印
+
+[happy] 丝网
+
+[calm] 热固
+
+[surprised] 冷固
+
+[casual] 轮转
+
+[curious] 单张纸
+
+[excited] 卷筒纸
+
+[serious] 商业轮转
+
+[nervous] 报纸轮转
+
+[happy] 表格印刷
+
+[calm] 标签印刷
+
+[surprised] 包装印刷
+
+[casual] 防伪印刷
+
+[curious] 钞票
+
+[excited] 邮票
+
+[serious] 有价证券
+
+[nervous] 热烫
+
+[happy] 冷烫
+
+[calm] 压凹凸
+
+[surprised] 模切
+
+[casual] 压痕
+
+[curious] 覆膜
+
+[excited] 上光
+
+[serious] UV上光
+
+[nervous] 水性上光
+
+[happy] 压光
+
+[calm] 裱纸
+
+[surprised] 裱糊
+
+[casual] 骑马订
+
+[curious] 无线胶订
+
+[excited] 锁线订
+
+[serious] 精装
+
+[nervous] 平装
+
+[happy] 活页
+
+[calm] 螺旋
+
+[surprised] 线装
+
+[casual] 毛边
+
+[curious] 切口
+
+[excited] 勒口
+
+[serious] 飘口
+
+[nervous] 堵头布
+
+[happy] 筒子页
+
+[calm] 环衬
+
+[surprised] 全宗
+
+[casual] 案卷
+
+[curious] 件
+
+[excited] 归档
+
+[serious] 鉴定
+
+[nervous] 销毁
+
+[happy] 保密
+
+[calm] 解密
+
+[surprised] 开放
+
+[casual] 划控
+
+[curious] 移交
+
+[excited] 接收
+
+[serious] 征集
+
+[nervous] 寄存
+
+[happy] 捐赠
+
+[calm] 数字化
+
+[surprised] 著录
+
+[casual] 标引
+
+[curious] 检索
+
+[excited] 利用
+
+[serious] 阅览
+
+[nervous] 复制
+
+[happy] 摘抄
+
+[calm] 证明
+
+[surprised] 凭证
+
+[casual] 法律效力
+
+[curious] 证据效力
+
+[excited] 原始性
+
+[serious] 真实性
+
+[nervous] 完整性
+
+[happy] 可靠性
+
+[calm] 可用性
+
+[surprised] 真实性
+
+[casual] 长期保存
+
+[curious] 永久保存
+
+[excited] 定期保存
+
+[serious] 电子档案
+
+[nervous] 电子文件
+
+[happy] 元数据
+
+[calm] 封装
+
+[surprised] 格式
+
+[casual] 版本
+
+[curious] 迁移
+
+[excited] 仿真
+
+[serious] 互操作
+
+[nervous] 长期保存格式
+
+[happy] PDFA
+
+[calm] ODF
+
+[surprised] OOXML
+
+[casual] 归档
+
+[curious] 封装
+
+[excited] 电子签名
+
+[serious] 电子印章
+
+[nervous] 时间戳
+
+[happy] 数字证书
+
+[calm] 哈希
+
+[surprised] 审计跟踪
+
+[casual] 日志
+
+[curious] 备份
+
+[excited] 异地备份
+
+[serious] 异质备份
+
+[nervous] 容灾
+
+[happy] 灾难恢复
+
+[calm] 缩微
+
+[surprised] 微缩胶卷
+
+[casual] 微缩平片
+
+[curious] 档案盒
+
+[excited] 档案袋
+
+[serious] 卷皮
+
+[nervous] 备考表
+
+[happy] 目录
+
+[calm] 案卷目录
+
+[surprised] 全引目录
+
+[casual] 专题目录
+
+[curious] 索引
+
+[excited] 指南
+
+[serious] 全宗卷
+
+[nervous] 全宗指南
+
+[happy] 档案馆指南
+
+[calm] 分类
+
+[surprised] 编目
+
+[casual] 著录
+
+[curious] 标引
+
+[excited] 主题标引
+
+[serious] 分类标引
+
+[nervous] 关键词
+
+[happy] 叙词
+
+[calm] 受控词表
+
+[surprised] 主题词表
+
+[casual] 叙词表
+
+[curious] 分类法
+
+[excited] 杜威十进
+
+[serious] 国际十进
+
+[nervous] 美国国会
+
+[happy] 冒号
+
+[calm] 中国图书馆
+
+[surprised] 四库
+
+[casual] 古籍
+
+[curious] 善本
+
+[excited] 抄本
+
+[serious] 稿本
+
+[nervous] 刻本
+
+[happy] 活字本
+
+[calm] 石印本
+
+[surprised] 影印本
+
+[casual] 钤印本
+
+[curious] 套印本
+
+[excited] 朱墨
+
+[serious] 三色
+
+[nervous] 四色
+
+[happy] 五色
+
+[calm] 六色
+
+[surprised] 蓝印
+
+[casual] 红印
+
+[curious] 递修
+
+[excited] 递藏
+
+[serious] 批校
+
+[nervous] 题跋
+
+[happy] 过录
+
+[calm] 补配
+
+[surprised] 衬纸
+
+[casual] 金镶玉
+
+[curious] 包背装
+
+[excited] 蝴蝶装
+
+[serious] 线装
+
+[nervous] 经折装
+
+[happy] 旋风装
+
+[calm] 梵夹装
+
+[surprised] 卷轴装
+
+[casual] 龙鳞装
+
+[curious] 毛装
+
+[excited] 函套
+
+[serious] 书匣
+
+[nervous] 书盒
+
+[happy] 夹板
+
+[calm] 数字化
+
+[surprised] 扫描
+
+[casual] 光学字符识别
+
+[curious] 全文检索
+
+[excited] 元数据
+
+[serious] DC
+
+[nervous] MODS
+
+[happy] METS
+
+[calm] MARC
+
+[surprised] MARC21
+
+[casual] CNMARC
+
+[curious] UNIMARC
+
+[excited] 规范记录
+
+[serious] 规范控制
+
+[nervous] 名称规范
+
+[happy] 主题规范
+
+[calm] 题名规范
+
+[surprised] 丛编规范
+
+[casual] 版本
+
+[curious] 版次
+
+[excited] 印次
+
+[serious] 刷次
+
+[nervous] 开本
+
+[happy] 书口
+
+[calm] 书脑
+
+[surprised] 书脊
+
+[casual] 书根
+
+[curious] 天头
+
+[excited] 地脚
+
+[serious] 鱼尾
+
+[nervous] 象鼻
+
+[happy] 白口
+
+[calm] 黑口
+
+[surprised] 花口
+
+[casual] 世界遗产
+
+[curious] 文化遗产
+
+[excited] 自然遗产
+
+[serious] 混合遗产
+
+[nervous] 文化景观
+
+[happy] 非物质文化遗产
+
+[calm] 代表性项目
+
+[surprised] 代表性传承人
+
+[casual] 保护单位
+
+[curious] 文化生态保护区
+
+[excited] 传统村落
+
+[serious] 历史文化名城
+
+[nervous] 历史文化名镇
+
+[happy] 历史文化名村
+
+[calm] 历史文化街区
+
+[surprised] 文物保护单位
+
+[casual] 全国重点
+
+[curious] 省级
+
+[excited] 市县级
+
+[serious] 登记不可移动文物
+
+[nervous] 可移动文物
+
+[happy] 珍贵文物
+
+[calm] 一级
+
+[surprised] 二级
+
+[casual] 三级
+
+[curious] 一般文物
+
+[excited] 禁止出境展览
+
+[serious] 考古遗址公园
+
+[nervous] 国家考古遗址公园
+
+[happy] 水下文化遗产
+
+[calm] 线性文化遗产
+
+[surprised] 文化线路
+
+[casual] 丝绸之路
+
+[curious] 大运河
+
+[excited] 茶马古道
+
+[serious] 蜀道
+
+[nervous] 长征
+
+[happy] 工业遗产
+
+[calm] 农业遗产
+
+[surprised] 灌溉工程遗产
+
+[casual] 二十世纪建筑遗产
+
+[curious] 校园遗产
+
+[excited] 铁路遗产
+
+[serious] 军事遗产
+
+[nervous] 矿业遗产
+
+[happy] 宗教遗产
+
+[calm] 纪念地
+
+[surprised] 名人故居
+
+[casual] 历史建筑
+
+[curious] 优秀近现代建筑
+
+[excited] 传统风貌建筑
+
+[serious] 乡土建筑
+
+[nervous] 碉楼
+
+[happy] 土楼
+
+[calm] 围屋
+
+[surprised] 窑洞
+
+[casual] 四合院
+
+[curious] 一颗印
+
+[excited] 吊脚楼
+
+[serious] 蒙古包
+
+[nervous] 毡房
+
+[happy] 仙人柱
+
+[calm] 船形屋
+
+[surprised] 干栏
+
+[casual] 井干
+
+[curious] 藏品
+
+[excited] 标本
+
+[serious] 档案
+
+[nervous] 登录
+
+[happy] 编目
+
+[calm] 著录
+
+[surprised] 分类
+
+[casual] 定名
+
+[curious] 断代
+
+[excited] 鉴定
+
+[serious] 评级
+
+[nervous] 来源
+
+[happy] 流传
+
+[calm] 征集
+
+[surprised] 购买
+
+[casual] 捐赠
+
+[curious] 调拨
+
+[excited] 移交
+
+[serious] 交换
+
+[nervous] 考古发掘
+
+[happy] 依法没收
+
+[calm] 登记
+
+[surprised] 注销
+
+[casual] 出库
+
+[curious] 入库
+
+[excited] 上架
+
+[serious] 排架
+
+[nervous] 库房
+
+[happy] 恒温恒湿
+
+[calm] 光照
+
+[surprised] 紫外线
+
+[casual] 红外
+
+[curious] 污染
+
+[excited] 虫害
+
+[serious] 霉菌
+
+[nervous] 锈蚀
+
+[happy] 粉化
+
+[calm] 剥落
+
+[surprised] 起甲
+
+[casual] 龟裂
+
+[curious] 酥碱
+
+[excited] 空鼓
+
+[serious] 修复
+
+[nervous] 清洗
+
+[happy] 加固
+
+[calm] 拼接
+
+[surprised] 补全
+
+[casual] 全色
+
+[curious] 可识别
+
+[excited] 可逆
+
+[serious] 兼容
+
+[nervous] 最小干预
+
+[happy] 原真性
+
+[calm] 完整性
+
+[surprised] 抢救性
+
+[casual] 预防性
+
+[curious] 数字化
+
+[excited] 三维扫描
+
+[serious] 摄影测量
+
+[nervous] 近景摄影
+
+[happy] 多光谱
+
+[calm] 高光谱
+
+[surprised] X射线
+
+[casual] CT
+
+[curious] 内窥镜
+
+[excited] 拉曼
+
+[serious] XRF
+
+[nervous] XRD
+
+[happy] SEM
+
+[calm] TEM
+
+[surprised] 展陈
+
+[casual] 基本陈列
+
+[curious] 专题展览
+
+[excited] 临时展览
+
+[serious] 巡回展览
+
+[nervous] 虚拟展览
+
+[happy] 展柜
+
+[calm] 恒温恒湿展柜
+
+[surprised] 低氧展柜
+
+[casual] 展托
+
+[curious] 展架
+
+[excited] 说明牌
+
+[serious] 触摸屏
+
+[nervous] 多媒体
+
+[happy] 互动
+
+[calm] 沉浸
+
+[surprised] 场景
+
+[casual] 复原
+
+[curious] 模型
+
+[excited] 沙盘
+
+[serious] 全景画
+
+[nervous] 半景画
+
+[happy] 幻影成像
+
+[calm] 旧石器
+
+[surprised] 新石器
+
+[casual] 青铜时代
+
+[curious] 铁器时代
+
+[excited] 仰韶
+
+[serious] 龙山
+
+[nervous] 良渚
+
+[happy] 红山
+
+[calm] 大汶口
+
+[surprised] 马家窑
+
+[casual] 齐家
+
+[curious] 二里头
+
+[excited] 二里岗
+
+[serious] 殷墟
+
+[nervous] 甲骨
+
+[happy] 金文
+
+[calm] 简牍
+
+[surprised] 帛书
+
+[casual] 封泥
+
+[curious] 印章
+
+[excited] 瓦当
+
+[serious] 画像石
+
+[nervous] 画像砖
+
+[happy] 壁画
+
+[calm] 石窟
+
+[surprised] 摩崖
+
+[casual] 造像
+
+[curious] 碑刻
+
+[excited] 墓志
+
+[serious] 地券
+
+[nervous] 镇墓兽
+
+[happy] 俑
+
+[calm] 兵马俑
+
+[surprised] 唐三彩
+
+[casual] 明器
+
+[curious] 礼器
+
+[excited] 食器
+
+[serious] 酒器
+
+[nervous] 水器
+
+[happy] 乐器
+
+[calm] 兵器
+
+[surprised] 车马器
+
+[casual] 工具
+
+[curious] 装饰品
+
+[excited] 玉器
+
+[serious] 玉琮
+
+[nervous] 玉璧
+
+[happy] 玉璜
+
+[calm] 玉圭
+
+[surprised] 玉璋
+
+[casual] 玉琥
+
+[curious] 玉觽
+
+[excited] 玉韘
+
+[serious] 玉带钩
+
+[nervous] 玉剑饰
+
+[happy] 青铜器
+
+[calm] 鼎
+
+[surprised] 簋
+
+[casual] 尊
+
+[curious] 卣
+
+[excited] 爵
+
+[serious] 觚
+
+[nervous] 觯
+
+[happy] 斝
+
+[calm] 盉
+
+[surprised] 匜
+
+[casual] 盘
+
+[curious] 匜
+
+[excited] 鉴
+
+[serious] 缶
+
+[nervous] 钟
+
+[happy] 镈
+
+[calm] 钲
+
+[surprised] 铙
+
+[casual] 铎
+
+[curious] 戈
+
+[excited] 矛
+
+[serious] 戟
+
+[nervous] 铍
+
+[happy] 殳
+
+[calm] 镞
+
+[surprised] 弩机
+
+[casual] 甲
+
+[curious] 胄
+
+[excited] 盾
+
+[serious] 周期
+
+[nervous] 大周期
+
+[happy] 中周期
+
+[calm] 小周期
+
+[surprised] 微周期
+
+[casual] 准备期
+
+[curious] 比赛期
+
+[excited] 过渡期
+
+[serious] 恢复期
+
+[nervous] 负荷
+
+[happy] 运动量
+
+[calm] 运动强度
+
+[surprised] 密度
+
+[casual] 频率
+
+[curious] 超量恢复
+
+[excited] 过度训练
+
+[serious] 训练不足
+
+[nervous] 停训
+
+[happy] 减量
+
+[calm] 减负荷
+
+[surprised] 渐进
+
+[casual] 特异性
+
+[curious] 超负荷
+
+[excited] 可逆性
+
+[serious] 个体差异
+
+[nervous] 力竭
+
+[happy] 最大力量
+
+[calm] 爆发力
+
+[surprised] 耐力
+
+[casual] 有氧
+
+[curious] 无氧
+
+[excited] 混氧
+
+[serious] 最大摄氧量
+
+[nervous] 无氧阈
+
+[happy] 乳酸阈
+
+[calm] 通气阈
+
+[surprised] 心率
+
+[casual] 最大心率
+
+[curious] 静息心率
+
+[excited] 靶心率
+
+[serious] 储备心率
+
+[nervous] 血乳酸
+
+[happy] 主观疲劳
+
+[calm] 自觉运动强度
+
+[surprised] 功率
+
+[casual] 功率体重比
+
+[curious] 功体比
+
+[excited] 踏频
+
+[serious] 步频
+
+[nervous] 步幅
+
+[happy] 触地时间
+
+[calm] 垂直振幅
+
+[surprised] 腾空
+
+[casual] 着地
+
+[curious] 离地
+
+[excited] 摇摆
+
+[serious] 支撑
+
+[nervous] 蹬伸
+
+[happy] 折叠
+
+[calm] 前摆
+
+[surprised] 下压
+
+[casual] 扒地
+
+[curious] 缓冲
+
+[excited] 制动
+
+[serious] 推进
+
+[nervous] 前脚掌
+
+[happy] 全脚掌
+
+[calm] 后脚跟
+
+[surprised] 内翻
+
+[casual] 外翻
+
+[curious] 旋前
+
+[excited] 旋后
+
+[serious] 等速
+
+[nervous] 等张
+
+[happy] 等长
+
+[calm] 离心
+
+[surprised] 向心
+
+[casual] 等长
+
+[curious] 等速
+
+[excited] 拉伸
+
+[serious] 静态
+
+[nervous] 动态
+
+[happy] PNF
+
+[calm] 泡沫轴
+
+[surprised] 筋膜枪
+
+[casual] 按摩
+
+[curious] 冷疗
+
+[excited] 热疗
+
+[serious] 高压氧
+
+[nervous] 压缩衣
+
+[happy] 紧身衣
+
+[calm] 能量
+
+[surprised] 卡路里
+
+[casual] 千焦
+
+[curious] 基础代谢
+
+[excited] 食物热效应
+
+[serious] 体力活动
+
+[nervous] 宏量营养素
+
+[happy] 微量营养素
+
+[calm] 必需氨基酸
+
+[surprised] 条件必需氨基酸
+
+[casual] 非必需氨基酸
+
+[curious] 限制氨基酸
+
+[excited] 氨基酸模式
+
+[serious] 蛋白质互补
+
+[nervous] 生物价
+
+[happy] 净蛋白利用率
+
+[calm] 蛋白质功效比
+
+[surprised] 氨基酸评分
+
+[casual] 消化率
+
+[curious] 碳水化合物
+
+[excited] 单糖
+
+[serious] 双糖
+
+[nervous] 寡糖
+
+[happy] 多糖
+
+[calm] 淀粉
+
+[surprised] 抗性淀粉
+
+[casual] 膳食纤维
+
+[curious] 可溶性纤维
+
+[excited] 不溶性纤维
+
+[serious] 益生元
+
+[nervous] 脂肪
+
+[happy] 饱和脂肪酸
+
+[calm] 单不饱和
+
+[surprised] 多不饱和
+
+[casual] 反式脂肪酸
+
+[curious] 必需脂肪酸
+
+[excited] 欧米伽3
+
+[serious] 欧米伽6
+
+[nervous] 欧米伽9
+
+[happy] DHA
+
+[calm] EPA
+
+[surprised] ALA
+
+[casual] 短链脂肪酸
+
+[curious] 中链脂肪酸
+
+[excited] 长链脂肪酸
+
+[serious] 脂蛋白
+
+[nervous] 乳糜微粒
+
+[happy] VLDL
+
+[calm] LDL
+
+[surprised] HDL
+
+[casual] 维生素A
+
+[curious] 视黄醇
+
+[excited] 胡萝卜素
+
+[serious] 维生素D
+
+[nervous] 维生素E
+
+[happy] 维生素K
+
+[calm] 维生素C
+
+[surprised] 维生素B1
+
+[casual] B2
+
+[curious] B3
+
+[excited] B5
+
+[serious] B6
+
+[nervous] B7
+
+[happy] B9
+
+[calm] B12
+
+[surprised] 矿物质
+
+[casual] 钙
+
+[curious] 铁
+
+[excited] 锌
+
+[serious] 硒
+
+[nervous] 碘
+
+[happy] 镁
+
+[calm] 钾
+
+[surprised] 钠
+
+[casual] 氯
+
+[curious] 磷
+
+[excited] 硫
+
+[serious] 铜
+
+[nervous] 锰
+
+[happy] 铬
+
+[calm] 钼
+
+[surprised] 氟
+
+[casual] 保健食品
+
+[curious] 膳食补充剂
+
+[excited] 运动营养
+
+[serious] 临床营养
+
+[nervous] 肠内营养
+
+[happy] 肠外营养
+
+[calm] 特殊医学用途配方
+
+[surprised] 阿拉比卡
+
+[casual] 罗布斯塔
+
+[curious] 利比利卡
+
+[excited] 瑰夏
+
+[serious] 耶加雪菲
+
+[nervous] 曼特宁
+
+[happy] 蓝山
+
+[calm] 科纳
+
+[surprised] 肯尼亚
+
+[casual] 埃塞俄比亚
+
+[curious] 哥伦比亚
+
+[excited] 巴西
+
+[serious] 哥斯达黎加
+
+[nervous] 巴拿马
+
+[happy] 危地马拉
+
+[calm] 水洗
+
+[surprised] 日晒
+
+[casual] 蜜处理
+
+[curious] 厌氧
+
+[excited] 二氧化碳浸渍
+
+[serious] 乳酸发酵
+
+[nervous] 酒桶
+
+[happy] 发酵
+
+[calm] 烘焙
+
+[surprised] 浅焙
+
+[casual] 中焙
+
+[curious] 深焙
+
+[excited] 一爆
+
+[serious] 二爆
+
+[nervous] 城市烘焙
+
+[happy] 全城市烘焙
+
+[calm] 法式烘焙
+
+[surprised] 意式烘焙
+
+[casual] 研磨
+
+[curious] 粗磨
+
+[excited] 中粗
+
+[serious] 中磨
+
+[nervous] 中细
+
+[happy] 细磨
+
+[calm] 极细
+
+[surprised] 萃取
+
+[casual] 手冲
+
+[curious] 法压
+
+[excited] 虹吸
+
+[serious] 爱乐压
+
+[nervous] 摩卡壶
+
+[happy] 意式
+
+[calm] 冷萃
+
+[surprised] 冰滴
+
+[casual] 氮气
+
+[curious] 浓缩
+
+[excited] 油脂
+
+[serious] 粉水比
+
+[nervous] 闷蒸
+
+[happy] 扰流
+
+[calm] 通道
+
+[surprised] 过萃
+
+[casual] 萃取不足
+
+[curious] 品鉴
+
+[excited] 香气
+
+[serious] 风味
+
+[nervous] 酸度
+
+[happy] 甜度
+
+[calm] 醇厚度
+
+[surprised] 余韵
+
+[casual] 平衡
+
+[curious] 干净度
+
+[excited] 干香
+
+[serious] 湿香
+
+[nervous] 啜吸
+
+[happy] 杯测
+
+[calm] 评分
+
+[surprised] 绿茶
+
+[casual] 白茶
+
+[curious] 黄茶
+
+[excited] 乌龙茶
+
+[serious] 红茶
+
+[nervous] 黑茶
+
+[happy] 杀青
+
+[calm] 揉捻
+
+[surprised] 萎凋
+
+[casual] 发酵
+
+[curious] 渥堆
+
+[excited] 干燥
+
+[serious] 茶道
+
+[nervous] 茶艺
+
+[happy] 盖碗
+
+[calm] 紫砂
+
+[surprised] 闻香杯
+
+[casual] 品茗杯
+
+[curious] 公道杯
+
+[excited] 金鱼
+
+[serious] 锦鲤
+
+[nervous] 热带鱼
+
+[happy] 灯科鱼
+
+[calm] 慈鲷
+
+[surprised] 斗鱼
+
+[casual] 鳉鱼
+
+[curious] 鼠鱼
+
+[excited] 异型
+
+[serious] 魟鱼
+
+[nervous] 龙鱼
+
+[happy] 罗汉鱼
+
+[calm] 鹦鹉鱼
+
+[surprised] 地图鱼
+
+[casual] 七彩神仙
+
+[curious] 海水鱼
+
+[excited] 小丑鱼
+
+[serious] 蓝吊
+
+[nervous] 蝶鱼
+
+[happy] 神仙鱼
+
+[calm] 倒吊
+
+[surprised] 炮弹
+
+[casual] 狮子鱼
+
+[curious] 珊瑚
+
+[excited] 软体
+
+[serious] 硬骨
+
+[nervous] SPS
+
+[happy] LPS
+
+[calm] 纽扣
+
+[surprised] 太阳花
+
+[casual] 气泡
+
+[curious] 榔头
+
+[excited] 花瓶
+
+[serious] 火柴头
+
+[nervous] 尼罗河
+
+[happy] 飞盘
+
+[calm] 圆帽
+
+[surprised] 管虫
+
+[casual] 海葵
+
+[curious] 小丑葵
+
+[excited] 地毯葵
+
+[serious] 公主葵
+
+[nervous] 奶嘴葵
+
+[happy] 虾
+
+[calm] 清洁虾
+
+[surprised] 医生虾
+
+[casual] 火焰虾
+
+[curious] 美人虾
+
+[excited] 海星
+
+[serious] 海胆
+
+[nervous] 海参
+
+[happy] 螺
+
+[calm] 食藻螺
+
+[surprised] 翻砂海星
+
+[casual] 翻砂海参
+
+[curious] 蛋白分离器
+
+[excited] 钙反应器
+
+[serious] 沸石
+
+[nervous] 活性炭
+
+[happy] 磷酸盐吸附
+
+[calm] 反硝化
+
+[surprised] 藻缸
+
+[casual] 藻屏
+
+[curious] 柏林系统
+
+[excited] Zeovit
+
+[serious] 系统
+
+[nervous] 底缸
+
+[happy] 溢流
+
+[calm] 上水泵
+
+[surprised] 造浪
+
+[casual] 造流
+
+[curious] LED
+
+[excited] T5
+
+[serious] 金卤灯
+
+[nervous] 色温
+
+[happy] PAR
+
+[calm] PUR
+
+[surprised] 光谱
+
+[casual] 光照周期
+
+[curious] 检疫
+
+[excited] 过水
+
+[serious] 淡水浴
+
+[nervous] 药浴
+
+[happy] 白点
+
+[calm] 卵圆鞭毛虫
+
+[surprised] 布鲁克原虫
+
+[casual] 播种
+
+[curious] 育苗
+
+[excited] 移栽
+
+[serious] 定植
+
+[nervous] 嫁接
+
+[happy] 扦插
+
+[calm] 压条
+
+[surprised] 分株
+
+[casual] 组培
+
+[curious] 脱毒
+
+[excited] 炼苗
+
+[serious] 驯化
+
+[nervous] 上盆
+
+[happy] 换盆
+
+[calm] 修剪
+
+[surprised] 短截
+
+[casual] 疏枝
+
+[curious] 回缩
+
+[excited] 开心形
+
+[serious] 自然圆头形
+
+[nervous] 纺锤形
+
+[happy] 篱壁形
+
+[calm] 棚架
+
+[surprised] 地膜
+
+[casual] 遮阳
+
+[curious] 防虫网
+
+[excited] 滴灌
+
+[serious] 潮汐灌溉
+
+[nervous] 营养液
+
+[happy] 基质
+
+[calm] 泥炭
+
+[surprised] 椰糠
+
+[casual] 珍珠岩
+
+[curious] 蛭石
+
+[excited] 陶粒
+
+[serious] 岩棉
+
+[nervous] 水培
+
+[happy] 气雾培
+
+[calm] 深液流
+
+[surprised] 营养液膜
+
+[casual] 花期
+
+[curious] 花芽分化
+
+[excited] 春化
+
+[serious] 光周期
+
+[nervous] 短日照
+
+[happy] 长日照
+
+[calm] 日中性
+
+[surprised] 催花
+
+[casual] 抑制
+
+[curious] 保鲜
+
+[excited] 采后
+
+[serious] 预冷
+
+[nervous] 分级
+
+[happy] 包装
+
+[calm] 冷链
+
+[surprised] 乙烯
+
+[casual] 脱落酸
+
+[curious] 赤霉素
+
+[excited] 生长素
+
+[serious] 细胞分裂素
+
+[nervous] 油菜素内酯
+
+[happy] 独脚金内酯
+
+[calm] 茉莉酸
+
+[surprised] 水杨酸
+
+[casual] 多效唑
+
+[curious] 矮壮素
+
+[excited] 比久
+
+[serious] 乙烯利
+
+[nervous] 硫代硫酸银
+
+[happy] 保鲜剂
+
+[calm] 杀菌剂
+
+[surprised] 杀虫剂
+
+[casual] 杀螨剂
+
+[curious] 除草剂
+
+[excited] 植物生长调节剂
+
+[serious] 总体规划
+
+[nervous] 详细规划
+
+[happy] 控制性详细规划
+
+[calm] 修建性详细规划
+
+[surprised] 战略规划
+
+[casual] 概念规划
+
+[curious] 城市设计
+
+[excited] 总规
+
+[serious] 控规
+
+[nervous] 修规
+
+[happy] 用地
+
+[calm] 居住
+
+[surprised] 商业
+
+[casual] 工业
+
+[curious] 物流仓储
+
+[excited] 公共管理与公共服务
+
+[serious] 绿地与广场
+
+[nervous] 道路与交通
+
+[happy] 市政设施
+
+[calm] 公用设施
+
+[surprised] 留白
+
+[casual] 混合用地
+
+[curious] TOD
+
+[excited] 公交导向
+
+[serious] 容积率
+
+[nervous] 建筑密度
+
+[happy] 绿地率
+
+[calm] 建筑高度
+
+[surprised] 建筑退线
+
+[casual] 贴线率
+
+[curious] 界面
+
+[excited] 天际线
+
+[serious] 视廊
+
+[nervous] 眺望
+
+[happy] 对景
+
+[calm] 借景
+
+[surprised] 框景
+
+[casual] 轴线
+
+[curious] 节点
+
+[excited] 标志
+
+[serious] 路径
+
+[nervous] 边界
+
+[happy] 区域
+
+[calm] 城市意象
+
+[surprised] 凯文林奇
+
+[casual] 簇群
+
+[curious] 组团
+
+[excited] 片区
+
+[serious] 街区
+
+[nervous] 单元
+
+[happy] 社区
+
+[calm] 生活圈
+
+[surprised] 15分钟生活圈
+
+[casual] 10分钟生活圈
+
+[curious] 5分钟生活圈
+
+[excited] 完整社区
+
+[serious] 街道
+
+[nervous] 巷
+
+[happy] 弄
+
+[calm] 坊
+
+[surprised] 里
+
+[casual] 冷巷
+
+[curious] 骑楼
+
+[excited] 连廊
+
+[serious] 架空层
+
+[nervous] 口袋公园
+
+[happy] 微更新
+
+[calm] 针灸
+
+[surprised] 触媒
+
+[casual] 有机更新
+
+[curious] 存量
+
+[excited] 增量
+
+[serious] 城市体检
+
+[nervous] 城市双修
+
+[happy] 城市修补
+
+[calm] 生态修复
+
+[surprised] 海绵城市
+
+[casual] 韧性城市
+
+[curious] 公园城市
+
+[excited] 智慧城市
+
+[serious] 数字孪生
+
+[nervous] 流域
+
+[happy] 水系
+
+[calm] 干流
+
+[surprised] 支流
+
+[casual] 上游
+
+[curious] 中游
+
+[excited] 下游
+
+[serious] 河源
+
+[nervous] 河口
+
+[happy] 三角洲
+
+[calm] 冲积扇
+
+[surprised] 河漫滩
+
+[casual] 阶地
+
+[curious] 曲流
+
+[excited] 牛轭湖
+
+[serious] 河床
+
+[nervous] 河岸
+
+[happy] 护岸
+
+[calm] 堤防
+
+[surprised] 防洪
+
+[casual] 蓄滞洪区
+
+[curious] 分洪
+
+[excited] 行洪
+
+[serious] 超标洪水
+
+[nervous] 设计洪水
+
+[happy] 校核洪水
+
+[calm] 最大可能洪水
+
+[surprised] 降水
+
+[casual] 径流
+
+[curious] 地表径流
+
+[excited] 地下径流
+
+[serious] 壤中流
+
+[nervous] 基流
+
+[happy] 产流
+
+[calm] 超渗产流
+
+[surprised] 蓄满产流
+
+[casual] 汇流
+
+[curious] 单位线
+
+[excited] 瞬时单位线
+
+[serious] 等流时线
+
+[nervous] 马斯京根
+
+[happy] 扩散波
+
+[calm] 动力波
+
+[surprised] 运动波
+
+[casual] 水库
+
+[curious] 死水位
+
+[excited] 正常蓄水位
+
+[serious] 防洪限制水位
+
+[nervous] 设计洪水位
+
+[happy] 校核洪水位
+
+[calm] 库容
+
+[surprised] 死库容
+
+[casual] 兴利库容
+
+[curious] 防洪库容
+
+[excited] 调洪库容
+
+[serious] 总库容
+
+[nervous] 淤积
+
+[happy] 异重流
+
+[calm] 排沙
+
+[surprised] 调水调沙
+
+[casual] 水资源
+
+[curious] 可利用量
+
+[excited] 可供水量
+
+[serious] 需水量
+
+[nervous] 缺水量
+
+[happy] 供需平衡
+
+[calm] 配置
+
+[surprised] 调度
+
+[casual] 分水
+
+[curious] 水权
+
+[excited] 水价
+
+[serious] 水市场
+
+[nervous] 水足迹
+
+[happy] 虚拟水
+
+[calm] 节水
+
+[surprised] 定额
+
+[casual] 效率
+
+[curious] 再生水
+
+[excited] 海水淡化
+
+[serious] 反渗透
+
+[nervous] 多级闪蒸
+
+[happy] 多效蒸馏
+
+[calm] 压汽蒸馏
+
+[surprised] 电渗析
+
+[casual] 太阳能
+
+[curious] 光伏
+
+[excited] 光热
+
+[serious] 塔式
+
+[nervous] 槽式
+
+[happy] 碟式
+
+[calm] 菲涅尔
+
+[surprised] 光伏电池
+
+[casual] 单晶硅
+
+[curious] 多晶硅
+
+[excited] 薄膜
+
+[serious] 碲化镉
+
+[nervous] 铜铟镓硒
+
+[happy] 钙钛矿
+
+[calm] 叠层
+
+[surprised] 异质结
+
+[casual] 背钝化
+
+[curious] 隧穿氧化层钝化接触
+
+[excited] 叉指背接触
+
+[serious] 金属穿孔卷绕
+
+[nervous] 光伏组件
+
+[happy] 逆变器
+
+[calm] 集中式
+
+[surprised] 组串式
