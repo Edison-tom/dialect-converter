@@ -22,7 +22,10 @@
 
 以上北京话例句，本技能可输出多种 TTS 模型可用的格式：
 
-**① MiniMax 2.8 HD（拼音注音）** — `text` 字段：
+**① Seed Audio 1.0（角色对白脚本）**：
+> `【角色A - 老李，京片子，慢悠悠】你干嘛呢？这玩意儿倍儿好吃。【角色B - 小王，语气冲】甭忽悠我了！你不儿道啊？`
+
+**② MiniMax 2.8 HD（拼音注音 JSON）** — `text` 字段始终可见：
 > `"text": "你干嘛呢？(breath) 这玩意儿倍儿好吃。#0.8# 你不儿道啊？(sighs) 甭忽悠我了。#1.0#"`
 
 <details>
@@ -33,17 +36,39 @@
   "pronunciation_dict": {
     "tone": ["倍儿/(bei4)(er2)", "甭/(beng2)", "忽悠/(hu1)(you0)"]
   },
-  "voice_setting": { "voice_id": "YOUR_ID", "speed": 1.0 },
+  "voice_setting": { "voice_id": "YOUR_ID", "speed": 1.0, "pitch": 0 },
   "audio_setting": { "sample_rate": 32000, "format": "mp3" }
 }
 ```
 </details>
 
-**② Eleven v3（IPA 国际音标 + 情绪标签）**：
+**③ Eleven v3（IPA 国际音标 + 情绪标签）**：
 > `[curious] 你干嘛呢？这玩意儿/pei⁵¹ ɚ⁵¹/好吃。[defiant] /pɤŋ³⁵/忽悠我了！`
 
-**③ Seed Audio 1.0（角色对白脚本）**：
-> `【角色A - 老李，京片子，慢悠悠】你干嘛呢？【角色B - 小王，语气冲】甭忽悠我了！`
+**④ Eleven Music v3（方言歌词 + 风格 Prompt）** — 歌词文本：
+> 你干嘛呢甭忽悠我 / 倍儿好吃你得信我 / 不儿道啊不儿道 / 胡同口儿见分晓
+
+<details>
+<summary>点击展开风格 Prompt</summary>
+
+```
+北京方言说唱，男声，痞气京片子，快板节奏，三弦+电子鼓，胡同生活氛围
+```
+</details>
+
+**⑤ Mureka v8（结构化歌词 JSON）** — `lyrics` 字段：
+> `"[Verse] 你干嘛呢甭忽悠我 / [Chorus] 倍儿好吃倍儿好吃 / [Outro] 走喽回见了您嘞"`
+
+<details>
+<summary>点击展开其余 JSON 字段</summary>
+
+```json
+{
+  "prompt": "北京方言民谣，男声，京韵大鼓风格，中速，三弦+吉他",
+  "n": 2
+}
+```
+</details>
 
 ---
 
