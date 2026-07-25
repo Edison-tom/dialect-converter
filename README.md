@@ -8,6 +8,8 @@
 
 ### 方言文本转译
 
+同一段普通话，不同方言的纯文本转换：
+
 ```
 普通话：你在干什么？这个东西很好吃。你不知道吗？别骗我了。
 
@@ -18,41 +20,30 @@
 湖北话：你在搞么斯咧？这个东西蛮好七。你不晓得？莫哄我。
 ```
 
-### 不止文本转译——多种输出方式
+以上北京话例句，本技能可输出多种 TTS 模型可用的格式：
 
-同一段方言对白，可按不同 TTS 模型输出对应格式：
-
-<details>
-<summary><b>MiniMax 2.8 HD — 拼音注音 JSON</b>（拼音数字调 + 语气标签 + 停顿控制）</summary>
-
-```text
-{"text": "你干嘛呢？(breath) 这玩意儿倍儿好吃。#0.8# 你不儿道啊？ 甭忽悠我了。#1.0#"}
-{"pronunciation_dict": {"tone": ["倍儿/(bei4)(er2)", "甭/(beng2)", "不儿道/(bu4)(r)(dao4)"]}}
-{"voice_setting": {"voice_id": "YOUR_ID", "speed": 1.0}}
-```
-→ 完整格式见 `outputs/model_formats/`
-</details>
+**① MiniMax 2.8 HD（拼音注音）** — `text` 字段：
+> `"text": "你干嘛呢？(breath) 这玩意儿倍儿好吃。#0.8# 你不儿道啊？(sighs) 甭忽悠我了。#1.0#"`
 
 <details>
-<summary><b>Seed Audio 1.0 — 角色对白脚本</b>（场景 + 人物口音描述 + 情绪）</summary>
+<summary>点击展开其余 JSON 字段</summary>
 
-```text
-【场景：北京胡同口，午后，鸽哨声远远飘过】
-【角色A - 老李，地道京片子，五十来岁，慢悠悠】
-你干嘛呢？这玩意儿倍儿好吃，尝尝？
-【角色B - 小王，二十出头，语气冲】
-甭忽悠我了！你不儿道啊？蒙谁呢！
+```json
+{
+  "pronunciation_dict": {
+    "tone": ["倍儿/(bei4)(er2)", "甭/(beng2)", "忽悠/(hu1)(you0)"]
+  },
+  "voice_setting": { "voice_id": "YOUR_ID", "speed": 1.0 },
+  "audio_setting": { "sample_rate": 32000, "format": "mp3" }
+}
 ```
 </details>
 
-<details>
-<summary><b>Eleven v3 — IPA 国际音标 + 情绪标签</b></summary>
+**② Eleven v3（IPA 国际音标 + 情绪标签）**：
+> `[curious] 你干嘛呢？这玩意儿/pei⁵¹ ɚ⁵¹/好吃。[defiant] /pɤŋ³⁵/忽悠我了！`
 
-```
-[curious] 你干嘛呢？这玩意儿/pei⁵¹ ɚ⁵¹/好吃。
-[defiant] /pɤŋ³⁵/忽悠我了！
-```
-</details>
+**③ Seed Audio 1.0（角色对白脚本）**：
+> `【角色A - 老李，京片子，慢悠悠】你干嘛呢？【角色B - 小王，语气冲】甭忽悠我了！`
 
 ---
 
