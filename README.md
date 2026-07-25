@@ -10,8 +10,9 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.0.0-blue?style=flat-square" alt="version">
-<img src="https://img.shields.io/badge/词条总数-200,000+-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/version-v2.0.1-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/活跃词条-218,500+-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/归档词条-83,400+-yellowgreen?style=flat-square" alt="archived">
 <img src="https://img.shields.io/badge/方言组-9种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/方言变体-21种-success?style=flat-square" alt="variants">
 <img src="https://img.shields.io/badge/TTS引擎-VoxCPM-red?style=flat-square" alt="tts">
@@ -47,7 +48,7 @@
 <td width="50%" valign="top">
 
 ### 📚 海量词库
-**200,000+ 条**词条覆盖 160+ 场景分类，从日常饮食到军事科技，每种方言均含独立语音学标注。
+**218,500+ 条**活跃词条覆盖 160+ 场景分类，另有 **83,400+ 条**归档词条（8 种待支持方言）以备后续使用，从日常饮食到军事科技，每种方言均含独立语音学标注。
 
 </td>
 <td width="50%" valign="top">
@@ -424,6 +425,8 @@ dialect-converter/
 本词典基于大规模语言模型 + 网络爬取 + 脚本批量生成，**非学术成果**。用字和注音可能存在偏差，仅供辅助创作参考。
 
 v2.0.0 重大变更：移除全部旧 TTS 模型适配（Seed Audio / MiniMax / Eleven / Mureka），方言从 29 种缩减为 VoxCPM 支持的 9 大方言组（含 21 种方言变体），输出格式统一为 VoxCPM Control Instruction + Target Text。
+
+v2.0.1 更新：Control Instruction 从英文改为中文自然语言（如：`四川方言，中老年女性，浓重口音，语速较快`）；修复四川话示例混入粤语的错误；简化输出格式。归档 8 种待支持方言词条至 `references/dialects_archive/`（共 83,482 条），以备后续 VoxCPM 扩展方言支持时启用。
 
 <br>
 
