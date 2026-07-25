@@ -223,8 +223,13 @@ dialect-converter/
 ├── TTS_MODEL_GUIDE.md                 # 6种TTS/Audio模型适配指南
 ├── generate_extra.py                  # Python 批量扩词条脚本
 ├── references/
-│   └── dialect_dictionary.md          # 28种方言词典（57481词条）
-└── outputs/
+│   └── dialects/                  # 29个方言词元文件（按需加载）
+    │   ├── INDEX.md
+    │   ├── 00_appendix.md
+    │   ├── 01_beijing.md
+    │   ├── 02_sichuan.md
+    │   ├── 03_yueyu.md
+    │   └── ... (29 种方言独立文件)└── outputs/
     └── model_formats/                 # 各模型方言输出样例
         ├── 四川_seed_audio.txt        #   Seed Audio 角色脚本
         ├── 四川_minimax_2.8.json      #   MiniMax 拼音注音
