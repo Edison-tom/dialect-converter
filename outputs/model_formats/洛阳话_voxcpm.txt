@@ -1,0 +1,50 @@
+# 洛阳话 — VoxCPM 适配文件
+
+> 方言组：河南话（分支） | 谱系：中原官话·洛嵩片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2)
+> 格式：Control Instruction + Target Text
+
+---
+
+## 默认 Control Instruction
+
+```
+A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality
+```
+
+## 完整输入示例
+
+```
+(A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality)短视频
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality)短视频",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("洛阳话_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 短视频 | 短视频 |
+| 直播 | 直播 |
+| 带货 | 带货 |
+| 打赏 | 打赏 |
+| 弹幕 | 弹幕 |
+
+---
+
+> 完整词条见 `references/dialects/25_luoyang.md`

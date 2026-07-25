@@ -1,0 +1,79 @@
+# 粤语 — VoxCPM 适配文件
+
+> 方言组：粤语 | 谱系：粤语·广府片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2)
+> 格式：Control Instruction + Target Text
+
+---
+
+## 默认 Control Instruction
+
+```
+A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery
+```
+
+## 完整输入示例
+
+```
+(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("粤语_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 词汇注释
+
+乜嘢=什么；好鬼=非常；唔=不；咩=吗；呃=骗
+
+## CLI 调用
+
+```bash
+voxcpm design \
+  --text "(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。" \
+  --output 粤语_voxcpm.wav
+```
+
+## 情绪变体示例
+
+### 轻松日常
+```
+(A young Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery, casual and relaxed tone)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。
+```
+
+### 激动语气
+```
+(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery, excited and loud tone, fast pace)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。
+```
+
+### 慢速低沉
+```
+(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery, slow and deep tone)你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 脸 | 面 |
+| 眼睛 | 眼 |
+| 鼻子 | 鼻哥 |
+| 嘴巴 | 嘴 / 口 |
+| 耳朵 | 耳仔 |
+
+---
+
+> 完整词条见 `references/dialects/03_yueyu.md`

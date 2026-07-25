@@ -1,0 +1,79 @@
+# 上海话 — VoxCPM 适配文件
+
+> 方言组：吴语 | 谱系：吴语·太湖片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2)
+> 格式：Control Instruction + Target Text
+
+---
+
+## 默认 Control Instruction
+
+```
+A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones
+```
+
+## 完整输入示例
+
+```
+(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("上海_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 词汇注释
+
+侬=你；勒=在；搿=这；物事=东西；蛮=很；切=吃；覅=不要
+
+## CLI 调用
+
+```bash
+voxcpm design \
+  --text "(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。" \
+  --output 上海_voxcpm.wav
+```
+
+## 情绪变体示例
+
+### 轻松日常
+```
+(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, casual and relaxed tone)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+```
+
+### 激动语气
+```
+(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, excited and loud tone, fast pace)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+```
+
+### 慢速低沉
+```
+(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones, slow and deep tone)侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 脸 | 面孔 |
+| 眼睛 | 眼乌珠 |
+| 鼻子 | 鼻头 |
+| 嘴巴 | 嘴巴 |
+| 耳朵 | 耳朵 |
+
+---
+
+> 完整词条见 `references/dialects/05_shanghai.md`

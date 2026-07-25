@@ -2,25 +2,25 @@
 
 # 🎙️ Dialect Converter
 
-### 中国方言对白转换器
+### 中国方言对白转换器 · VoxCPM Edition
 
 <p>
-  <em>普通话 → 29 种重口音方言表述 · 适配 6 种主流 TTS/Audio 大模型</em>
+  <em>普通话 → 9 大方言重口音表述 · 适配 VoxCPM 本地语音合成模型</em>
 </p>
 
 ---
 
-<img src="https://img.shields.io/badge/version-v1.2.0-blue?style=flat-square" alt="version">
-<img src="https://img.shields.io/badge/词条总数-302,018-brightgreen?style=flat-square" alt="entries">
-<img src="https://img.shields.io/badge/方言-29种-orange?style=flat-square" alt="dialects">
-<img src="https://img.shields.io/badge/TTS模型-6种-success?style=flat-square" alt="tts">
+<img src="https://img.shields.io/badge/version-v2.0.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/词条总数-200,000+-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/方言组-9种-orange?style=flat-square" alt="dialects">
+<img src="https://img.shields.io/badge/方言变体-21种-success?style=flat-square" alt="variants">
+<img src="https://img.shields.io/badge/TTS引擎-VoxCPM-red?style=flat-square" alt="tts">
 <img src="https://img.shields.io/badge/场景分类-160+-yellow?style=flat-square" alt="categories">
-<img src="https://img.shields.io/badge/license-MIT-purple?style=flat-square" alt="license">
-<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-teal?style=flat-square" alt="platform">
+<img src="https://img.shields.io/badge/license-Apache--2.0-purple?style=flat-square" alt="license">
 
 <br>
 
-**每种方言附带完整语音学标注 · 分类词表 · 用法示例**
+**每次转换输出 Control Instruction + Target Text，可直接送入 VoxCPM 生成方言语音**
 
 </div>
 
@@ -33,13 +33,13 @@
 <td width="50%" valign="top">
 
 ### 🗣️ 方言转译
-将普通话对白转换为 **29 种**中国方言的重口音表述，涵盖官话、吴语、粤语、闽南语、客家话等主要方言区。
+将普通话对白转换为 **9 大方言**（含地方分支共 21 种）的重口音表述，覆盖西南官话、粤语、吴语、东北官话、中原官话、冀鲁/胶辽官话、闽语等主要方言区。
 
 </td>
 <td width="50%" valign="top">
 
-### 🔊 TTS 适配
-同一方言对白可输出 **6 种**主流 TTS 模型格式：Seed Audio · MiniMax 2.8 · Eleven v3 · Eleven Music · Mureka v8 等。
+### 🔊 VoxCPM 语音适配
+每次转换自动生成 **Control Instruction**（声音控制指令）+ **Target Text**（方言目标文本），直接送入 VoxCPM `model.generate()` 即可合成 48kHz 工作室级方言语音。
 
 </td>
 </tr>
@@ -47,7 +47,7 @@
 <td width="50%" valign="top">
 
 ### 📚 海量词库
-**302,018 条**词条覆盖 160+ 场景分类，从日常饮食到军事科技，每种方言均含独立语音学标注。
+**200,000+ 条**词条覆盖 160+ 场景分类，从日常饮食到军事科技，每种方言均含独立语音学标注。
 
 </td>
 <td width="50%" valign="top">
@@ -63,59 +63,61 @@
 
 ## 🎬 快速预览
 
-> 同一段普通话，6 种方言的纯文本转译效果：
+> 同一段普通话，9 种方言的转译效果 + VoxCPM Control Instruction：
+
+<details>
+<summary><b>点击查看方言转译示例</b></summary>
+
+<br>
 
 ```
 普通话  →  你在干什么？这个东西很好吃。你不知道吗？别骗我了。
 
-北京话  →  你干嘛呢？这玩意儿倍儿好吃。你不儿道啊？甭忽悠我了。
 四川话  →  你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。
 粤  语  →  你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。
-东北话  →  你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
-湖北话  →  你在搞么斯咧？这个东西蛮好七。你不晓得？莫哄我。
 上海话  →  侬勒做啥？搿只物事蛮好切额。侬勿晓得啊？覅骗吾了。
+东北话  →  你嘎哈呢？这玩意儿嘎嘎好吃。你不知道啊？别忽悠我了。
+河南话  →  你弄啥嘞？这东西可中可好吃。你不知情哩？白搁这儿骗我。
+陕西话  →  你弄啥哩？这东西嫽滴很。你不得知道？包哄我。
+山东话  →  你干啥呢？这玩意儿杠好吃。你不知道啊？别忽悠俺了。
+天津话  →  你干嘛呢？介玩意儿倍儿好吃。你不儿道啊？甭忽悠我了。
+闽南话  →  汝咧做啥物？这物事诚好食。汝毋知影？莫骗我。
 ```
 
+</details>
+
 <details>
-<summary><b>🔊 同一段方言对白的 6 种 TTS 模型输出格式</b></summary>
+<summary><b>🔊 VoxCPM 输出格式示例（四川话）</b></summary>
 
 <br>
 
-**① Seed Audio 1.0** — 角色脚本（场景 + 口音 + 情绪描述）
-```text
-【角色A - 老李，京片子，慢悠悠】你干嘛呢？这玩意儿倍儿好吃。
-【角色B - 小王，语气冲】甭忽悠我了！你不儿道啊？
+**完整 VoxCPM 输入** — Control Instruction 置于 Target Text 前，用括号包裹：
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+# Control Instruction + Target Text
+wav = model.generate(
+    text="(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, "
+         "with Chengdu accent, trailing particles like 'o' and 'sa')"
+         "你在搞爪子？这个硬是好吃得很。你不晓得嗦？莫日弄老子哈。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("sichuan.wav", wav, model.tts_model.sample_rate)
 ```
 
-**② MiniMax 2.8 HD** — JSON（汉字 + 拼音数字调 + 语气标签）
-```json
-{
-  "text": "你干嘛呢？(breath) 这玩意儿倍儿好吃。#0.8# 你不儿道啊？(sighs) 甭忽悠我了。#1.0#",
-  "pronunciation_dict": { "tone": ["倍儿/(bei4)(er2)", "甭/(beng2)", "忽悠/(hu1)(you0)"] }
-}
-```
+**输出结构拆解**：
 
-**③ Eleven v3** — TXT（IPA 国际音标 + 情绪标签）
-```text
-[curious] 你干嘛呢？这玩意儿/pei⁵¹ ɚ⁵¹/好吃。
-[defiant] /pɤŋ³⁵/忽悠我了！
-```
-
-**④ Eleven Music v3** — 方言歌词 + 风格 Prompt
-```text
-你干嘛呢甭忽悠我 / 倍儿好吃你得信我 / 不儿道啊不儿道 / 胡同口儿见分晓
-风格: 北京方言说唱，男声，痞气京片子，快板节奏，三弦+电子鼓
-```
-
-**⑤ Mureka v8** — 结构化歌词 JSON
-```json
-{
-  "lyrics": "[Verse] 你干嘛呢甭忽悠我 / [Chorus] 倍儿好吃倍儿好吃 / [Outro] 走喽回见了您嘞",
-  "prompt": "北京方言民谣，男声，京韵大鼓风格，中速，三弦+吉他"
-}
-```
-
-**⑥ MiniMax 2.8 Turbo** — JSON（同 ② 格式，无语气标签）
+| 部分 | 内容 | 说明 |
+|------|------|------|
+| **Control Instruction** | `(A middle-aged Sichuan male, relaxed and lazy tone, ...)` | 声音控制指令，括号内自然语言描述 |
+| **Target Text** | `你在搞爪子？这个硬是好吃得很。...` | 方言目标文本 |
+| **完整输入** | `(Control Instruction)Target Text` | 拼接后送入 `text` 参数 |
 
 </details>
 
@@ -132,135 +134,110 @@
 | <b>ChatGPT</b> | Custom GPTs | 上传为 Knowledge Base |
 | <b>DeepSeek / Kimi / 通义千问</b> | 长上下文 | 直接上传词典文件 |
 
-> 💡 **核心原理**：所有 Agent 均支持在上下文中注入外部文件。将 `references/dialects/` 下的方言词元文件作为参考文件附加给对话，AI 自动按词条转换。
+> 💡 **核心原理**：所有 Agent 均支持在上下文中注入外部文件。将 `references/dialects/` 下的方言词元文件作为参考文件附加给对话，AI 自动按词条转换并生成 VoxCPM 格式输出。
 
 <br>
 
-## 🔊 TTS/Audio 模型适配
+## 🔊 VoxCPM 语音模型
 
-| # | 模型 | 输出格式 | 注音方案 | 适用方言 |
-|:---:|------|---------|---------|---------|
-| 1 | **Seed Audio 1.0** | 角色脚本（场景 + 对白） | 无（角色口音引导） | 官话方言 |
-| 2 | **MiniMax 2.8 HD** | JSON（汉字 + 拼音数字调） | `(zhua3)(zi0)` | 官话 + 粤语 |
-| 3 | **MiniMax 2.8 Turbo** | JSON（同上，无语气标签） | 同上 | 同上 |
-| 4 | **Eleven v3** | TXT（IPA 音标 + 情绪标签） | `/tʂu̯a²¹⁴ tsɹ̩⁰/` | 所有方言 |
-| 5 | **Eleven Music v3** | TXT（歌词 + 风格 Prompt） | 无 | 方言歌曲 |
-| 6 | **Mureka v8** | JSON（歌词 + 风格 Prompt） | 无 | 方言歌曲 |
+### 模型简介
 
-<details>
-<summary><b>📋 各模型输出格式完整示例（点击展开）</b></summary>
+[VoxCPM](https://github.com/OpenBMB/VoxCPM) 是 OpenBMB 开源的高质量多语言 TTS 模型：
 
-<br>
+| 特性 | 规格 |
+|------|------|
+| 模型参数 | 2B |
+| 训练数据 | 200 万+小时 |
+| 支持语言 | 30 种 + 9 种中文方言 |
+| 音频输出 | 48kHz（工作室级质量） |
+| VRAM 需求 | ~8 GB |
+| 架构 | Tokenizer-free, Diffusion Autoregressive |
+| 许可证 | Apache-2.0（可商用） |
 
-**Seed Audio 1.0 — 角色脚本**
-```text
-【场景：成都茶馆，市井氛围】
+### 输入格式
 
-【角色A - 老王，地道成都口音，懒散】
-你在搞爪子哦？
+VoxCPM 使用 **Control Instruction + Target Text** 格式，通过括号包裹的自然语言描述控制声音特征：
 
-【角色B - 老张，重庆腔，急性子】
-锤子！毛线！老子硬是不信。
 ```
-> 完整样例见 `outputs/model_formats/四川_seed_audio.txt`
-
----
-
-**MiniMax 2.8 HD — JSON + 拼音注音**
-```json
-{
-  "model": "speech-2.8-hd",
-  "text": "你在搞爪子哦？(breath) 这个东西硬是好吃得很。#0.8# 你不晓得嗦？(breath) 走撒去哆饭。#1.0# 硬是巴适得板哟",
-  "pronunciation_dict": {
-    "tone": ["爪子/(zhua3)(zi0)", "硬是/(ying4)(shi4)", "晓得/(xiao3)(de0)", "嗦/(so1)", "巴适/(ba1)(shi4)"]
-  },
-  "voice_setting": { "voice_id": "YOUR_VOICE_ID", "speed": 1.0 }
-}
+(Control Instruction)Target Text
 ```
-> 完整样例见 `outputs/model_formats/四川_minimax_2.8.json`
 
----
+| 模式 | 说明 | 示例 |
+|------|------|------|
+| **Voice Design** | 从描述创建全新声音，无需参考音频 | `(A young woman, gentle voice)要合成的文本` |
+| **Controllable Cloning** | 克隆已有声音 + 风格控制 | `(slightly faster, cheerful tone)要合成的文本` + `reference_wav_path` |
+| **纯 TTS** | 无控制指令，使用默认声音 | `要合成的文本` |
 
-**Eleven v3 — IPA 音标 + 情绪标签**
-```text
-[curious] 你在搞/tʂu̯a²¹⁴ tsɹ̩⁰/哦？
-[excited] 锤子！毛线！老子/iŋ⁵¹ ʂʅ⁵¹/不信。
-[casual] 走撒，去/duo⁵⁵/饭！/pa⁵⁵ ʂʅ⁵¹ tɤ⁵¹ pan²¹⁴/哟
+### Python 调用
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+# 方言语音生成
+wav = model.generate(
+    text="(A middle-aged Cantonese male, confident tone, with Guangzhou accent)"
+         "你做紧乜嘢啊？呢个好鬼好食㗎。你唔知咩？唔好呃我啦。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("cantonese.wav", wav, model.tts_model.sample_rate)
 ```
-> 完整样例见 `outputs/model_formats/四川_eleven_v3.txt`
 
----
+### CLI 调用
 
-**Mureka v8 — 歌词 JSON**
-```json
-{
-  "model": "mureka-8",
-  "lyrics": "[Verse]\n在搞爪子哦在搞爪子\n硬是巴适得板喽\n[Chorus]\n巴适得板哟安逸得板\n[Outro]\n走喽走喽，明天再来",
-  "prompt": "四川方言民谣，男声，痞气，中速，吉他+川剧锣鼓，火锅店氛围",
-  "n": 2
-}
+```bash
+# Voice Design
+voxcpm design \
+  --text "(A middle-aged Sichuan male, relaxed tone)你在搞爪子？这个硬是好吃得很。" \
+  --output sichuan.wav
+
+# 带风格控制
+voxcpm design \
+  --text "你在搞爪子？这个硬是好吃得很。" \
+  --control "A middle-aged Sichuan male, relaxed and lazy tone" \
+  --seed 42 --output sichuan.wav
 ```
-> 完整样例见 `outputs/model_formats/四川_mureka_v8.json`
-
-</details>
-
-> 📁 **全部适配文件**：`outputs/model_formats/` — 29 种方言 × 4 格式 = **116 个文件**
 
 <br>
 
 ## 📖 使用方法
 
-### 场景一：生成方言对白
+### 场景一：生成方言对白 + 语音提示词
 
 在任何 AI Agent 中附加方言词典文件后：
 
 ```text
-请参考附件方言词典，把下面这段话改成湖北话（增强层）：
+请参考附件方言词典，把下面这段话改成四川话（增强层）：
 "老板，这个多少钱？能不能便宜点？"
 ```
 
-Agent 自动检索对应方言词条，完成转换。
+Agent 自动输出：**Target Text**（方言文本）+ **Control Instruction**（VoxCPM 控制指令）。
 
-### 场景二：导出 TTS 模型格式
+### 场景二：直接送入 VoxCPM 生成语音
 
-```text
-把这段话改成四川话，输出 Seed Audio 角色脚本格式。
-把这段话改成粤语，输出 MiniMax 拼音注音 JSON。
+将 Skill 输出的 `完整输入` 复制到 VoxCPM 的 `text` 参数即可：
+
+```python
+text = "(A middle-aged Sichuan male, relaxed tone)老板，几多钱嘛？可唔可以平啲哦？"
+wav = model.generate(text=text, cfg_value=2.0, inference_timesteps=10, seed=42)
 ```
 
-### 场景三：直接使用示例文件
+### 场景三：使用示例文件
 
 ```bash
-# 查看所有模型方言输出样例
+# 查看 VoxCPM 格式的方言输出样例
 ls outputs/model_formats/
 
-# Seed Audio 角色脚本
-cat outputs/model_formats/四川_seed_audio.txt
+# 四川话 VoxCPM 格式
+cat outputs/model_formats/四川_voxcpm.txt
 
-# MiniMax 拼音注音 JSON
-cat outputs/model_formats/四川_minimax_2.8.json
-
-# Eleven v3 IPA 文本
-cat outputs/model_formats/四川_eleven_v3.txt
+# 粤语 VoxCPM 格式
+cat outputs/model_formats/粤语_voxcpm.txt
 ```
-
-### 场景四：按话题检索词条
-
-词典覆盖 160+ 场景，打开 `references/dialects/` 目录，按文件内分类标题搜索：
-
-| 搜索关键词 | 场景内容 | 词条量 |
-|-----------|---------|:------:|
-| `家居电器` | 冰箱/洗衣机/空调… | ~50 |
-| `职场办公` | 面试/打卡/年终奖… | ~50 |
-| `烹饪技法` | 炒/煎/蒸/炖/涮… | ~50 |
-| `传统文化` | 书法/国画/刺绣/陶艺… | ~50 |
-| `生物学` | 细胞/基因/疫苗/抗生素… | ~50 |
-| `心理学` | 人格/情绪/潜意识/抑郁症… | ~50 |
-| `军事武器` | 航母/核潜艇/战斗机/导弹… | ~50 |
-| `社会发展` | 改革/创新/扶贫/法治… | ~50 |
-| `建筑工程` | 地基/钢结构/消防通道… | ~50 |
-
-> 每个话题下所有 29 种方言的词条排列在一起，支持横向对比。
 
 <br>
 
@@ -276,75 +253,53 @@ cat outputs/model_formats/四川_eleven_v3.txt
 
 ## 🗺️ 支持的方言
 
-### 20 种主要方言
+### 9 大方言组 + 21 种方言变体
 
 <div align="center">
 
-| # | 方言 | 谱系 | 词条数 |
-|:--:|------|------|-------:|
-| 1 | 北京话 | 北京官话·京师片 | 12,595 |
-| 2 | 四川话 | 西南官话·成渝片 | 10,812 |
-| 3 | 粤语 | 粤语·广府片 | 10,552 |
-| 4 | 东北话 | 东北官话 | 10,468 |
-| 5 | 上海话 | 吴语·太湖片 | 10,362 |
-| 6 | 河南话 | 中原官话·郑开片 | 10,252 |
-| 7 | 陕西话 | 中原官话·关中片 | 9,669 |
-| 8 | 湖南话 | 湘语·长益片 | 12,328 |
-| 9 | 山东话 | 冀鲁/胶辽官话 | 9,670 |
-| 10 | 天津话 | 冀鲁官话·天津片 | 9,664 |
+| # | 方言组 | 谱系 | 地方分支 | VoxCPM |
+|:--:|------|------|---------|:------:|
+| 1 | **四川话** | 西南官话·成渝片 | 成都话、重庆话、自贡话、贵阳话、云南话、湖北话 | ✅ |
+| 2 | **粤语** | 粤语·广府片 | — | ✅ |
+| 3 | **吴语** | 吴语·太湖片/瓯江片 | 上海话、苏州话、温州话 | ✅ |
+| 4 | **东北话** | 东北官话 | — | ✅ |
+| 5 | **河南话** | 中原官话·郑开片 | 洛阳话、徐州话 | ✅ |
+| 6 | **陕西话** | 中原官话·关中片 | — | ✅ |
+| 7 | **山东话** | 冀鲁/胶辽官话 | 济南话、青岛话 | ✅ |
+| 8 | **天津话** | 冀鲁官话·天津片 | — | ✅ |
+| 9 | **闽南话** | 闽语·闽南片 | — | ✅ |
 
 </div>
-
-<details>
-<summary><b>展开全部 29 种方言列表（含 9 种次方言/扩增区）</b></summary>
-
-<div align="center">
-
-| # | 方言 | 谱系 | 词条数 |
-|:--:|------|------|-------:|
-| 11 | 闽南语 | 闽语·闽南片 | 14,332 |
-| 12 | 客家话 | 客语·粤台片 | 10,253 |
-| 13 | 赣语 | 赣语·昌靖片 | 10,223 |
-| 14 | 晋语 | 晋语·并州片 | 10,238 |
-| 15 | 云南话 | 西南官话·滇中片 | 9,683 |
-| 16 | 湖北话 | 西南官话·武天片 | 12,509 |
-| 17 | 贵阳话 | 西南官话·黔中片 | 10,254 |
-| 18 | 徐州话 | 中原官话·徐淮片 | 10,235 |
-| 19 | 自贡话 | 西南官话·仁富片 | 10,253 |
-| 20 | 苏州话 | 吴语·太湖片 | 10,235 |
-| 21 | 成都话 | 西南官话·成渝片 | 9,496 |
-| 22 | 重庆话 | 西南官话·成渝片 | 9,494 |
-| 23 | 济南话 | 冀鲁官话 | 9,499 |
-| 24 | 青岛话 | 胶辽官话 | 9,501 |
-| 25 | 洛阳话 | 中原官话·洛嵩片 | 9,495 |
-| 26 | 南京话 | 江淮官话·洪巢片 | 9,287 |
-| 27 | 温州话 | 吴语·瓯江片 | 9,282 |
-| 28 | 福州话 | 闽语·闽东片 | 9,276 |
-| 29 | 兰州话 | 兰银官话·金城片 | 9,282 |
-
-</div>
-
-</details>
 
 > 📝 每种方言附带声调系统、入声演变、韵母特征、语法特点、示例转换等完整语言学标注。
 
-<br>
+<details>
+<summary><b>展开各方言 Control Instruction 默认参考</b></summary>
 
-## 🔡 注音方案对照
+| 方言 | 默认 Control Instruction |
+|------|--------------------------|
+| **四川话** | `A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles like "o" and "sa"` |
+| **粤语** | `A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery` |
+| **吴语（上海话）** | `A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones` |
+| **东北话** | `A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery` |
+| **河南话** | `A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality` |
+| **陕西话** | `A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones` |
+| **山东话** | `A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery` |
+| **天津话** | `A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation` |
+| **闽南话** | `A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones` |
 
-| 注音类型 | 适用方言 | 示例 | 适用模型 |
-|---------|---------|------|---------|
-| 无注音（纯汉字） | 所有方言 | 你在搞爪子？ | Seed Audio |
-| 拼音数字调 | 官话方言 | `zhua3 zi0` | MiniMax 2.8 |
-| 粤拼 (Jyutping) | 粤语 | `mat1 je5` | MiniMax 2.8 |
-| IPA 国际音标 | 所有方言 | `/tʂu̯a²¹⁴ tsɹ̩⁰/` | Eleven v3 |
+</details>
 
 <br>
 
 ## 📦 安装
 
 <details>
-<summary><b>macOS</b></summary>
+<summary><b>安装方言转换器</b></summary>
+
+<br>
+
+**macOS:**
 
 ```bash
 # 克隆仓库
@@ -360,25 +315,55 @@ cp dialect-converter/references/dialects/ 你的项目目录/
 mkdir -p 你的项目目录/.cursor/references
 cp dialect-converter/references/dialects/ 你的项目目录/.cursor/references/
 ```
-</details>
 
-<details>
-<summary><b>Windows</b></summary>
+**Windows:**
 
 ```powershell
 # 克隆仓库
 git clone https://github.com/Edison-tom/dialect-converter.git
 
-# WorkBuddy 用户 — 直接安装为 Skill
+# WorkBuddy 用户
 xcopy /E /I dialect-converter %USERPROFILE%\.workbuddy\skills\dialect-converter
-
-# Claude Code 用户 — 放入项目引用
-xcopy /E /I dialect-converter\references\dialects 你的项目目录\
-
-# Cursor 用户 — 放入 .cursor 目录
-mkdir 你的项目目录\.cursor\references
-xcopy /E /I dialect-converter\references\dialects 你的项目目录\.cursor\references\
 ```
+</details>
+
+<details>
+<summary><b>安装 VoxCPM 语音模型</b></summary>
+
+<br>
+
+**方式一：pip 安装**
+
+```bash
+pip install voxcpm
+```
+
+**方式二：从源码安装**
+
+```bash
+git clone https://github.com/OpenBMB/VoxCPM.git
+cd VoxCPM
+pip install -e .
+```
+
+**方式三：从 ModelScope 下载**
+
+```python
+from modelscope import snapshot_download
+snapshot_download("OpenBMB/VoxCPM2", local_dir='./pretrained_models/VoxCPM2')
+```
+
+**快速验证：**
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+wav = model.generate(text="欢迎使用方言转换器。", cfg_value=2.0, inference_timesteps=10, seed=42)
+sf.write("test.wav", wav, model.tts_model.sample_rate)
+```
+
 </details>
 
 <br>
@@ -389,35 +374,47 @@ xcopy /E /I dialect-converter\references\dialects 你的项目目录\.cursor\ref
 dialect-converter/
 │
 ├── 📄 README.md                        # 本文件
-├── 📄 SKILL.md                         # 技能定义（含三级转换策略）
-├── 📄 TTS_MODEL_GUIDE.md               # 6种TTS/Audio模型适配指南
+├── 📄 SKILL.md                         # 技能定义（含三级转换策略 + VoxCPM 格式）
+├── 📄 TTS_MODEL_GUIDE.md               # VoxCPM 模型适配指南
 │
 ├── 🐍 expand_entries.py                # 大规模词条扩充脚本
 ├── 🐍 regen_model_formats.py           # 模型适配文件重新生成脚本
-├── 🐍 generate_extra.py               # 批量扩词条脚本
 │
 ├── 📂 references/
-│   └── 📂 dialects/                    # 29个方言词元文件（按需加载）
+│   └── 📂 dialects/                    # 9 大方言 + 12 地方分支词元文件
 │       ├── INDEX.md                    #   方言索引
 │       ├── 00_appendix.md             #   附录
-│       ├── 01_beijing.md              #   北京话
-│       ├── 02_sichuan.md             #   四川话
-│       └── ...                        #   (29种方言独立文件)
+│       ├── 02_sichuan.md              #   四川话（含成都/重庆/自贡等分支）
+│       ├── 03_yueyu.md               #   粤语
+│       ├── 04_dongbei.md            #   东北话
+│       ├── 05_shanghai.md           #   上海话（吴语）
+│       ├── 06_henan.md              #   河南话
+│       ├── 07_shaanxi.md            #   陕西话
+│       ├── 09_shandong.md           #   山东话
+│       ├── 10_tianjin.md            #   天津话
+│       ├── 11_minnan.md             #   闽南语
+│       └── ...                      #   (地方分支文件)
 │
 └── 📂 outputs/
-    └── 📂 model_formats/               # 各模型方言输出样例
-        ├── *_seed_audio.txt           #   Seed Audio 角色脚本
-        ├── *_minimax_2.8.json         #   MiniMax 拼音注音
-        ├── *_eleven_v3.txt            #   Eleven IPA 音标
-        ├── *_mureka_v8.json          #   Mureka 歌词
-        └── ...                        #   (29方言 × 4格式 = 116文件)
+    └── 📂 model_formats/               # VoxCPM 方言输出样例
+        ├── 四川_voxcpm.txt             #   四川话 Control Instruction + Target Text
+        ├── 粤语_voxcpm.txt             #   粤语
+        ├── 上海_voxcpm.txt             #   上海话（吴语）
+        ├── 东北_voxcpm.txt             #   东北话
+        ├── 河南_voxcpm.txt             #   河南话
+        ├── 陕西_voxcpm.txt             #   陕西话
+        ├── 山东_voxcpm.txt             #   山东话
+        ├── 天津_voxcpm.txt             #   天津话
+        └── 闽南_voxcpm.txt             #   闽南话
 ```
 
 <br>
 
 ## ⚠️ 技术说明
 
-本词典基于大规模语言模型 + 网络爬取 + 脚本批量生成，**非学术成果**。用字和注音可能存在偏差，仅供辅助创作参考。如需语言学级精度，请参考各方言学术文献。
+本词典基于大规模语言模型 + 网络爬取 + 脚本批量生成，**非学术成果**。用字和注音可能存在偏差，仅供辅助创作参考。
+
+v2.0.0 重大变更：移除全部旧 TTS 模型适配（Seed Audio / MiniMax / Eleven / Mureka），方言从 29 种缩减为 VoxCPM 支持的 9 大方言组（含 21 种方言变体），输出格式统一为 VoxCPM Control Instruction + Target Text。
 
 <br>
 
@@ -426,6 +423,8 @@ dialect-converter/
 <div align="center">
 
 <sub>📦 仓库地址：https://github.com/Edison-tom/dialect-converter</sub>
+
+<sub>🔊 语音模型：https://github.com/OpenBMB/VoxCPM</sub>
 
 <sub>© 2025-2026 Dialect Converter · Made with ❤️ for Chinese dialect preservation</sub>
 

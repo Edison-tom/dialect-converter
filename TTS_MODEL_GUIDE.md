@@ -1,266 +1,297 @@
-# 方言对白 TTS/Audio 模型适配写法指南
+# VoxCPM 方言语音合成适配指南
 
-> 针对 6 种模型的方言输入最优格式。每种模型对拼音/注音/语气标签的要求不同。
-
----
-
-## 1. Seed Audio 1.0（豆包 Seed 音频）
-
-### 模型特点
-- 不是传统 TTS，是**提示词驱动的全场景音频生成**
-- 输入：自然语言"脚本"，支持多角色对白 + 情绪描述 + 音效
-- **不支持 SSML，不支持音标/拼音**
-- 支持中文，但**官方声明"纯方言不支持"**，需要通过角色口音描述来引导
-
-### 最优写法：角色脚本模式
-
-```
-【场景：四川茶馆，嘈杂背景声】
-【角色A - 中年男人，重庆口音，语气急躁】
-搞爪子嘛！等了半天了，快点撒！
-【角色A 对角色B 喊，声音提高】
-喂，老板，再来一碗茶！
-【角色B - 老茶客，慢悠悠的成都腔】
-急啥子嘛，来喽来喽。今天这个茶，巴适得板哟。
-【角色A 语气转和缓】
-要得嘛。你慢慢来，莫搞洒了哈。
-```
-
-### 关键技术
-- 用 `【角色】` 加 `口音/腔调` 描述来引导方言发音
-- 文本本身直接用方言字（汉字），模型通过上下文理解发音
-- 情绪描述增强自然度：`[语气急躁]`、`[慢悠悠]`
-- 单次最多 1500-3000 字符
+> Dialect Converter v2.0.0 — 全面切换至 VoxCPM 本地语音模型
 
 ---
 
-## 2. MiniMax speech-2.8-hd / speech-2.8-turbo
+## 1. VoxCPM 模型简介
 
-### 模型特点
-- **正宗 TTS 模型**，支持 40 种语言包括**粤语（Cantonese）**
-- 支持**拼音注音** `pronunciation_dict` + 声调数字
-- 支持**语气词标签**：(laughs)(sighs)(coughs)(breath)(emm) 等 19 种
-- 支持**自定义停顿**：`#1.5#` = 停顿 1.5 秒
-- `language_boost: "auto"` 自动识别语言
+[VoxCPM](https://github.com/OpenBMB/VoxCPM) 是 OpenBMB 开源的高质量多语言 TTS 模型，支持 30 种语言 + 9 种中文方言。
 
-### 最优写法：拼音注音 + 语气标签 模式
+| 特性 | 规格 |
+|------|------|
+| 模型参数 | 2B |
+| 骨干网络 | MiniCPM-4 |
+| 训练数据 | 200 万+小时 |
+| 支持语言 | 30 种 + 9 种中文方言 |
+| 音频输出 | 48kHz 工作室级质量 |
+| VRAM 需求 | ~8 GB |
+| 架构 | Tokenizer-free, Diffusion Autoregressive |
+| 流水线 | LocEnc → TSLM → RALM → LocDiT |
+| 许可证 | Apache-2.0（可商用） |
+| RTF | ~0.3 (RTX 4090, PyTorch) / ~0.13 (Nano-vLLM) |
 
-#### 方案 A（官话方言）：拼音注音
+### 支持的 9 种中文方言
 
-```json
-{
-  "model": "speech-2.8-hd",
-  "text": "你在搞爪子？(breath) 这个硬是好吃得很嘛。#1.0# 你不晓得嗦？(sighs) 莫日弄老子了哈。",
-  "language_boost": "zh",
-  "pronunciation_dict": {
-    "tone": [
-      "爪子/(zhua3)(zi0)",
-      "硬是/(ying4)(shi4)",
-      "晓得/(xiao3)(de0)",
-      "嗦/(so1)",
-      "日弄/(ri4)(nong4)"
-    ]
-  }
-}
-```
-
-#### 方案 B（粤语）：拼音注音 + 语言标记
-
-```json
-{
-  "model": "speech-2.8-hd",
-  "text": "你做紧乜嘢啊？#1.0# 呢个好鬼好食㗎。(laughs) 你唔知咩？唔好呃我啦。",
-  "language_boost": "yue",
-  "pronunciation_dict": {
-    "tone": [
-      "乜嘢/(mat1)(je5)",
-      "好食/(hou2)(sik6)",
-      "㗎/(gaa3)",
-      "咩/(me1)",
-      "呃/(aak1)"
-    ]
-  }
-}
-```
-
-#### 方案 C（其他方言）：纯文本 + 音效标签
-
-对于 MiniMax 不支持的其他方言（如四川话、东北话），直接使用汉字文本 + 语气标签：
-
-```
-你嘎哈呢？(breath) 这玩意儿嘎嘎好吃。#0.8# 你不知道啊？别忽悠我了。(sighs) 咱整点饭去呗。
-```
-
-### 关键技术
-- **拼音必须带数字声调**：`(cao3)(di1)` 格式
-- **粤语用粤拼数字**：`(mat1)(je5)` 
-- 语气标签增强自然度
-- `#x#` 控制停顿节奏
-- **HD 模型支持语气标签，Turbo 模型部分支持**
+| # | 方言 | 本项目对应词元文件 |
+|:--:|------|------------------|
+| 1 | 四川话 | `02_sichuan.md` + 成都/重庆/自贡/贵阳/云南/湖北分支 |
+| 2 | 粤语 | `03_yueyu.md` |
+| 3 | 吴语 | `05_shanghai.md` + 苏州/温州分支 |
+| 4 | 东北话 | `04_dongbei.md` |
+| 5 | 河南话 | `06_henan.md` + 洛阳/徐州分支 |
+| 6 | 陕西话 | `07_shaanxi.md` |
+| 7 | 山东话 | `09_shandong.md` + 济南/青岛分支 |
+| 8 | 天津话 | `10_tianjin.md` |
+| 9 | 闽南话 | `11_minnan.md` |
 
 ---
 
-## 3. ElevenLabs v3（eleven_v3）
+## 2. 安装
 
-### 模型特点
-- **原生 IPA 音标支持**：`/IPA_transcription/` 语法
-- 70+ 语言，中文标记为 `cmn` (Mandarin Chinese)
-- **不支持 SSML**（不同于 v2）
-- 音频标签：`[curious]` `[sad]` `[chuckles]` `[whispers]` `[slowly]` 等
-- 停顿：换行（自然停顿）、破折号`—`（短停顿）、省略号`…`（犹豫）
-- IPA 准确率 80-90%
+### pip 安装
 
-### 最优写法：IPA 音标注音 + 情绪标签 模式
-
-#### 官话方言（四川话例）
-
-```
-[slowly] 你在搞爪子？
-这个硬是好/tɕʰi/得很嘛…
-你不/ɕjɑʊ³⁵/得嗦？莫/ʐɻ̩⁵¹/弄老子了哈。
-
-[sad] 今天这个/tiɛn⁵¹/气，/ʂʅ⁵¹/在是/pa⁵¹/适。
+```bash
+pip install voxcpm
 ```
 
-#### 粤语例
+### 从源码安装
 
+```bash
+git clone https://github.com/OpenBMB/VoxCPM.git
+cd VoxCPM
+pip install -e .
 ```
-你/tsoʊ³³/紧/mɐt⁵⁵/嘢啊？
-[chuckles] 呢个/hou³⁵/鬼/hou³⁵/食㗎。
 
-你/m̩²¹/tʃi⁵⁵/咩？/m̩²¹/hou³⁵//aːk⁵⁵/我啦。
-```
-
-#### 实际使用建议
+### 从 ModelScope 下载
 
 ```python
-from elevenlabs import ElevenLabs
+from modelscope import snapshot_download
+snapshot_download("OpenBMB/VoxCPM2", local_dir='./pretrained_models/VoxCPM2')
+```
 
-client = ElevenLabs()
-audio = client.text_to_speech.convert(
-    voice_id="YOUR_VOICE_ID",
-    text="""
-[excited] /ni²¹⁴/在/kaʊ̯²¹⁴//ʈʂua²¹⁴//tsɿ²¹⁴/？
-这个/jiŋ⁵¹ ʂʅ⁵¹//xaʊ̯²¹⁴//tʂʰʅ⁵⁵/得很嘛。
+### CLI 工具
 
-[whispers] 你/pa⁵¹//pu⁵¹//ɕjɑʊ²¹⁴/得嗦？
-"""
-,
-    model_id="eleven_v3",
+```bash
+# 安装后可直接使用
+voxcpm design --text "测试文本" --output test.wav
+```
+
+---
+
+## 3. 输入格式：Control Instruction + Target Text
+
+VoxCPM 的核心输入格式非常简洁：
+
+```
+(Control Instruction)Target Text
+```
+
+- **Control Instruction**：放在括号 `()` 内的自然语言声音描述，控制性别、年龄、口音、语速、情绪等
+- **Target Text**：紧随括号之后的实际要合成的文本（方言文本）
+
+> 模型会自动从文本推断语言/方言，**无需指定语言标签**。
+
+### 三种生成模式
+
+| 模式 | 输入 | 所需参数 | 特点 |
+|------|------|---------|------|
+| **纯 TTS** | `Target Text` | `text` | 无控制指令，使用默认声音 |
+| **Voice Design** | `(描述)Target Text` | `text` | 从描述创建全新声音，无需参考音频 |
+| **Controllable Cloning** | `(控制)Target Text` + 参考音频 | `text` + `reference_wav_path` | 克隆音色 + 风格控制 |
+
+---
+
+## 4. Python API 用法
+
+### 4.1 基础方言语音生成
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+# 四川话 — Voice Design 模式
+wav = model.generate(
+    text="(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, "
+         "with Chengdu accent, trailing particles)"
+         "你在搞爪子？这个硬是好吃得很。你不晓得嗦？",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("sichuan.wav", wav, model.tts_model.sample_rate)
+```
+
+### 4.2 参数说明
+
+| 参数 | 类型 | 说明 | 推荐值 |
+|------|------|------|--------|
+| `text` | str | Control Instruction + Target Text | — |
+| `reference_wav_path` | str | 参考音频路径（声音克隆） | 可选 |
+| `prompt_wav_path` | str | 提示音频路径（极致克隆） | 可选 |
+| `prompt_text` | str | 提示音频的精确转录文本 | 极致克隆必需 |
+| `cfg_value` | float | CFG 引导强度 | 2.0 |
+| `inference_timesteps` | int | 推理步数 | 10 |
+| `seed` | int | 随机种子（可复现） | 42 |
+
+### 4.3 声音克隆 + 方言控制
+
+```python
+# 使用参考音频克隆音色 + 方言风格控制
+wav = model.generate(
+    text="(slightly faster, cheerful tone)你在搞爪子？这个硬是好吃得很。",
+    reference_wav_path="path/to/dialect_voice.wav",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
 )
 ```
 
-### 关键技术
-- **IPA 用 `/` 包裹**：`/maʊ̯²¹⁴/`
-- 声调用 IPA 调值数字标记（非拼音数字）
-- 情绪标签 `[bracket]` 格式
-- 换行 = 自然停顿，`…` = 犹豫
-- **方言字直接写汉字，重点词用 IPA 精准控制发音**
+### 4.4 流式生成
 
----
+```python
+import numpy as np
 
-## 4. Eleven Music v3（eleven_music_v3）
-
-### 模型特点
-- **AI 音乐生成模型**，不是语音合成
-- 输入：歌词 + 风格描述
-- 支持多语言歌词
-
-### 最优写法：歌词 + 风格 Prompt 模式
-
-```
-# 风格描述（中文 Prompt）
-一首四川方言民谣，男声，慢板，吉他伴奏，市井气息，带川剧元素
-
-# 歌词（方言 + 段落标签）
-[Verse 1]
-走嘛走嘛，去哆饭撒，
-今天的海椒硬是香得很。
-[Chorus 1]
-巴适得板哟，安逸得板，
-这个味道，莫得哪个比得上。
-[Verse 2]
-摆龙门阵摆到天黑，
-茶馆头的日子慢悠悠。
-[Chorus 2]
-巴适得板哟，安逸得板，
-一辈子就这样，莫得啥子遗憾。
+chunks = []
+for chunk in model.generate_streaming(
+    text="(A middle-aged Cantonese male, confident tone)"
+         "你做紧乜嘢啊？呢个好鬼好食㗎。",
+):
+    chunks.append(chunk)
+wav = np.concatenate(chunks)
+sf.write("cantonese.wav", wav, model.tts_model.sample_rate)
 ```
 
-### 关键技术
-- 风格 Prompt 用普通话/英文描述
-- 歌词写方言汉字
-- 段落标签 `[Verse]` `[Chorus]` `[Bridge]` `[Intro]` `[Outro]`
-- 目标是"歌唱"而非"朗读"，语音模型应选 Eleven v3 TTS
-
 ---
 
-## 5. Mureka v8
+## 5. CLI 用法
 
-### 模型特点
-- 昆仑万维 AI 音乐模型
-- 输入：`lyrics`（歌词，3000 字符）+ `prompt`（风格，1024 字符）
-- 模型版本：`mureka-8` 最新
-- 支持参考歌曲 + 自定义歌手
-- **纯音乐生成，不适合朗读对白**
+### Voice Design
 
-### 最优写法：结构化歌词 + 风格 Prompt 模式
-
-```json
-{
-  "model": "mureka-8",
-  "lyrics": "[Intro]\n(川剧锣鼓声渐起)\n\n[Verse]\n清早起来嗦碗面，\n海椒放多莫放盐。\n隔壁老王又在喊，\n搞快点儿嘛，要迟到了喃。\n\n[Chorus]\n四川人，四川魂，\n巴适得板就是我们的命。\n管他啥子锤子事，\n今天硬是要雄起才行。\n\n[Bridge]\n哦豁，又说远了，\n摆龙门阵就是安逸。\n\n[Outro]\n走喽走喽，明天再来。",
-  "prompt": "四川方言说唱，川剧元素融合现代trap，男声，痞气，市井，火锅店氛围，唢呐采样",
-  "n": 2
-}
+```bash
+voxcpm design \
+  --text "(A middle-aged Sichuan male, relaxed tone)你在搞爪子？这个硬是好吃得很。" \
+  --output sichuan.wav
 ```
 
-### 关键技术
-- **歌词 = 方言汉字 + 段落标签**
-- 风格 Prompt = 普通话/英文描述（流派/情绪/乐器/人声特质）
-- 不支持音标/拼音
-- 段落标签：`[Intro]` `[Verse]` `[Chorus]` `[Bridge]` `[Outro]`
-- **Mureka 是做歌的，不能用来说对白**
+### 带风格控制
+
+```bash
+voxcpm design \
+  --text "你在搞爪子？这个硬是好吃得很。" \
+  --control "A middle-aged Sichuan male, relaxed and lazy tone" \
+  --seed 42 \
+  --output sichuan.wav
+```
+
+### 声音克隆
+
+```bash
+voxcpm clone \
+  --text "你在搞爪子？这个硬是好吃得很。" \
+  --reference-audio path/to/voice.wav \
+  --output sichuan.wav
+```
+
+### 批量处理
+
+```bash
+voxcpm batch --input examples/input.txt --output-dir outs
+```
 
 ---
 
-## 6. 模型能力对比总表
+## 6. 各方言 Control Instruction 参考
 
-| 能力 | Seed Audio 1.0 | MiniMax 2.8 | Eleven v3 | Eleven Music v3 | Mureka v8 |
-|------|:---:|:---:|:---:|:---:|:---:|
-| **方言对话 TTS** | ⚠️角色描述引导 | ✅拼音+粤拼 | ✅IPA | ❌ | ❌ |
-| **粤语支持** | ❌ | ✅原生 | ⚠️IPA | ❌ | ❌ |
-| **拼音/注音** | ❌ | ✅拼音数字调 | ✅IPA | ❌ | ❌ |
-| **情绪标签** | 自然语言描述 | (laughs)等19种 | [curious]等 | prompt描述 | prompt描述 |
-| **停顿控制** | 换行 | #1.5# | 换行/—/… | N/A | N/A |
-| **音乐生成** | ⚠️音效 | ❌ | ❌ | ✅ | ✅ |
-| **最佳用途** | 多人对话场景 | 单人对白朗读 | 单人对白朗读 | 方言歌曲 | 方言歌曲 |
-| **输入上限** | 1500-3000字 | 10000字 | 5000字/次 | 歌词+prompt | 3000字歌词 |
+### 6.1 默认 Control Instruction
+
+| 方言 | Control Instruction |
+|------|---------------------|
+| **四川话** | `(A middle-aged Sichuan male, relaxed and lazy tone, slightly slow pace, with Chengdu accent, trailing particles like "o" and "sa")` |
+| **粤语** | `(A middle-aged Cantonese male, confident and energetic tone, moderate pace, with Guangzhou accent, short and punchy delivery)` |
+| **吴语（上海话）** | `(A young Shanghai female, gentle and soft voice, moderate pace, with Wu dialect accent, melodic rising tones)` |
+| **东北话** | `(A middle-aged Northeastern male, loud and bold voice, fast pace, with Dongbei accent, hearty and direct delivery)` |
+| **河南话** | `(A middle-aged Henan male, steady and grounded tone, moderate pace, with Central Plains accent, nasal quality)` |
+| **陕西话** | `(A middle-aged Shaanxi male, deep and resonant voice, slow pace, with Guanzhong accent, heavy nasal tones)` |
+| **山东话** | `(A middle-aged Shandong male, robust and straightforward voice, moderate pace, with Ji-Lu accent, bold delivery)` |
+| **天津话** | `(A middle-aged Tianjin male, witty and humorous tone, moderate pace, with Tianjin accent, playful rising intonation)` |
+| **闽南话** | `(A middle-aged Minnan male, warm and friendly voice, slow pace, with Southern Fujian accent, soft trailing tones)` |
+
+### 6.2 Control Instruction 要素
+
+| 要素 | 说明 | 可选值 |
+|------|------|--------|
+| **性别** | 根据对白角色推断 | male / female |
+| **年龄** | 根据角色设定 | young / middle-aged / elderly |
+| **口音** | 方言名称 + 特征 | Sichuan accent, Cantonese accent, etc. |
+| **语速** | 结合内容情绪 | slow / moderate / fast / rapid |
+| **情绪** | 从对白内容提取 | relaxed / excited / angry / sad / cheerful / serious |
+| **嗓音特征** | 声音质感描述 | gentle / raspy / resonant / soft / bold |
+
+### 6.3 情绪调整示例
+
+```python
+# 轻松市井
+text = "(A middle-aged Sichuan male, relaxed tone, slow pace)巴适得板哟，今天硬是安逸。"
+
+# 激动争吵
+text = "(A middle-aged Sichuan male, excited and loud tone, fast pace)搞锤子搞！你硬是不听话是不是嘛！"
+
+# 悲伤低落
+text = "(A middle-aged Sichuan male, sad tone, slow pace)今天嘛，心头硬是不舒服，啥子都不想搞。"
+
+# 幽默调侃
+text = "(A middle-aged Tianjin male, witty and humorous tone)介不废话嘛，倍儿好吃了您嘞。"
+```
 
 ---
 
-## 7. 针对方言转换器的输出建议
+## 7. 部署选项
 
-| 使用场景 | 推荐模型 | 输出格式 |
-|---------|---------|---------|
-| 四川话/东北话/河南话对白朗读 | MiniMax 2.8 HD | 汉字 + 拼音注音 + 语气标签 |
-| 粤语对白朗读 | MiniMax 2.8 HD（语言标记 yue）| 汉字 + 粤拼 + 语气标签 |
-| 多角色方言对话短剧 | Seed Audio 1.0 | 角色脚本模式 |
-| 高质量方言独白（需要精确发音） | Eleven v3 | 汉字 + IPA 音标 + 情绪标签 |
-| 方言歌曲 | Mureka v8 / Eleven Music v3 | 歌词+风格描述 |
+| 部署方式 | RTF (RTX 4090) | 说明 |
+|----------|----------------|------|
+| 标准 PyTorch | ~0.30 | 基础推理 |
+| Nano-vLLM | ~0.13 | 高吞吐量 GPU 服务 |
+| vLLM-Omni | — | OpenAI 兼容 API，多 GPU 部署 |
+| llama.cpp-omni | ~1.76 (M4 Pro) | 端侧推理，CPU/Metal/CUDA/Vulkan |
+
+### Web Demo
+
+```bash
+python app.py --port 8808
+# 设备选择: auto / cpu / mps / cuda / cuda:N
+python app.py --device auto
+```
 
 ---
 
-## 8. 每种方言的推荐注音方案
+## 8. 与 Dialect Converter 的配合流程
 
-| 方言 | 注音方案 | 适用模型 |
-|------|---------|---------|
-| 四川话 | 汉语拼音 + 数字调（方言调值） | MiniMax |
-| 粤语 | 粤拼 Jyutping 数字调 | MiniMax |
-| 东北话 | 汉语拼音（变调标注） | MiniMax / Eleven IPA |
-| 闽南语 | 白话字 Pe̍h-ōe-jī / TLPA | MiniMax (limited) / Eleven IPA |
-| 客家话 | 客拼 / IPA | Eleven IPA |
-| 吴语(上海/苏州) | IPA | Eleven IPA |
-| 其他官话方言 | 汉语拼音 + 变调 | MiniMax |
+```
+用户输入普通话
+       │
+       ▼
+Dialect Converter Skill
+  ├── 1. 方言匹配（9 大方言 + 分支）
+  ├── 2. 分层转换（基础/增强/地道）
+  ├── 3. 音韵规则检查
+  └── 4. 输出
+         ├── Target Text（方言文本）
+         └── Control Instruction（声音控制指令）
+                │
+                ▼
+         VoxCPM model.generate()
+         text = "(Control Instruction)Target Text"
+                │
+                ▼
+         48kHz 方言语音输出
+```
 
-> **注**：MiniMax 仅原生支持中文普通话和粤语。其他方言需要通过拼音字典`pronunciation_dict` 强制指定发音。
+---
+
+## 9. 微调（可选）
+
+如需进一步提升特定方言的合成质量，VoxCPM 支持 LoRA 微调：
+
+```bash
+# LoRA 微调（推荐）
+python scripts/train_voxcpm_finetune.py \
+    --config_path conf/voxcpm_v2/voxcpm_finetune_lora.yaml
+
+# WebUI 微调
+python lora_ft_webui.py   # http://localhost:7860
+```
+
+> 💡 仅需 5-10 分钟音频即可适配特定说话人、语言或领域。
