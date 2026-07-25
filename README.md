@@ -217,12 +217,28 @@ voxcpm design \
 
 Agent 自动输出：**Target Text**（方言文本）+ **Control Instruction**（VoxCPM 控制指令）。
 
+**输出示例**：
+
+```text
+【Target Text — 四川话·成渝片】
+老板，这个几多钱嘛？能不能少点嘛？
+
+---
+
+> **🔊 VoxCPM Control Instruction**
+>
+> 四川方言，中年男性，慵懒语气，语速偏慢
+>
+> **完整输入**：
+> (四川方言，中年男性，慵懒语气，语速偏慢)老板，这个几多钱嘛？能不能少点嘛？
+```
+
 ### 场景二：直接送入 VoxCPM 生成语音
 
 将 Skill 输出的 `完整输入` 复制到 VoxCPM 的 `text` 参数即可：
 
 ```python
-text = "(四川方言，中年男性，慵懒语气)老板，几多钱嘛？能不能少点嘛？"
+text = "(四川方言，中年男性，慵懒语气，语速偏慢)老板，这个几多钱嘛？能不能少点嘛？"
 wav = model.generate(text=text, cfg_value=2.0, inference_timesteps=10, seed=42)
 ```
 
