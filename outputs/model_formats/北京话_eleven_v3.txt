@@ -1,0 +1,9 @@
+[casual] 京剧
+
+[curious] 评剧
+
+[excited] 河北梆子
+
+[serious] 北京曲剧
+
+[nervous] 昆曲

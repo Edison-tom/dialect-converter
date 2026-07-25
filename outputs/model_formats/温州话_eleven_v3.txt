@@ -1,0 +1,9 @@
+[casual] 短视频
+
+[curious] 直播
+
+[excited] 带货
+
+[serious] 打赏
+
+[nervous] 弹幕
