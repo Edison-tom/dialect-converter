@@ -376,23 +376,33 @@ dialect-converter/
 ├── 📄 SKILL.md                         # 技能定义（含三级转换策略 + VoxCPM 格式）
 ├── 📄 TTS_MODEL_GUIDE.md               # VoxCPM 模型适配指南
 │
-├── 🐍 expand_entries.py                # 大规模词条扩充脚本
-├── 🐍 regen_model_formats.py           # 模型适配文件重新生成脚本
+├── 🐍 regen_voxcpm_formats.py          # VoxCPM 适配文件生成脚本
 │
 ├── 📂 references/
-│   └── 📂 dialects/                    # 9 大方言 + 12 地方分支词元文件
-│       ├── INDEX.md                    #   方言索引
-│       ├── 00_appendix.md             #   附录
-│       ├── 02_sichuan.md              #   四川话（含成都/重庆/自贡等分支）
-│       ├── 03_yueyu.md               #   粤语
-│       ├── 04_dongbei.md            #   东北话
-│       ├── 05_shanghai.md           #   上海话（吴语）
-│       ├── 06_henan.md              #   河南话
-│       ├── 07_shaanxi.md            #   陕西话
-│       ├── 09_shandong.md           #   山东话
-│       ├── 10_tianjin.md            #   天津话
-│       ├── 11_minnan.md             #   闽南语
-│       └── ...                      #   (地方分支文件)
+│   ├── 📂 dialects/                    # 9 大方言 + 12 地方分支词元文件
+│   │   ├── INDEX.md                    #   方言索引
+│   │   ├── 00_appendix.md             #   附录
+│   │   ├── 02_sichuan.md              #   四川话（含成都/重庆/自贡等分支）
+│   │   ├── 03_yueyu.md               #   粤语
+│   │   ├── 04_dongbei.md            #   东北话
+│   │   ├── 05_shanghai.md           #   上海话（吴语）
+│   │   ├── 06_henan.md              #   河南话
+│   │   ├── 07_shaanxi.md            #   陕西话
+│   │   ├── 09_shandong.md           #   山东话
+│   │   ├── 10_tianjin.md            #   天津话
+│   │   ├── 11_minnan.md             #   闽南语
+│   │   └── ...                      #   (地方分支文件)
+│   │
+│   └── 📂 dialects_archive/            # 已归档方言（VoxCPM 暂不支持）
+│       ├── INDEX.md                    #   归档索引
+│       ├── 01_beijing.md              #   北京话（12,595 条）
+│       ├── 08_hunan.md                #   湖南话（12,328 条）
+│       ├── 12_kejia.md                #   客家话（10,253 条）
+│       ├── 13_ganyu.md               #   赣语（10,223 条）
+│       ├── 14_jinyu.md               #   晋语（10,238 条）
+│       ├── 26_nanjing.md             #   南京话（9,287 条）
+│       ├── 28_fuzhou.md              #   福州话（9,276 条）
+│       └── 29_lanzhou.md            #   兰州话（9,282 条）
 │
 └── 📂 outputs/
     └── 📂 model_formats/               # VoxCPM 方言输出样例
