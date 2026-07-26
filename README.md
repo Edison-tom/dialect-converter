@@ -5,16 +5,16 @@
 ### 中国方言对白转换器 · VoxCPM Edition
 
 <p>
-  <em>普通话 → 9 大方言重口音表述 · 适配 VoxCPM 本地语音合成模型</em>
+  <em>普通话 → 29 种方言重口音表述 · 适配 VoxCPM 本地语音合成模型</em>
 </p>
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.0.1-blue?style=flat-square" alt="version">
-<img src="https://img.shields.io/badge/活跃词条-218,500+-brightgreen?style=flat-square" alt="entries">
-<img src="https://img.shields.io/badge/归档词条-83,400+-yellowgreen?style=flat-square" alt="archived">
-<img src="https://img.shields.io/badge/方言组-9种-orange?style=flat-square" alt="dialects">
-<img src="https://img.shields.io/badge/方言变体-21种-success?style=flat-square" alt="variants">
+<img src="https://img.shields.io/badge/version-v2.0.2-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/总词条-225,234-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/活跃词条-162,154-brightgreen?style=flat-square" alt="active">
+<img src="https://img.shields.io/badge/归档词条-63,080-yellowgreen?style=flat-square" alt="archived">
+<img src="https://img.shields.io/badge/方言-29种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/TTS引擎-VoxCPM-red?style=flat-square" alt="tts">
 <img src="https://img.shields.io/badge/场景分类-160+-yellow?style=flat-square" alt="categories">
 <img src="https://img.shields.io/badge/license-Apache--2.0-purple?style=flat-square" alt="license">
@@ -34,7 +34,7 @@
 <td width="50%" valign="top">
 
 ### 🗣️ 方言转译
-将普通话对白转换为 **9 大方言**（含地方分支共 21 种）的重口音表述，覆盖西南官话、粤语、吴语、东北官话、中原官话、冀鲁/胶辽官话、闽语等主要方言区。
+将普通话对白转换为 **29 种方言**（21 种 VoxCPM 活跃方言 + 8 种已归档）的重口音表述，覆盖西南官话、粤语、吴语、东北官话、中原官话、冀鲁/胶辽官话、闽语、湘语、赣语、晋语、江淮官话、兰银官话等主要方言区。
 
 </td>
 <td width="50%" valign="top">
@@ -48,7 +48,7 @@
 <td width="50%" valign="top">
 
 ### 📚 海量词库
-**218,500+ 条**活跃词条覆盖 160+ 场景分类，另有 **83,400+ 条**归档词条（8 种待支持方言）以备后续使用，从日常饮食到军事科技，每种方言均含独立语音学标注。
+**225,234 条**词条覆盖 29 种方言（含 21 种 VoxCPM 活跃方言 + 8 种已归档方言），另有 **63,080 条**归档词条以备后续使用，从日常饮食到军事科技，每种方言均含独立语音学标注。
 
 </td>
 <td width="50%" valign="top">
@@ -64,7 +64,7 @@
 
 ## 🎬 快速预览
 
-> 同一段普通话，9 种方言的转译效果 + VoxCPM Control Instruction：
+> 同一段普通话，9 种 VoxCPM 活跃方言的转译效果 + Control Instruction：
 
 <details>
 <summary><b>点击查看方言转译示例</b></summary>
@@ -260,25 +260,45 @@ cat outputs/model_formats/粤语_voxcpm.txt
 
 ## 🗺️ 支持的方言
 
-### 9 大方言组 + 21 种方言变体
+### 29 种方言全覆盖（21 活跃 + 8 归档）
 
 <div align="center">
 
-| # | 方言组 | 谱系 | 地方分支 | VoxCPM |
-|:--:|------|------|---------|:------:|
-| 1 | **四川话** | 西南官话·成渝片 | 成都话、重庆话、自贡话、贵阳话、云南话、湖北话 | ✅ |
-| 2 | **粤语** | 粤语·广府片 | — | ✅ |
-| 3 | **吴语** | 吴语·太湖片/瓯江片 | 上海话、苏州话、温州话 | ✅ |
-| 4 | **东北话** | 东北官话 | — | ✅ |
-| 5 | **河南话** | 中原官话·郑开片 | 洛阳话、徐州话 | ✅ |
-| 6 | **陕西话** | 中原官话·关中片 | — | ✅ |
-| 7 | **山东话** | 冀鲁/胶辽官话 | 济南话、青岛话 | ✅ |
-| 8 | **天津话** | 冀鲁官话·天津片 | — | ✅ |
-| 9 | **闽南话** | 闽语·闽南片 | — | ✅ |
+| # | 方言 | 谱系 | 词条数 | 状态 |
+|:--:|------|------|------:|:----:|
+| 1 | **四川话** | 西南官话·成渝片 | 8,379 | ✅ 活跃 |
+| 2 | **粤语** | 粤语·广府片 | 8,120 | ✅ 活跃 |
+| 3 | **东北话** | 东北官话 | 8,032 | ✅ 活跃 |
+| 4 | **上海话** | 吴语·太湖片 | 7,915 | ✅ 活跃 |
+| 5 | **河南话** | 中原官话·郑开片 | 7,798 | ✅ 活跃 |
+| 6 | **陕西话** | 中原官话·关中片 | 6,990 | ✅ 活跃 |
+| 7 | **山东话** | 冀鲁/胶辽官话 | 6,991 | ✅ 活跃 |
+| 8 | **天津话** | 冀鲁官话·天津片 | 6,985 | ✅ 活跃 |
+| 9 | **闽南话** | 闽语·闽南片 | 12,006 | ✅ 活跃 |
+| 10 | **湖北话** | 西南官话·武天片 | 10,127 | ✅ 活跃 |
+| 11 | **云南话** | 西南官话·滇中片 | 7,005 | ✅ 活跃 |
+| 12 | **贵阳话** | 西南官话·黔中片 | 7,797 | ✅ 活跃 |
+| 13 | **徐州话** | 中原官话·徐淮片 | 7,778 | ✅ 活跃 |
+| 14 | **自贡话** | 西南官话·仁富片 | 7,796 | ✅ 活跃 |
+| 15 | **苏州话** | 吴语·太湖片 | 7,777 | ✅ 活跃 |
+| 16 | **成都话** | 西南官话·成渝片 | 6,812 | ✅ 活跃 |
+| 17 | **重庆话** | 西南官话·成渝片 | 6,810 | ✅ 活跃 |
+| 18 | **济南话** | 冀鲁官话 | 6,815 | ✅ 活跃 |
+| 19 | **青岛话** | 胶辽官话 | 6,817 | ✅ 活跃 |
+| 20 | **洛阳话** | 中原官话·洛嵩片 | 6,811 | ✅ 活跃 |
+| 21 | **温州话** | 吴语·瓯江片 | 6,593 | ✅ 活跃 |
+| 22 | **北京话** | 北京官话·京师片 | 10,019 | 📦 归档 |
+| 23 | **湖南话** | 湘语·长益片 | 9,938 | 📦 归档 |
+| 24 | **客家话** | 客语·梅县片 | 7,798 | 📦 归档 |
+| 25 | **赣语** | 赣语·昌靖片 | 7,766 | 📦 归档 |
+| 26 | **晋语** | 晋语·并州片 | 7,781 | 📦 归档 |
+| 27 | **南京话** | 江淮官话·洪巢片 | 6,598 | 📦 归档 |
+| 28 | **福州话** | 闽语·闽东片 | 6,587 | 📦 归档 |
+| 29 | **兰州话** | 兰银官话·金城片 | 6,593 | 📦 归档 |
 
 </div>
 
-> 📝 每种方言附带声调系统、入声演变、韵母特征、语法特点、示例转换等完整语言学标注。
+> 📝 活跃方言（✅）已适配 VoxCPM 语音模型；归档方言（📦）因 VoxCPM 暂不支持已保存词条以备后用。每种方言附带声调系统、入声演变、韵母特征、语法特点、示例转换等完整语言学标注。
 
 <details>
 <summary><b>展开各方言 Control Instruction 默认参考</b></summary>
@@ -433,7 +453,9 @@ dialect-converter/
 
 v2.0.0 重大变更：移除全部旧 TTS 模型适配（Seed Audio / MiniMax / Eleven / Mureka），方言从 29 种缩减为 VoxCPM 支持的 9 大方言组（含 21 种方言变体），输出格式统一为 VoxCPM Control Instruction + Target Text。
 
-v2.0.1 更新：Control Instruction 从英文改为中文自然语言（如：`四川方言，中老年女性，浓重口音，语速较快`）；修复四川话示例混入粤语的错误；简化输出格式。归档 8 种待支持方言词条至 `references/dialects_archive/`（共 83,482 条），以备后续 VoxCPM 扩展方言支持时启用。
+v2.0.1 更新：Control Instruction 从英文改为中文自然语言（如：`四川方言，中老年女性，浓重口音，语速较快`）；修复四川话示例混入粤语的错误；简化输出格式。归档 8 种待支持方言词条至 `references/dialects_archive/`（共 63,080 条），以备后续 VoxCPM 扩展方言支持时启用。
+
+v2.0.2 更新：修正词条统计数据（词典实际 225,234 条，29 种方言）；更新方言表为 29 方言完整视图（21 活跃 + 8 归档）；词典版本升至 1.1.1。
 
 <br>
 
