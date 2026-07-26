@@ -1,0 +1,88 @@
+# 南京话 — VoxCPM 适配文件
+
+> 方言组：南京话 | 谱系：江淮官话·洪巢片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2) — VoxCPM 暂不支持此方言，推荐备选模型：MiniMax / ElevenLabs
+> 格式：Control Instruction + Target Text
+
+---
+
+## ⚠️ 备选模型说明
+
+> VoxCPM 暂不支持 **南京话** 的原生合成。推荐使用以下备选 TTS 模型：
+>
+> **MiniMax / ElevenLabs**
+>
+> 详见 `TTS_MODEL_GUIDE.md` 第二部分。Control Instruction + Target Text 格式同样适用于备选模型。
+
+
+## 默认 Control Instruction
+
+```
+南京话，中年男性，随和语气，正常语速
+```
+
+## 完整输入示例
+
+```
+(南京话，中年男性，随和语气，正常语速)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(南京话，中年男性，随和语气，正常语速)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("南京话_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 词汇注释
+
+么事=什么；蛮=很；滴=语气词；表=别
+
+## CLI 调用
+
+```bash
+voxcpm design \
+  --text "(南京话，中年男性，随和语气，正常语速)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。" \
+  --output 南京话_voxcpm.wav
+```
+
+## 情绪变体示例
+
+### 轻松日常
+```
+(南京话，中年男性，轻松语气，语速偏慢)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。
+```
+
+### 激动语气
+```
+(南京话，中年男性，激动语气，语速较快)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。
+```
+
+### 悲伤低沉
+```
+(南京话，中年男性，悲伤语气，语速偏慢)你干么事啊？这东西蛮好吃滴。你不晓得啊？表骗我。
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 短视频 | 短视频 |
+| 直播 | 直播 |
+| 带货 | 带货 |
+| 打赏 | 打赏 |
+| 弹幕 | 弹幕 |
+
+---
+
+> 完整词条见 `references/dialects/26_nanjing.md`

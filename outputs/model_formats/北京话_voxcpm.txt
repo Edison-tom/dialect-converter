@@ -1,0 +1,88 @@
+# 北京话 — VoxCPM 适配文件
+
+> 方言组：北京话 | 谱系：北京官话·京师片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2) — VoxCPM 暂不支持此方言，推荐备选模型：Seed Audio / MiniMax
+> 格式：Control Instruction + Target Text
+
+---
+
+## ⚠️ 备选模型说明
+
+> VoxCPM 暂不支持 **北京话** 的原生合成。推荐使用以下备选 TTS 模型：
+>
+> **Seed Audio / MiniMax**
+>
+> 详见 `TTS_MODEL_GUIDE.md` 第二部分。Control Instruction + Target Text 格式同样适用于备选模型。
+
+
+## 默认 Control Instruction
+
+```
+北京话，中年男性，随和语气，正常语速
+```
+
+## 完整输入示例
+
+```
+(北京话，中年男性，随和语气，正常语速)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(北京话，中年男性，随和语气，正常语速)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("北京话_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 词汇注释
+
+干嘛=干什么；玩意儿=东西；倍儿=非常；甭=别；蒙=骗
+
+## CLI 调用
+
+```bash
+voxcpm design \
+  --text "(北京话，中年男性，随和语气，正常语速)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。" \
+  --output 北京话_voxcpm.wav
+```
+
+## 情绪变体示例
+
+### 轻松日常
+```
+(北京话，中年男性，轻松语气，语速偏慢)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。
+```
+
+### 激动语气
+```
+(北京话，中年男性，激动语气，语速较快)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。
+```
+
+### 悲伤低沉
+```
+(北京话，中年男性，悲伤语气，语速偏慢)你干嘛呢？这玩意儿倍儿好吃。您不知道啊？甭蒙我了。
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 京剧 | 京剧 |
+| 评剧 | 评剧 |
+| 河北梆子 | 河北梆子 |
+| 北京曲剧 | 北京曲剧 |
+| 昆曲 | 昆曲 |
+
+---
+
+> 完整词条见 `references/dialects/01_beijing.md`

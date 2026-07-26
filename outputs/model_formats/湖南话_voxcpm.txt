@@ -1,0 +1,88 @@
+# 湖南话 — VoxCPM 适配文件
+
+> 方言组：湖南话 | 谱系：湘语·长益片
+> 生成模型：VoxCPM2 (openbmb/VoxCPM2) — VoxCPM 暂不支持此方言，推荐备选模型：MiniMax / ElevenLabs
+> 格式：Control Instruction + Target Text
+
+---
+
+## ⚠️ 备选模型说明
+
+> VoxCPM 暂不支持 **湖南话** 的原生合成。推荐使用以下备选 TTS 模型：
+>
+> **MiniMax / ElevenLabs**
+>
+> 详见 `TTS_MODEL_GUIDE.md` 第二部分。Control Instruction + Target Text 格式同样适用于备选模型。
+
+
+## 默认 Control Instruction
+
+```
+湖南话，中年男性，爽朗语气，语速较快
+```
+
+## 完整输入示例
+
+```
+(湖南话，中年男性，爽朗语气，语速较快)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。
+```
+
+## Python 调用示例
+
+```python
+from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+
+wav = model.generate(
+    text="(湖南话，中年男性，爽朗语气，语速较快)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。",
+    cfg_value=2.0,
+    inference_timesteps=10,
+    seed=42,
+)
+sf.write("湖南话_voxcpm.wav", wav, model.tts_model.sample_rate)
+```
+
+## 词汇注释
+
+么子=什么；咯=这；恰=吃；啵=吗；咧=语气词
+
+## CLI 调用
+
+```bash
+voxcpm design \
+  --text "(湖南话，中年男性，爽朗语气，语速较快)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。" \
+  --output 湖南话_voxcpm.wav
+```
+
+## 情绪变体示例
+
+### 轻松日常
+```
+(湖南话，中年男性，轻松语气，语速偏慢)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。
+```
+
+### 激动语气
+```
+(湖南话，中年男性，激动语气，语速较快)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。
+```
+
+### 悲伤低沉
+```
+(湖南话，中年男性，悲伤语气，语速偏慢)你搞么子咯？咯只东西好恰得很。你不晓得啵？莫骗我咧。
+```
+
+## 代表性词条（前 5 条）
+
+| 普通话 | 方言 |
+|--------|------|
+| 脸 | 脸 |
+| 眼睛 | 眼睛 |
+| 鼻子 | 鼻子 |
+| 嘴巴 | 嘴巴 |
+| 耳朵 | 耳朵 |
+
+---
+
+> 完整词条见 `references/dialects/08_hunan.md`
