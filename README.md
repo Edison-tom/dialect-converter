@@ -10,8 +10,8 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.2.0-blue?style=flat-square" alt="version">
-<img src="https://img.shields.io/badge/总词条-311,129-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/version-v2.3.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/总词条-234,673-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
 <img src="https://img.shields.io/badge/备选模型-4种-teal?style=flat-square" alt="alt-models">
@@ -32,7 +32,7 @@
 <tr>
 <td width="50%" valign="top">
 
-### 🗣️ 29 种方言全覆盖
+### 🗣️ 30 种方言全覆盖
 将普通话对白转换为 **30 种方言**的重口音表述，覆盖西南官话、粤语、吴语、东北官话、中原官话、冀鲁/胶辽官话、闽语、湘语、赣语、晋语、江淮官话、兰银官话、北京官话、河湟方言等主要方言区。
 
 </td>
@@ -47,7 +47,7 @@
 <td width="50%" valign="top">
 
 ### 📚 海量词库
-**311,129 条**词条覆盖全部 30 种方言，从日常饮食到军事科技，每种方言均含独立语音学标注（声调、声韵母、连读变调）与谱系分类。
+**234,673 条**词条覆盖全部 30 种方言，从日常饮食到军事科技，每种方言均含独立语音学标注（声调、声韵母、连读变调）与谱系分类。
 
 </td>
 <td width="50%" valign="top">
@@ -302,42 +302,42 @@ cat outputs/model_formats/北京话_voxcpm.txt
 
 ## 🗺️ 支持的方言
 
-### 29 种方言全覆盖
+### 30 种方言全覆盖
 
 <div align="center">
 
 | # | 方言 | 谱系 | 词条数 | TTS 模型 |
 |:--:|------|------|------:|:--------:|
-| 1 | **四川话** | 西南官话·成渝片 | 10,932 | VoxCPM |
-| 2 | **粤语** | 粤语·广府片 | 10,674 | VoxCPM |
-| 3 | **东北话** | 东北官话 | 10,585 | VoxCPM |
-| 4 | **上海话** | 吴语·太湖片 | 10,469 | VoxCPM |
-| 5 | **河南话** | 中原官话·郑开片 | 10,353 | VoxCPM |
-| 6 | **陕西话** | 中原官话·关中片 | 9,737 | VoxCPM |
-| 7 | **山东话** | 冀鲁/胶辽官话 | 9,738 | VoxCPM |
-| 8 | **天津话** | 冀鲁官话·天津片 | 9,732 | VoxCPM |
-| 9 | **闽南话** | 闽语·闽南片 | 14,530 | VoxCPM |
-| 10 | **湖北话** | 西南官话·武天片 | 12,667 | VoxCPM |
-| 11 | **云南话** | 西南官话·滇中片 | 9,752 | VoxCPM |
-| 12 | **贵阳话** | 西南官话·黔中片 | 10,351 | VoxCPM |
-| 13 | **徐州话** | 中原官话·徐淮片 | 10,333 | VoxCPM |
-| 14 | **自贡话** | 西南官话·仁富片 | 10,352 | VoxCPM |
-| 15 | **苏州话** | 吴语·太湖片 | 10,332 | VoxCPM |
-| 16 | **成都话** | 西南官话·成渝片 | 9,559 | VoxCPM |
-| 17 | **重庆话** | 西南官话·成渝片 | 9,557 | VoxCPM |
-| 18 | **济南话** | 冀鲁官话 | 9,562 | VoxCPM |
-| 19 | **青岛话** | 胶辽官话 | 9,564 | VoxCPM |
-| 20 | **洛阳话** | 中原官话·洛嵩片 | 9,558 | VoxCPM |
-| 21 | **温州话** | 吴语·瓯江片 | 9,343 | VoxCPM |
-| 22 | **北京话** | 北京官话·京师片 | 12,564 | Seed Audio / MiniMax |
-| 23 | **湖南话** | 湘语·长益片 | 12,478 | MiniMax / ElevenLabs |
-| 24 | **客家话** | 客语·粤台片 | 10,354 | Seed Audio / Mureka |
-| 25 | **赣语** | 赣语·昌靖片 | 10,321 | MiniMax / Mureka |
-| 26 | **晋语** | 晋语·并州片 | 10,335 | Seed Audio / MiniMax |
-| 27 | **南京话** | 江淮官话·洪巢片 | 9,348 | MiniMax / ElevenLabs |
-| 28 | **福州话** | 闽语·闽东片 | 9,337 | Seed Audio / Mureka |
-| 29 | **兰州话** | 兰银官话·金城片 | 9,343 | MiniMax / Seed Audio |
-| 30 | **青海话** | 中原官话·秦陇片 | 9,369 | Seed Audio / MiniMax / Mureka |
+| 1 | **四川话** | 西南官话·成渝片 | 8,379 | VoxCPM |
+| 2 | **粤语** | 粤语·广府片 | 8,120 | VoxCPM |
+| 3 | **东北话** | 东北官话 | 8,032 | VoxCPM |
+| 4 | **上海话** | 吴语·太湖片 | 7,915 | VoxCPM |
+| 5 | **河南话** | 中原官话·郑开片 | 7,798 | VoxCPM |
+| 6 | **陕西话** | 中原官话·关中片 | 6,990 | VoxCPM |
+| 7 | **山东话** | 冀鲁/胶辽官话 | 6,991 | VoxCPM |
+| 8 | **天津话** | 冀鲁官话·天津片 | 6,985 | VoxCPM |
+| 9 | **闽南话** | 闽语·闽南片 | 12,006 | VoxCPM |
+| 10 | **湖北话** | 西南官话·武天片 | 10,127 | VoxCPM |
+| 11 | **云南话** | 西南官话·滇中片 | 7,005 | VoxCPM |
+| 12 | **贵阳话** | 西南官话·黔中片 | 7,797 | VoxCPM |
+| 13 | **徐州话** | 中原官话·徐淮片 | 7,778 | VoxCPM |
+| 14 | **自贡话** | 西南官话·仁富片 | 7,796 | VoxCPM |
+| 15 | **苏州话** | 吴语·太湖片 | 7,777 | VoxCPM |
+| 16 | **成都话** | 西南官话·成渝片 | 6,812 | VoxCPM |
+| 17 | **重庆话** | 西南官话·成渝片 | 6,810 | VoxCPM |
+| 18 | **济南话** | 冀鲁官话 | 6,815 | VoxCPM |
+| 19 | **青岛话** | 胶辽官话 | 6,817 | VoxCPM |
+| 20 | **洛阳话** | 中原官话·洛嵩片 | 6,811 | VoxCPM |
+| 21 | **温州话** | 吴语·瓯江片 | 6,593 | VoxCPM |
+| 22 | **北京话** | 北京官话·京师片 | 10,019 | Seed Audio / MiniMax |
+| 23 | **湖南话** | 湘语·长益片 | 9,938 | MiniMax / ElevenLabs |
+| 24 | **客家话** | 客语·粤台片 | 7,798 | Seed Audio / Mureka |
+| 25 | **赣语** | 赣语·昌靖片 | 7,766 | MiniMax / Mureka |
+| 26 | **晋语** | 晋语·并州片 | 7,781 | Seed Audio / MiniMax |
+| 27 | **南京话** | 江淮官话·洪巢片 | 6,598 | MiniMax / ElevenLabs |
+| 28 | **福州话** | 闽语·闽东片 | 6,587 | Seed Audio / Mureka |
+| 29 | **兰州话** | 兰银官话·金城片 | 6,593 | MiniMax / Seed Audio |
+| 30 | **青海话** | 中原官话·秦陇片 | 9,439 | Seed Audio / MiniMax / Mureka |
 
 </div>
 
@@ -525,7 +525,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.2.0**（当前）：新增青海话（河湟方言，中原官话·秦陇片，湟源/乐都/湟中一带）；方言总数达 30 种；VoxCPM 为主要模型，9 种 VoxCPM 不支持的方言使用 Seed Audio / MiniMax / ElevenLabs / Mureka 备选模型；词条总数 311,129 条。
+**v2.3.0**（当前）：合并青海话至 dialect_dictionary.md；词典版本升至 1.2.0；更新各方言词条数为词典实际统计值（共 234,673 条）；修正方言数量描述统一为 30 种。
+
+**v2.2.0**：新增青海话（河湟方言，中原官话·秦陇片，湟源/乐都/湟中一带）；方言总数达 30 种；VoxCPM 为主要模型，9 种 VoxCPM 不支持的方言使用 Seed Audio / MiniMax / ElevenLabs / Mureka 备选模型；词条总数 311,129 条。
 
 **v2.1.0**：恢复全部 29 种方言为活跃状态；VoxCPM 设为主要模型，保留 Seed Audio / MiniMax / ElevenLabs / Mureka 作为备选 TTS 模型；8 种 VoxCPM 不支持的方言使用备选模型生成语音；词条总数 303,398 条。
 
