@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-regen_voxcpm_formats.py — 为 29 种方言生成 VoxCPM 格式适配文件
+regen_voxcpm_formats.py — 为 30 种方言生成 VoxCPM 格式适配文件
 输出: Control Instruction + Target Text
 
 VoxCPM 原生方言（9 大方言组 21 变体）：直接生成 VoxCPM 调用示例
-备选模型方言（8 种）：生成格式文件并标注推荐备选 TTS 模型
+备选模型方言（9 种）：生成格式文件并标注推荐备选 TTS 模型
 """
 
 import os
@@ -13,7 +13,7 @@ import re
 DIALECTS_DIR = os.path.join(os.path.dirname(__file__), "references", "dialects")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "outputs", "model_formats")
 
-# 17 种主要方言的 VoxCPM 适配配置（9 大 VoxCPM 原生 + 8 种备选模型）
+# 18 种主要方言的 VoxCPM 适配配置（9 大 VoxCPM 原生 + 9 种备选模型）
 DIALECT_CONFIG = {
     # ── VoxCPM 原生方言 ──
     "02_sichuan": {
@@ -203,6 +203,17 @@ DIALECT_CONFIG = {
         "sample_text": "你做啥呢？这东西满好滴。你不知道？白骗我。",
         "translation_notes": "做啥=干什么；满=很；滴=语气词；白=别",
         "alt_models": "MiniMax / Seed Audio",
+    },
+    "30_qinghai": {
+        "name": "青海话",
+        "dialect_group": "青海话",
+        "subgroup": "秦陇片",
+        "phylogeny": "中原官话·秦陇片",
+        "output_file": "青海话_voxcpm.txt",
+        "control_instruction": "青海话，中年男性，随和语气，正常语速",
+        "sample_text": "你阿扎家去哩？这个东西歹得很。你知不道？嫑骗我。",
+        "translation_notes": "阿扎=哪里；家去=回家；歹=好/厉害；知不道=不知道；嫑=别；一挂=一起；尕=小；心疼=漂亮；攒劲=棒/好",
+        "alt_models": "Seed Audio / MiniMax / Mureka",
     },
 }
 
@@ -415,7 +426,7 @@ def main():
 
     generated = []
 
-    # Generate 17 main dialect files (9 VoxCPM + 8 alternative model)
+    # Generate 18 main dialect files (9 VoxCPM + 9 alternative model)
     for key, config in DIALECT_CONFIG.items():
         filepath = os.path.join(DIALECTS_DIR, f"{key}.md")
         if not os.path.exists(filepath):

@@ -1,14 +1,14 @@
 ---
 name: dialect-converter
-description: 将普通话对白文字转换为重口音的方言表述。覆盖 29 种方言（9 大方言组 + 8 种其他方言），支持三级转换模式（基础/增强/地道），含完整语音学标注（声调、声韵母、连读变调）与谱系分类。主要适配 VoxCPM 本地语音模型（9 大方言组原生支持），同时兼容 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型。每次转换输出 Control Instruction（语音控制指令）+ Target Text（方言目标文本），可直接送入对应 TTS 模型生成方言语音。自动通过自然语言分析匹配目标方言及对应词元文件，用户无需手动指定文件路径。触发词：方言转换、四川话、粤语、东北话、北京话、湖南话、客家话、改写对白、方言台词、方言配音、方言段子、VoxCPM、方言语音。
+description: 将普通话对白文字转换为重口音的方言表述。覆盖 30 种方言（9 大方言组 + 其他方言），支持三级转换模式（基础/增强/地道），含完整语音学标注（声调、声韵母、连读变调）与谱系分类。主要适配 VoxCPM 本地语音模型（9 大方言组原生支持），同时兼容 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型。每次转换输出 Control Instruction（语音控制指令）+ Target Text（方言目标文本），可直接送入对应 TTS 模型生成方言语音。自动通过自然语言分析匹配目标方言及对应词元文件，用户无需手动指定文件路径。触发词：方言转换、四川话、粤语、东北话、北京话、湖南话、客家话、改写对白、方言台词、方言配音、方言段子、VoxCPM、方言语音。
 agent_created: true
 ---
 
-# Dialect Converter — 方言转换器 v2.1.0
+# Dialect Converter — 方言转换器 v2.2.0
 
 ## Overview
 
-将普通话对白转换为 **29 种方言**的重口音表述。v2.1.0 架构调整：**VoxCPM 设为主要语音模型**（9 大方言组 21 种变体原生支持），同时**保留 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型**用于 VoxCPM 暂不支持的 8 种方言（北京话、湖南话、客家话、赣语、晋语、南京话、福州话、兰州话）。全部 29 种方言恢复活跃状态，输出格式统一为 **Control Instruction + Target Text**。
+将普通话对白转换为 **30 种方言**的重口音表述。v2.2.0 架构调整：**VoxCPM 设为主要语音模型**（9 大方言组 21 种变体原生支持），同时**保留 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型**用于 VoxCPM 暂不支持的 9 种方言（北京话、湖南话、客家话、赣语、晋语、南京话、福州话、兰州话、青海话）。全部 30 种方言均活跃可用，输出格式统一为 **Control Instruction + Target Text**。
 
 > 🔧 **VoxCPM** 是 OpenBMB 开源的高质量多语言 TTS 模型（2B 参数，200 万+小时训练数据），支持 30 种语言 + 9 种中文方言，输出 48kHz 工作室级音频。GitHub: https://github.com/OpenBMB/VoxCPM
 >
@@ -44,6 +44,7 @@ agent_created: true
 | 15 | **南京话** | 江淮官话·洪巢片 | MiniMax / ElevenLabs |
 | 16 | **福州话** | 闽语·闽东片 | Seed Audio / Mureka |
 | 17 | **兰州话** | 兰银官话·金城片 | MiniMax / Seed Audio |
+| 18 | **青海话** | 中原官话·秦陇片 | Seed Audio / MiniMax / Mureka |
 
 ### 匹配原则
 
@@ -72,6 +73,7 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 | **南京话** | "南京话"、"金陵话" | 南京话 | `26_nanjing.md` | MiniMax / ElevenLabs |
 | **福州话** | "福州话"、"闽东话" | 福州话 | `28_fuzhou.md` | Seed Audio / Mureka |
 | **兰州话** | "兰州话"、"甘肃话" | 兰州话 | `29_lanzhou.md` | MiniMax / Seed Audio |
+| **青海话** | "青海话"、"河湟话"、"西宁话"、"湟源话"、"乐都话"、"湟中话" | 青海话 | `30_qinghai.md` | Seed Audio / MiniMax / Mureka |
 
 ### Level 2 — 模糊描述推断
 
@@ -96,6 +98,7 @@ Skill 收到请求后，按以下优先级分析用户自然语言中的方言�
 | "南京金陵那边" | 南京话 | `26_nanjing.md` | MiniMax |
 | "福州闽东那边" | 福州话 | `28_fuzhou.md` | Seed Audio |
 | "兰州西北那边" | 兰州话 | `29_lanzhou.md` | MiniMax |
+| "青海河湟那边"、"湟源乐都" | 青海话 | `30_qinghai.md` | Seed Audio / MiniMax |
 
 ### Level 3 — 多方言处理
 
@@ -246,6 +249,7 @@ Target Text：你干嘛呢？这玩意儿倍儿好吃。
 | **南京话** | `南京话，中年男性，随和语气，正常语速` | MiniMax / ElevenLabs |
 | **福州话** | `福州话，中年男性，温和语气，语速偏慢` | Seed Audio / Mureka |
 | **兰州话** | `兰州话，中年男性，豪爽语气，正常语速` | MiniMax / Seed Audio |
+| **青海话** | `青海话，中年男性，随和语气，正常语速` | Seed Audio / MiniMax / Mureka |
 
 > 💡 多角色场景为每个角色分别生成 Control Instruction，用 `---` 隔开。
 
@@ -299,13 +303,14 @@ Target Text：平啲啦，我成日嚟买嘢㗎。
 - `12_kejia.md` — 客家话（客语·粤台片）
 - `13_ganyu.md` — 赣语（赣语·昌靖片）
 - `14_jinyu.md` — 晋语（晋语·并州片）
-- `15_yunnan.md` ~ `29_lanzhou.md` — 地方分支词元文件
+- `15_yunnan.md` ~ `30_qinghai.md` — 地方分支与备选方言词元文件
+- `30_qinghai.md` — 青海话（河湟方言·中原官话秦陇片，Seed Audio / MiniMax / Mureka）
 
 ### references/
 - `dialect_dictionary.md` — 合并版完整词典（向下兼容）
 
 ### outputs/model_formats/
-- 29 种方言 × VoxCPM 格式 = 29 个输出文件
+- 30 种方言 × VoxCPM 格式 = 30 个输出文件
 - 每个文件包含 Control Instruction + Target Text 完整示例
 - VoxCPM 原生方言标注推荐参数；备选模型方言标注推荐备选 TTS 模型
 
