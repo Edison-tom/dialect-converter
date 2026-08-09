@@ -10,7 +10,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.3.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v2.3.1-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/总词条-234,673-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
@@ -525,7 +525,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.3.0**（当前）：合并青海话至 dialect_dictionary.md；词典版本升至 1.2.0；更新各方言词条数为词典实际统计值（共 234,673 条）；修正方言数量描述统一为 30 种。
+**v2.3.1**（当前）：周期维护 — 校验 30 种方言分布均衡性（极差比 1.82:1，低于 2:1 阈值）；验证词条总数 234,673 与 README 一致；词典版本保持 1.2.0。
+
+**v2.3.0**：合并青海话至 dialect_dictionary.md；词典版本升至 1.2.0；更新各方言词条数为词典实际统计值（共 234,673 条）；修正方言数量描述统一为 30 种。
 
 **v2.2.0**：新增青海话（河湟方言，中原官话·秦陇片，湟源/乐都/湟中一带）；方言总数达 30 种；VoxCPM 为主要模型，9 种 VoxCPM 不支持的方言使用 Seed Audio / MiniMax / ElevenLabs / Mureka 备选模型；词条总数 311,129 条。
 

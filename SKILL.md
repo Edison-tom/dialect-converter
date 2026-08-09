@@ -4,11 +4,11 @@ description: 将普通话对白文字转换为重口音的方言表述。覆盖 
 agent_created: true
 ---
 
-# Dialect Converter — 方言转换器 v2.3.0
+# Dialect Converter — 方言转换器 v2.3.1
 
 ## Overview
 
-将普通话对白转换为 **30 种方言**的重口音表述。v2.3.0 架构调整：**VoxCPM 设为主要语音模型**（9 大方言组 21 种变体原生支持），同时**保留 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型**用于 VoxCPM 暂不支持的 9 种方言（北京话、湖南话、客家话、赣语、晋语、南京话、福州话、兰州话、青海话）。全部 30 种方言均活跃可用，输出格式统一为 **Control Instruction + Target Text**。
+将普通话对白转换为 **30 种方言**的重口音表述。v2.3.1 架构调整：**VoxCPM 设为主要语音模型**（9 大方言组 21 种变体原生支持），同时**保留 Seed Audio / MiniMax / ElevenLabs / Mureka 等备选 TTS 模型**用于 VoxCPM 暂不支持的 9 种方言（北京话、湖南话、客家话、赣语、晋语、南京话、福州话、兰州话、青海话）。全部 30 种方言均活跃可用，输出格式统一为 **Control Instruction + Target Text**。
 
 > 🔧 **VoxCPM** 是 OpenBMB 开源的高质量多语言 TTS 模型（2B 参数，200 万+小时训练数据），支持 30 种语言 + 9 种中文方言，输出 48kHz 工作室级音频。GitHub: https://github.com/OpenBMB/VoxCPM
 >
