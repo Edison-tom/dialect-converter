@@ -10,7 +10,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.3.4-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v2.3.5-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/总词条-234,673-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
@@ -525,7 +525,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.3.4**（当前）：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
+**v2.3.5**（当前）：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
+
+**v2.3.4**：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
 
 **v2.3.3**：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
 
