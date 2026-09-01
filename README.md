@@ -10,7 +10,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.3.5-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v2.3.6-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/总词条-234,673-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
@@ -464,6 +464,11 @@ dialect-converter/
 ├── 📄 TTS_MODEL_GUIDE.md               # TTS 模型适配指南（VoxCPM + 备选模型）
 │
 ├── 🐍 regen_voxcpm_formats.py          # VoxCPM 适配文件生成脚本
+├── 🐍 generate_qinghai.py              # 青海话（河湟方言）词元生成脚本
+│
+├── 📂 .github/
+│   └── 📂 workflows/
+│       └── 📄 pylint.yml               #   CI：Python 代码静态检查
 │
 ├── 📂 references/
 │   ├── 📂 dialects/                    # 30 种方言词元文件（全部活跃）
@@ -503,18 +508,43 @@ dialect-converter/
 │   └── 📄 dialect_dictionary.md        # 合并版完整词典（向下兼容）
 │
 └── 📂 outputs/
-    └── 📂 model_formats/               # 30 种方言输出样例
-        ├── 四川_voxcpm.txt             #   四川话（VoxCPM）
-        ├── 粤语_voxcpm.txt             #   粤语（VoxCPM）
-        ├── 北京话_voxcpm.txt           #   北京话（备选模型标注）
-        ├── 湖南话_voxcpm.txt           #   湖南话（备选模型标注）
-        ├── 客家话_voxcpm.txt           #   客家话（备选模型标注）
-        ├── 赣语_voxcpm.txt             #   赣语（备选模型标注）
-        ├── 晋语_voxcpm.txt             #   晋语（备选模型标注）
-        ├── 南京话_voxcpm.txt           #   南京话（备选模型标注）
-        ├── 福州话_voxcpm.txt           #   福州话（备选模型标注）
-        ├── 兰州话_voxcpm.txt           #   兰州话（备选模型标注）
-        └── ...                      #   其余方言
+    ├── 📄 eleven_v3_sichuan.txt         #   ElevenLabs v3 格式（四川话 · 含音标）
+    ├── 📄 seed_audio_1.0_sichuan.txt    #   Seed Audio 1.0 场景对白（四川话）
+    ├── 📄 minimax_2.8_hd_sichuan.json   #   MiniMax speech-2.8-hd（四川话）
+    ├── 📄 minimax_2.8_hd_cantonese.json #   MiniMax speech-2.8-hd（粤语）
+    ├── 📄 mureka_v8_sichuan.json        #   Mureka v8 歌词格式（四川话）
+    │
+    └── 📂 model_formats/                # 30 种方言 VoxCPM 输出样例
+        ├── 四川_voxcpm.txt              #   四川话（VoxCPM）
+        ├── 粤语_voxcpm.txt              #   粤语（VoxCPM）
+        ├── 东北_voxcpm.txt              #   东北话（VoxCPM）
+        ├── 上海_voxcpm.txt              #   上海话（VoxCPM）
+        ├── 河南_voxcpm.txt              #   河南话（VoxCPM）
+        ├── 陕西_voxcpm.txt              #   陕西话（VoxCPM）
+        ├── 山东_voxcpm.txt              #   山东话（VoxCPM）
+        ├── 天津_voxcpm.txt              #   天津话（VoxCPM）
+        ├── 闽南_voxcpm.txt              #   闽南话（VoxCPM）
+        ├── 湖北话_voxcpm.txt            #   湖北话（VoxCPM）
+        ├── 云南话_voxcpm.txt            #   云南话（VoxCPM）
+        ├── 贵阳话_voxcpm.txt            #   贵阳话（VoxCPM）
+        ├── 徐州话_voxcpm.txt            #   徐州话（VoxCPM）
+        ├── 自贡话_voxcpm.txt            #   自贡话（VoxCPM）
+        ├── 苏州话_voxcpm.txt            #   苏州话（VoxCPM）
+        ├── 成都话_voxcpm.txt            #   成都话（VoxCPM）
+        ├── 重庆话_voxcpm.txt            #   重庆话（VoxCPM）
+        ├── 济南话_voxcpm.txt            #   济南话（VoxCPM）
+        ├── 青岛话_voxcpm.txt            #   青岛话（VoxCPM）
+        ├── 洛阳话_voxcpm.txt            #   洛阳话（VoxCPM）
+        ├── 温州话_voxcpm.txt            #   温州话（VoxCPM）
+        ├── 北京话_voxcpm.txt            #   北京话（备选模型标注）
+        ├── 湖南话_voxcpm.txt            #   湖南话（备选模型标注）
+        ├── 客家话_voxcpm.txt            #   客家话（备选模型标注）
+        ├── 赣语_voxcpm.txt              #   赣语（备选模型标注）
+        ├── 晋语_voxcpm.txt              #   晋语（备选模型标注）
+        ├── 南京话_voxcpm.txt            #   南京话（备选模型标注）
+        ├── 福州话_voxcpm.txt            #   福州话（备选模型标注）
+        ├── 兰州话_voxcpm.txt            #   兰州话（备选模型标注）
+        └── 青海话_voxcpm.txt            #   青海话（备选模型标注）
 ```
 
 <br>
@@ -525,7 +555,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.3.5**（当前）：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
+**v2.3.6**（当前）：文档同步与结构补全 — 补全 README 文件结构（新增 generate_qinghai.py、.github/workflows/pylint.yml、outputs 顶层 5 个备选模型样例，model_formats 补全为 30 个完整清单）；复核 30 种方言词条数与词典一致（234,673 条，30/30 吻合）；同步 INDEX.md 至 v2.3.6 / 234,673 条，并修正 9 种备选模型方言的词条数偏差（原记录各少记 70–91 条）。
+
+**v2.3.5**：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
 
 **v2.3.4**：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
 
