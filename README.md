@@ -10,8 +10,8 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.3.6-blue?style=flat-square" alt="version">
-<img src="https://img.shields.io/badge/总词条-234,673-brightgreen?style=flat-square" alt="entries">
+<img src="https://img.shields.io/badge/version-v2.4.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/总词条-313,432-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
 <img src="https://img.shields.io/badge/备选模型-4种-teal?style=flat-square" alt="alt-models">
@@ -47,7 +47,7 @@
 <td width="50%" valign="top">
 
 ### 📚 海量词库
-**234,673 条**词条覆盖全部 30 种方言，从日常饮食到军事科技，每种方言均含独立语音学标注（声调、声韵母、连读变调）与谱系分类。
+**313,432 条**词条覆盖全部 30 种方言，从日常饮食到军事科技，每种方言均含独立语音学标注（声调、声韵母、连读变调）与谱系分类。
 
 </td>
 <td width="50%" valign="top">
@@ -308,35 +308,35 @@ cat outputs/model_formats/北京话_voxcpm.txt
 
 | # | 方言 | 谱系 | 词条数 | TTS 模型 |
 |:--:|------|------|------:|:--------:|
-| 1 | **四川话** | 西南官话·成渝片 | 8,379 | VoxCPM |
-| 2 | **粤语** | 粤语·广府片 | 8,120 | VoxCPM |
-| 3 | **东北话** | 东北官话 | 8,032 | VoxCPM |
-| 4 | **上海话** | 吴语·太湖片 | 7,915 | VoxCPM |
-| 5 | **河南话** | 中原官话·郑开片 | 7,798 | VoxCPM |
-| 6 | **陕西话** | 中原官话·关中片 | 6,990 | VoxCPM |
-| 7 | **山东话** | 冀鲁/胶辽官话 | 6,991 | VoxCPM |
-| 8 | **天津话** | 冀鲁官话·天津片 | 6,985 | VoxCPM |
-| 9 | **闽南话** | 闽语·闽南片 | 12,006 | VoxCPM |
-| 10 | **湖北话** | 西南官话·武天片 | 10,127 | VoxCPM |
-| 11 | **云南话** | 西南官话·滇中片 | 7,005 | VoxCPM |
-| 12 | **贵阳话** | 西南官话·黔中片 | 7,797 | VoxCPM |
-| 13 | **徐州话** | 中原官话·徐淮片 | 7,778 | VoxCPM |
-| 14 | **自贡话** | 西南官话·仁富片 | 7,796 | VoxCPM |
-| 15 | **苏州话** | 吴语·太湖片 | 7,777 | VoxCPM |
-| 16 | **成都话** | 西南官话·成渝片 | 6,812 | VoxCPM |
-| 17 | **重庆话** | 西南官话·成渝片 | 6,810 | VoxCPM |
-| 18 | **济南话** | 冀鲁官话 | 6,815 | VoxCPM |
-| 19 | **青岛话** | 胶辽官话 | 6,817 | VoxCPM |
-| 20 | **洛阳话** | 中原官话·洛嵩片 | 6,811 | VoxCPM |
-| 21 | **温州话** | 吴语·瓯江片 | 6,593 | VoxCPM |
-| 22 | **北京话** | 北京官话·京师片 | 10,019 | Seed Audio / MiniMax |
-| 23 | **湖南话** | 湘语·长益片 | 9,938 | MiniMax / ElevenLabs |
-| 24 | **客家话** | 客语·粤台片 | 7,798 | Seed Audio / Mureka |
-| 25 | **赣语** | 赣语·昌靖片 | 7,766 | MiniMax / Mureka |
-| 26 | **晋语** | 晋语·并州片 | 7,781 | Seed Audio / MiniMax |
-| 27 | **南京话** | 江淮官话·洪巢片 | 6,598 | MiniMax / ElevenLabs |
-| 28 | **福州话** | 闽语·闽东片 | 6,587 | Seed Audio / Mureka |
-| 29 | **兰州话** | 兰银官话·金城片 | 6,593 | MiniMax / Seed Audio |
+| 1 | **四川话** | 西南官话·成渝片 | 11,011 | VoxCPM |
+| 2 | **粤语** | 粤语·广府片 | 10,752 | VoxCPM |
+| 3 | **东北话** | 东北官话 | 10,663 | VoxCPM |
+| 4 | **上海话** | 吴语·太湖片 | 10,546 | VoxCPM |
+| 5 | **河南话** | 中原官话·郑开片 | 10,429 | VoxCPM |
+| 6 | **陕西话** | 中原官话·关中片 | 9,810 | VoxCPM |
+| 7 | **山东话** | 冀鲁/胶辽官话 | 9,811 | VoxCPM |
+| 8 | **天津话** | 冀鲁官话·天津片 | 9,805 | VoxCPM |
+| 9 | **闽南话** | 闽语·闽南片 | 14,637 | VoxCPM |
+| 10 | **湖北话** | 西南官话·武天片 | 12,758 | VoxCPM |
+| 11 | **云南话** | 西南官话·滇中片 | 9,825 | VoxCPM |
+| 12 | **贵阳话** | 西南官话·黔中片 | 10,428 | VoxCPM |
+| 13 | **徐州话** | 中原官话·徐淮片 | 10,409 | VoxCPM |
+| 14 | **自贡话** | 西南官话·仁富片 | 10,427 | VoxCPM |
+| 15 | **苏州话** | 吴语·太湖片 | 10,408 | VoxCPM |
+| 16 | **成都话** | 西南官话·成渝片 | 9,632 | VoxCPM |
+| 17 | **重庆话** | 西南官话·成渝片 | 9,630 | VoxCPM |
+| 18 | **济南话** | 冀鲁官话 | 9,635 | VoxCPM |
+| 19 | **青岛话** | 胶辽官话 | 9,637 | VoxCPM |
+| 20 | **洛阳话** | 中原官话·洛嵩片 | 9,631 | VoxCPM |
+| 21 | **温州话** | 吴语·瓯江片 | 9,413 | VoxCPM |
+| 22 | **北京话** | 北京官话·京师片 | 12,651 | Seed Audio / MiniMax |
+| 23 | **湖南话** | 湘语·长益片 | 12,569 | MiniMax / ElevenLabs |
+| 24 | **客家话** | 客语·粤台片 | 10,429 | Seed Audio / Mureka |
+| 25 | **赣语** | 赣语·昌靖片 | 10,397 | MiniMax / Mureka |
+| 26 | **晋语** | 晋语·并州片 | 10,412 | Seed Audio / MiniMax |
+| 27 | **南京话** | 江淮官话·洪巢片 | 9,418 | MiniMax / ElevenLabs |
+| 28 | **福州话** | 闽语·闽东片 | 9,407 | Seed Audio / Mureka |
+| 29 | **兰州话** | 兰银官话·金城片 | 9,413 | MiniMax / Seed Audio |
 | 30 | **青海话** | 中原官话·秦陇片 | 9,439 | Seed Audio / MiniMax / Mureka |
 
 </div>
@@ -555,7 +555,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.3.6**（当前）：文档同步与结构补全 — 补全 README 文件结构（新增 generate_qinghai.py、.github/workflows/pylint.yml、outputs 顶层 5 个备选模型样例，model_formats 补全为 30 个完整清单）；复核 30 种方言词条数与词典一致（234,673 条，30/30 吻合）；同步 INDEX.md 至 v2.3.6 / 234,673 条，并修正 9 种备选模型方言的词条数偏差（原记录各少记 70–91 条）。
+**v2.4.0**（当前）：全量整合词典 — 由 `references/dialects/` 下 30 个词元文件重铸 `dialect_dictionary.md`，补全旧合并版缺失的 26 个扩展段落（y30–y56）；词条总数 234,673 → **313,432**（+78,759，增幅 33.6%）；分布更趋均衡，极差比由 1.82:1 收敛至 1.56:1（闽南话 14,637 vs 福州话 9,407）；同步更新方言表、INDEX.md 与各方言 Control Instruction；词典版本 1.2.0 → 1.3.0。
+
+**v2.3.6**：文档同步与结构补全 — 补全 README 文件结构（新增 generate_qinghai.py、.github/workflows/pylint.yml、outputs 顶层 5 个备选模型样例，model_formats 补全为 30 个完整清单）；复核 30 种方言词条数与词典一致（234,673 条，30/30 吻合）；同步 INDEX.md 至 v2.3.6 / 234,673 条，并修正 9 种备选模型方言的词条数偏差（原记录各少记 70–91 条）。
 
 **v2.3.5**：周期维护 — 复核 30 种方言词条分布（极差比 1.82:1，低于 2:1 阈值）；验证词典版本 1.2.0 与词条总数 234,673 一致；无新增方言、无词条增删。
 
