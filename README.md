@@ -10,7 +10,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/version-v2.4.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v2.4.1-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/总词条-313,432-brightgreen?style=flat-square" alt="entries">
 <img src="https://img.shields.io/badge/方言-30种-orange?style=flat-square" alt="dialects">
 <img src="https://img.shields.io/badge/VoxCPM原生-9组21变体-red?style=flat-square" alt="voxcpm">
@@ -555,7 +555,9 @@ dialect-converter/
 
 ### 版本历史
 
-**v2.4.0**（当前）：全量整合词典 — 由 `references/dialects/` 下 30 个词元文件重铸 `dialect_dictionary.md`，补全旧合并版缺失的 26 个扩展段落（y30–y56）；词条总数 234,673 → **313,432**（+78,759，增幅 33.6%）；分布更趋均衡，极差比由 1.82:1 收敛至 1.56:1（闽南话 14,637 vs 福州话 9,407）；同步更新方言表、INDEX.md 与各方言 Control Instruction；词典版本 1.2.0 → 1.3.0。
+**v2.4.1**（当前）：周期维护 — 复核 30 种方言词条分布（极差比 1.56:1，低于 2:1 阈值）；验证词典版本 1.3.0 与词条总数 313,432 一致；无新增方言、无词条增删。
+
+**v2.4.0**：全量整合词典 — 由 `references/dialects/` 下 30 个词元文件重铸 `dialect_dictionary.md`，补全旧合并版缺失的 26 个扩展段落（y30–y56）；词条总数 234,673 → **313,432**（+78,759，增幅 33.6%）；分布更趋均衡，极差比由 1.82:1 收敛至 1.56:1（闽南话 14,637 vs 福州话 9,407）；同步更新方言表、INDEX.md 与各方言 Control Instruction；词典版本 1.2.0 → 1.3.0。
 
 **v2.3.6**：文档同步与结构补全 — 补全 README 文件结构（新增 generate_qinghai.py、.github/workflows/pylint.yml、outputs 顶层 5 个备选模型样例，model_formats 补全为 30 个完整清单）；复核 30 种方言词条数与词典一致（234,673 条，30/30 吻合）；同步 INDEX.md 至 v2.3.6 / 234,673 条，并修正 9 种备选模型方言的词条数偏差（原记录各少记 70–91 条）。
 
